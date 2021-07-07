@@ -34,52 +34,11 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="resources/img/logo.png" alt="<logo></logo>"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="menu_icon"><i class="fas fa-bars"></i></span>
-                        </button>
-
-<!--                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent"> -->
-<!--                             <ul class="navbar-nav"> -->
-<!--                                 <li class="nav-item"> -->
-<!--                                     <a class="nav-link" href="index.html">Home</a> -->
-<!--                                 </li> -->
-<!--                                 <li class="nav-item"> -->
-<!--                                     <a class="nav-link" href="about.html">about</a> -->
-<!--                                 </li> -->
-<!--                                 <li class="nav-item"> -->
-<!--                                     <a class="nav-link" href="packages.html">packages</a> -->
-<!--                                 </li> -->
-<!--                                 <li class="nav-item dropdown"> -->
-<!--                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" -->
-<!--                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-<!--                                         Blog -->
-<!--                                     </a> -->
-<!--                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
-<!--                                         <a class="dropdown-item" href="blog.html"> blog</a> -->
-<!--                                         <a class="dropdown-item" href="single-blog.html">Single blog</a> -->
-<!--                                     </div> -->
-<!--                                 </li> -->
-<!--                                 <li class="nav-item dropdown"> -->
-<!--                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown1" -->
-<!--                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-<!--                                         pages -->
-<!--                                     </a> -->
-<!--                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> -->
-<!--                                         <a class="dropdown-item" href="elements.html">Elements</a> -->
-<!--                                     </div> -->
-<!--                                 </li> -->
-<!--                                 <li class="nav-item"> -->
-<!--                                     <a class="nav-link" href="contact.html">Contact</a> -->
-<!--                                 </li> -->
-<!--                             </ul> -->
-<!--                         </div> -->
-                        <a class="btn_1 d-none d-lg-block" href="#">Log in</a>
-                        <a class="btn_1 d-none d-lg-block" href="#">Community</a>
-                    </nav>
+                    
+                        <a class="navbar-brand" href="index.jsp"> <img src="resources/img/logo.png" alt="<logo></logo>"> </a>
+                       	<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
+                       	<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
+   
                 </div>
             </div>
         </div>
@@ -94,7 +53,7 @@
                     <div class="banner_text">
                         <div class="banner_text_iner">
                             <h5>Must-go restaurants</h5>
-                            <h1>Find out <br> the best-rated restaurants near subway station</h1>
+                            <h2>Find out the best-rated restaurants near subway station</h2>
                         </div>
                     </div>
                 </div>
@@ -141,43 +100,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_donation_item">
-                        <img src="resources/img/icon/money_bag.svg" alt="#">
-                        <h4>donation</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing 
-                        elit sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna </p>
-                        <a href="#" class="read_btn">read more</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_donation_item">
-                        <img src="resources/img/icon/money_bag.svg" alt="#">
-                        <h4>donation</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing 
-                        elit sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna </p>
-                        <a href="#" class="read_btn">read more</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_donation_item">
-                        <img src="resources/img/icon/money_bag.svg" alt="#">
-                        <h4>donation</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing 
-                        elit sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna </p>
-                        <a href="#" class="read_btn">read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="resources/img/animate_icon/Shape-1.png" alt="" class="feature_icon_1">
-        <img src="resources/img/animate_icon/Shape-2.png" alt="" class="feature_icon_2">
+
     </section>
-    <!-- banner part start-->
 
     <!-- feature_part start-->
     <section class="feature_part padding_top">
@@ -185,51 +109,20 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-7">
                     <div class="feature_img">
-                        <img src="resources/img/about_img.png" alt="">
+                        <img src="resources/img/salad.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="feature_part_text">
-                        <img src="resources/img/section_tittle_img.png" alt="#">
-                        <h2>Amazing tour</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                            ipsum suspendisse ultrices gravida Risus commodo viverra maecenas
-                            accumsan lacus vel facilisis. </p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
-                            ut</span>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-4">
-                                <div class="feature_part_text_iner">
-                                    <img src="resources/img/icon/tour_icon_1.png" alt="">
-                                    <h4>london</h4>
-                                    <p>35 Places</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="feature_part_text_iner">
-                                    <img src="resources/img/icon/tour_icon_2.png" alt="">
-                                    <h4>Kashmir</h4>
-                                    <p>75 Places</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="feature_part_text_iner">
-                                    <img src="resources/img/icon/tour_icon_3.png" alt="">
-                                    <h4>chaina</h4>
-                                    <p>85 Places</p>
-                                </div>
-                            </div>
+                        <img src="resources/img/sushi.jpg" alt="#">
+                        <h2>Top Restaurants to go</h2>
+                        <p>Life is short! Don't waste your time looking for Restaurants outside. We do that job for you! Feel free to explore our website and take a look at the reviews other diners have given. You're welcome to share your experiences with our community! :) </p>
+                     
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <img src="resources/img/animate_icon/Shape-1.png" alt="" class="feature_icon_1">
-        <img src="resources/img/animate_icon/Shape-2.png" alt="" class="feature_icon_2">
-        <img src="resources/img/animate_icon/Shape-3.png" alt="" class="feature_icon_3">
-    </section>
     <!-- upcoming_event part start-->
 
     <!-- use sasu part end-->
@@ -238,287 +131,20 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="section_tittle text-center">
-                        <img src="resources/img/section_tittle_img.png" alt="">
-                        <h2>Most Popular <span>place</span> </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-                        sed  do eiusmod tempor incididunt ut</p>
+                      
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_popular_place">
-                        <img src="resources/img/icon/place_icon_1.png" alt="">
-                        <h4>Life of Egeft</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
-                        <a href="#" class="btn1">book now</a>
-                    </div>
-                </div><div class="col-lg-4 col-sm-6">
-                    <div class="single_popular_place">
-                        <img src="resources/img/icon/place_icon_2.png" alt="">
-                        <h4>Biking in Norway</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
-                        <a href="#" class="btn1">book now</a>
-                    </div>
-                </div><div class="col-lg-4 col-sm-6">
-                    <div class="single_popular_place">
-                        <img src="resources/img/icon/place_icon_3.png" alt="">
-                        <h4>Tour of iceland</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
-                        <a href="#" class="btn1">book now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- use sasu part end-->
 
-    <!-- about_us part start-->
-    <section class="place_details section_padding">
-        <div class="container-fluid">
-            <div class="row justify-content-between">
-                <div class="col-md-6 col-lg-6">
-                    <div class="place_detauls_text">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
-                                <div class="place_details_content">
-                                    <img src="resources/img/section_tittle_img.png" alt="#">
-                                    <h2>Amazing tour</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                                        ipsum suspendisse ultrices gravida Risus commodo viverra maecenas
-                                        accumsan lacus vel facilisis. </p>
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
-                                    ut</span>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="resources/img/plase_details_1.png" alt="#">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="place_details_img">
-                        <img src="resources/img/plase_details_2.png" alt="#">
-                    </div>
-                </div>
             </div>
         </div>
-        <div class="view_all_btn">
-            <a href="#" class="view_btn">view all</a>
-        </div>
     </section>
-    <!-- about_us part end-->
 
-    <!-- pricing part start-->
-    <section class="tour_package section_padding">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="tour_package_cotent owl-carousel">
-                        <div class="single_tour_package">
-                            <img src="resources/img/tour_plan_1.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_tour_package">
-                            <img src="resources/img/tour_plan_2.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_tour_package">
-                            <img src="resources/img/tour_plan_1.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_tour_package">
-                            <img src="resources/img/tour_plan_2.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-xl-3 offset-lg-1 col-sm-6">
-                    <div class="tour_pack_content">
-                        <img src="resources/img/section_tittle_img.png" alt="">
-                        <h2>tour package</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-                        sed  do eiusmod tempor incididunt ut</p>
-                        <a href="#" class="btn_1">join now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- pricing part end-->
 
-    <!-- cta part start-->
-    <section class="cta_part section_padding">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-8 col-xl-7">
-                    <div class="cta_text text-center">
-                        <h5>Join Our Newsletter</h5>
-                        <h2>Subscribe to get Updated
-                                with new offers</h2>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter email address" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-                            <div class="input-group-append" id="button-addon4">
-                                <a href="#" class="subs_btn">subscribe now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- cta part end-->
+  
 
-    <!-- blog part start-->
-    <section class="blog_part padding_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="section_tittle">
-                        <img src="resources/img/section_tittle_img.png" alt="">
-                        <h2>our blog</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-                        sed  do eiusmod tempor incididunt ut</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="resources/img/blog/blog_1.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="resources/img/blog/blog_2.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="resources/img/blog/blog_3.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="resources/img/overlay_1.png" alt="#" class="blog_img">
-    </section>
-    <!-- blog part end-->
+
+
 
     <!--::footer_part start::-->
     <footer class="footer_part">
@@ -526,28 +152,14 @@
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_footer_part">
-                        <h4>About Agency</h4>
+                        <h4>About us</h4>
                         <p>The world has become so fast paced that people don’t want 
                         to stand by reading a page of information, they would much 
                         rather look at a presentation and understand the message. 
                         It has come to a point where images</p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>Navigation Links</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">team</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
+
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_footer_part">
                         <h4>Newsletter</h4>
@@ -570,8 +182,6 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>Instafeed</h4>
                         <div class="footer_img">
                             <a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
                             <a href="#"><img src="img/footer_img/footer_2.png" alt=""></a>
@@ -590,7 +200,7 @@
                 <div class="col-lg-8">
                     <div class="copyright_text">
                         <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+　Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
                     </div>
                 </div>
@@ -600,7 +210,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
-                            <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
+<!--                             <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li> -->
                         </ul>
                     </div>
                 </div>
