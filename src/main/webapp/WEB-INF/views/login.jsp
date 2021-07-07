@@ -62,17 +62,21 @@
 								type="password" id="password" name="password"
 								class="form-control" placeholder="비밀번호를 입력해 주세요" required>
 						</div>
-						<div class="checkbox px-lg-5"  >
+						<div class="checkbox px-lg-5">
 							<label> <input type="checkbox" value="remember-me">
-								<strong>로그인 정보 기억하기</strong>
+								<strong style="color:white;font-style: italic;" >로그인 정보 기억하기</strong>
 							</label>
+						</div>
+						<div class="col py-2 px-lg-5">
+							<button type="button" class="btn btn-danger btn-lg btn-block">회원가입</button>
 						</div>
 						<div class="row justify-content-center">
 							<div class="col-5">
 								<button type="submit" class="btn btn-warning btn-lg btn-block">로그인</button>
 							</div>
 							<div class="col-5">
-								<button type="button" class="btn btn-primary btn-lg btn-block">ID/PW 찾기</button>
+								<button type="button" class="btn btn-primary btn-lg btn-block">ID/PW
+									찾기</button>
 							</div>
 						</div>
 					</div>
