@@ -33,4 +33,11 @@ public class HomeController {
 		return "login";
 	}
 	
+	@GetMapping("/login2")
+	public String loginGet2() {
+		logger.info("login page");
+		
+		return "login2";
+	}
+	
 }

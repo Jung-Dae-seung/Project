@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="resources/css/slick.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
+
 </head>
 <body>
 	<!--::header part start::-->
