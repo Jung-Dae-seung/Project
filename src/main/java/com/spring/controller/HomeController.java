@@ -40,4 +40,11 @@ public class HomeController {
 		return "login2";
 	}
 	
+	@GetMapping("/community")
+	public String community() {
+		logger.info("community page");
+		
+		return "community";
+	}
+	
 }
