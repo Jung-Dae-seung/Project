@@ -47,4 +47,11 @@ public class HomeController {
 		return "community";
 	}
 	
+	@GetMapping("/signUp")
+	public String signUpGet() {
+		logger.info("signUp page");
+		
+		return "signUp";
+	}
+	
 }

@@ -4,12 +4,12 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background-image: url("../img/loginpage3.jpg");
+			background-image: url("../img/loginpage2.jpg");
 			background-size: cover;
 		}
 		.user_card {
-			height: 400px;
-			width: 350px;
+			height: 700px;
+			width: 450px;
 			margin-top: auto;
 			margin-bottom: auto;
 			background: #f39c12;

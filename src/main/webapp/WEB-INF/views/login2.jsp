@@ -34,19 +34,18 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-12">
-
-					<a class="navbar-brand" href="index.jsp"> <img
-						src="resources/img/logo.png" alt="<logo></logo>">
-					</a> <a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
-
+					<a class="navbar-brand" href="index.jsp"> 
+					<img src="resources/img/logo.png" alt="<logo></logo>">
+					</a> 
+					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a> 
+					<a class="btn_1 d-none d-lg-block" href="index.jsp">index</a>
 				</div>
 			</div>
 		</div>
 	</header>
 	<!-- Header part end-->
 
-	
+
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -56,31 +55,35 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
-						<div class="input-group mb-3">
+					<form class="form-signin" name="#" action="/login" method="post">
+						<div class="input-group mb-4">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
+							<input type="text" name="" class="form-control input_user"
+								value="" placeholder="username">
 						</div>
-						<div class="input-group mb-2">
+						<div class="input-group mb-4">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+							<input type="password" name="" class="form-control input_pass"
+								value="" placeholder="password">
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
+								<input type="checkbox" class="custom-control-input"
+									id="customControlInline"> <label
+									class="custom-control-label" for="customControlInline">Remember
+									me</label>
 							</div>
 						</div>
-							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" name="button" class="btn login_btn">Login</button>
-				   </div>
+						<div class="d-flex justify-content-center mt-4 login_container">
+							<button type="button" name="button" class="btn login_btn">Login</button>
+						</div>
 					</form>
 				</div>
-		
+
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
@@ -92,6 +95,6 @@
 			</div>
 		</div>
 	</div>
-	
+
 </body>
 </html>
