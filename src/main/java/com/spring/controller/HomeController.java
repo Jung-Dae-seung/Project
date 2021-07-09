@@ -54,4 +54,18 @@ public class HomeController {
 		return "signUp";
 	}
 	
+	@GetMapping("/food")
+	public String foodGet() {
+		logger.info("food page");
+		
+		return "food";
+	}
+	
+	@GetMapping("/foodlist")
+	public String foodlistGet() {
+		logger.info("foodlist page");
+		
+		return "foodlist";
+	}
+	
 }

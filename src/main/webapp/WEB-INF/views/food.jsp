@@ -14,7 +14,7 @@ pageEncoding="UTF-8"%>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/foodstyles.css" rel="stylesheet" />
+    <link href="resources/css/foodstyles.css" rel="stylesheet" />
   </head>
   <body>
     <!-- 맨 위에 배너(나중에 있던걸로 교체하기)-->
@@ -118,6 +118,6 @@ pageEncoding="UTF-8"%>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/foodscripts.js"></script>
+    <script src="resources/js/foodscripts.js"></script>
   </body>
 </html>
