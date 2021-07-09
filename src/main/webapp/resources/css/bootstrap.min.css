@@ -604,6 +604,16 @@ pre code {
 	max-width: 33.333333%
 }
 
+.col-4-2 {
+	float:left;
+	display:inline-block;
+	margin-left:50px;
+	margin-right:100px;
+	-ms-flex: 0 0 33.333333%;
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%
+}
+
 .col-5 {
 	-ms-flex: 0 0 41.666667%;
 	flex: 0 0 41.666667%;
@@ -1144,6 +1154,12 @@ pre code {
 		flex: 0 0 25%;
 		max-width: 25%
 	}
+	.col-lg-3-2 {
+		margin-left:95px;
+		-ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%
+	}
 	.col-lg-4 {
 		-ms-flex: 0 0 33.333333%;
 		flex: 0 0 33.333333%;
@@ -1462,6 +1478,15 @@ pre code {
 .table {
 	width: 100%;
 	margin-bottom: 1rem;
+	color: #212529
+}
+
+.table1 {
+	float:left;
+	display:inline-block;
+	width: 100%;
+	margin-bottom: 1rem;
+	margin:0 auto;
 	color: #212529
 }
 

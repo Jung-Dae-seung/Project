@@ -81,12 +81,9 @@
 											<option value="2">Line 2</option>
 											<option value="3">Line 3</option>
 											<!-- 여기까지는 적용되어있음 -->
-											<option value="4">Line 4</option>
+											<option value="4" selected>Line 4</option>
 											<option value="5">Line 5</option>
-											<option value="6">Line 6</option>
-											<option value="7">Line 7</option>
-											<option value="8">Line 8</option>
-											<option value="9">Line 9</option>
+
 										</select> <select class="custom_select" id="inlineFormCustomSelect1">
 											<option selected>Station</option>
 											<option value="1">One</option>
@@ -104,77 +101,52 @@
 				</div>
 			</div>
 	</section>
+	
 
 	<!-- feature_part start-->
-	<section class="feature_part padding_top">
-		<div class="container">
-			<div class="row align-items-center justify-content-between">
-				<div class="col-lg-12">
-					<div class="feature_img">
-						<img src="resources/img/salad.png" alt="">
-					</div>
+<!-- 	<section class="feature_part padding_top"> -->
+	<div class="container">
+		<div class="row align-items-center justify-content-between">
+			<div class="col-6">
+				<div class="feature_img">
+					<img src="resources/img/salad.png" alt="">
 				</div>
-				
 			</div>
-		</div>
-
-		<!-- upcoming_event part start-->
-
-		<!-- use sasu part end-->
-		<section class="popular_place padding_top">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-5">
-						<div class="section_tittle text-center"></div>
-					</div>
-				</div>
-
-			</div>
-			</div>
-		</section>
-
-
-
-
-
+			<div class="col-6">
+				<h2>Top Restaurants to go</h2>		
+				<p>
+					Life is short! Don't waste your time looking for Restaurants outside. <br /> We do that job for you! Feel free to explore our website and take a look at the reviews other diners have given. You're welcome to share your dining experiences to recommend places for other food enthusiasts.  
+				</p>
+			</div> 
+		</div>	
 
 
 		<!--::footer_part start::-->
 		<footer class="footer_part">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6 col-lg-3">
+					<div class="col-md-4">
 						<div class="single_footer_part">
 							<h4>About us</h4>
-							<p>The world has become so fast paced that people don’t want
-								to stand by reading a page of information, they would much
-								rather look at a presentation and understand the message. It has
-								come to a point where images</p>
+							<p>  EatAtLine4 is a social networking site that lets users post reviews and rate restaurants near subway line 4.
+							  Share your experiences with our community and receive the best recommendations for restaurants.
+							</p>
 						</div>
 					</div>
 
-					<div class="col-sm-6 col-lg-3">
+					<div class="col-md-4">
 						<div class="single_footer_part">
-							<h4>Newsletter</h4>
-							<p>Heaven fruitful doesn't over lesser in days. Appear
-								creeping seasons deve behold bearing days open</p>
-							<div id="mc_embed_signup">
-								<form target="_blank"
-									action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-									method="get" class="subscribe_form relative mail_part">
-									<input type="email" name="email" id="newsletter-form-email"
-										placeholder="Email Address" class="placeholder hide-on-focus"
-										onfocus="this.placeholder = ''"
-										onblur="this.placeholder = ' Email Address '">
-									<button type="submit" name="submit" id="newsletter-submit"
-										class="email_icon newsletter-submit button-contactForm">
-										<i class="far fa-paper-plane"></i>
-									</button>
-									<div class="mt-10 info"></div>
-								</form>
-							</div>
+							<h4>Community</h4>
+							<p>Are you a food lover? <br /> Our community is a place where everyone has a voice to share, create, 
+							and connect with other  food lovers. It's easy to find and share what to eat and where to eat. </p>
 						</div>
 					</div>
+					
+					<div class="col-md-4 col-lg-3-2">
+						<img src="resources/img/couple.png" alt="" class="" />
+					</div>
+					
+					
 					<div class="col-sm-6 col-lg-3">
 						<div class="footer_img">
 							<a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
@@ -199,9 +171,8 @@
 							<script>
 								document.write(new Date().getFullYear());
 							</script>
-							All rights reserved | This template is made with <i
-								class="ti-heart" aria-hidden="true"></i> by <a
-								href="https://colorlib.com" target="_blank">Colorlib</a>
+							All rights reserved | <a
+								href="https://colorlib.com" target="_blank">EatAtLine4</a>
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</P>
 					</div>
@@ -248,5 +219,4 @@
 		<!-- custom js -->
 		<script src="resources/js/custom.js"></script>
 </body>
-
 </html>

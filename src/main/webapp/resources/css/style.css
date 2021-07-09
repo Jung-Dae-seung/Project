@@ -2465,8 +2465,17 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 1050px;
+  height: 1000px;
   background-color: #ffdab9;
+}
+.banner_part2 {
+  background-image: url(../img/dining_table.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  background-color: #ffdab9;
+  margin-bottom: 80px;
 }
 
 @media (max-width: 991px) {
