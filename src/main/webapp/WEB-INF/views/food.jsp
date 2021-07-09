@@ -52,59 +52,92 @@ pageEncoding="UTF-8"%>
         <div class="col-lg-7">
           <img
             class="img-fluid rounded mb-4 mb-lg-0"
-            src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg"
+            src="https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg"
             alt="..."
           />
         </div>
         <div class="col-lg-5">
-          <h1 class="font-weight-light">해당 음식점 이름 넣기</h1>
+          <h1 class="font-weight-light">음식점 이름 넣기</h1>
           <p>해당 음식점의 설명 넣기</p>
+          <p>설명 및 오는길</p>
           <a class="btn btn-primary" href="#!"
             >버튼 클릭시 지도 이동(지도 url 넣기)</a
           >
         </div>
       </div>
       <!-- 별점 및 다른것 -->
-      <div class="card text-white bg-secondary my-5 py-4 text-center">
+       <div class="card text-white bg-secondary my-2 py-4 text-center">
+      <p>리뷰 출력</p>
         <div class="card-body">
-          <p class="text-white m-0">해당 위치에 별점 및 평가 집어넣기</p>
-        </div>
+         <!-- 해당 위치에 리뷰를 집어 넣자 -->
+        </div> 
       </div>
+      <!-- 만족도 및 리뷰(댓글)//로그인 구현? or not? -->
+     	 <form action="practice.jsp" method="post">
+      		
+      <div class="card text-white bg-secondary my-5 py-4 text-center">
+        <div class="bbs_view" style="margin-top:50px;margin-bottom:20px">
+    <table class="view_1">
+        <tr>
+            <th style="width:20%">만족도</th>
+            <td class="name">
+                 <input type="radio" name="review_point" id="review_point" value="5" /> 매우 만족
+                 <input type="radio" name="review_point" id="review_point" value="4" /> 만족
+                 <input type="radio" name="review_point" id="review_point" value="3" /> 보통
+                 <input type="radio" name="review_point" id="review_point" value="2" /> 불만족
+                 <input type="radio" name="review_point" id="review_point" value="1" /> 매우 불만족
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type = "submit" value = "등록">
+            </td>
+        </tr>
+        <tr>
+        	<td>
+        	<p>  </p>
+        	</td>
+        </tr>
+        <tr>
+            <th scope="row">만족도내용</th>
+            <td class="name">
+                <textarea id=review_point_content name=review_point_content rows="10" cols="120"></textarea>
+            </td>
+        </tr>
+        <!-- 사람, 내용, 별점, 음식점이름  -->
+    </table>
+    </div>
+      </div>
+      
+     	 </form>
+      
+      
+      
+      
       <!-- 다른 연관 식당 -->
-      <div class="row gx-4 gx-lg-5">
-        <div class="col-md-4 mb-5">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">1번 식당</h2>
-              <p class="card-text">다른 식당 페이지 이동 1번</p>
-            </div>
-            <div class="card-footer">
-              <a class="btn btn-primary btn-sm" href="#!">이동하기</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-5">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">2번 식당</h2>
-              <p class="card-text">다른 식당 페이지 이동 2번</p>
-            </div>
-            <div class="card-footer">
-              <a class="btn btn-primary btn-sm" href="#!">이동하기</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-5">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">3번 식당</h2>
-              <p class="card-text">다른 식당 페이지 이동 3번</p>
-            </div>
-            <div class="card-footer">
-              <a class="btn btn-primary btn-sm" href="#!">이동하기</a>
-            </div>
-          </div>
-        </div>
+      <div class="row gx-8 gx-lg-5">
+      
+        <div class="card" style="width: 26rem;">
+  		<img src="https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg" class="card-img-top" alt="...">
+  			<div class="card-body">
+  			  <h5 class="card-title">음식점 이름</h5>
+  			  <p class="card-text">음식점 부과설명</p>
+  			  <a href="#" class="btn btn-primary">이동경로()</a>
+  			</div>
+		</div>
+        <div class="card" style="width: 26rem;">
+  		<img src="https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg" class="card-img-top" alt="...">
+  			<div class="card-body">
+  			  <h5 class="card-title">음식점 이름</h5>
+  			  <p class="card-text">음식점 부과설명</p>
+  			  <a href="#" class="btn btn-primary">이동경로()</a>
+  			</div>
+		</div>
+        <div class="card" style="width: 26rem;">
+  		<img src="https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg" class="card-img-top" alt="...">
+  			<div class="card-body">
+  			  <h5 class="card-title">음식점 이름</h5>
+  			  <p class="card-text">음식점 부과설명</p>
+  			  <a href="#" class="btn btn-primary">이동경로()</a>
+  			</div>
+		</div>
       </div>
     </div>
     <!-- Footer-->
