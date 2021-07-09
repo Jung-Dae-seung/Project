@@ -13,9 +13,9 @@
 	</select>
 	
 	<!-- 로그인 : login(userid,name) -->
-	<select id="login" resultType="com.spring.domain.LoginVO">
+	<!-- <select id="login" resultType="com.spring.domain.LoginVO">
 		select userid,name from memberTBL where userid=#{userid} and password=#{password}
-	</select>
+	</select> -->
 	
 	<!--  탈퇴 : leave -->
 	<delete id="leave">
