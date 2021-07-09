@@ -115,24 +115,25 @@
 									class="text-info"></small>
 							</div>
 						</div>
-						<div class="d-flex justify-content-center mt-4 login_container">
-							<div class="col">
-								<button type="button" name="button" class="btn login_btn">sign
-									up</button>
+						<div class="mt-4">
+							<div class="d-flex justify-content-center links">
+								<input type="checkbox" class="" id=""> <a href="#"
+									class="ml-2">회원 가입 약관 확인</a>
 							</div>
-							<div class="col">
-								<button type="button" name="button" class="btn login_btn">cancel</button>
+							<div class="d-flex justify-content-center mt-4 login_container">
+								<div class="col">
+									<button type="button" name="button" class="btn login_btn">sign
+										up</button>
+								</div>
+								<div class="col">
+									<button type="button" name="button" class="btn login_btn">cancel</button>
+								</div>
 							</div>
-						</div>
 					</form>
-					</div>
-					<div class="mt-4">
-						<div class="d-flex justify-content-center links">
-							<a href="#" class="ml-2">회원 가입 약관 확인</a>
-						</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  * Handles requests for the application home page.
  */
 @Controller
+@Log4j2
 public class HomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		log.info("Welcome home! The client locale is {}.", locale);
 		
 
 		return "index";
@@ -28,44 +28,51 @@ public class HomeController {
 	
 	@GetMapping("/login")
 	public String loginGet() {
-		logger.info("login page");
+		log.info("login page");
 		
 		return "login";
 	}
 	
 	@GetMapping("/login2")
 	public String loginGet2() {
-		logger.info("login page");
+		log.info("login page");
 		
 		return "login2";
 	}
 	
 	@GetMapping("/community")
 	public String community() {
-		logger.info("community page");
+		log.info("community page");
 		
 		return "community";
 	}
 	
 	@GetMapping("/signUp")
 	public String signUpGet() {
-		logger.info("signUp page");
+		log.info("signUp page");
 		
 		return "signUp";
 	}
 	
 	@GetMapping("/food")
 	public String foodGet() {
-		logger.info("food page");
+		log.info("food page");
 		
 		return "food";
 	}
 	
 	@GetMapping("/foodlist")
 	public String foodlistGet() {
-		logger.info("foodlist page");
+		log.info("foodlist page");
 		
 		return "foodlist";
+	}
+	
+	@GetMapping("/subway")
+	public String subwayGet() {
+		log.info("subway page");
+		
+		return "/subway/subway";
 	}
 	
 	
