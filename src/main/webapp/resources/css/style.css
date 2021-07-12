@@ -2478,6 +2478,16 @@ ul {
   margin-bottom: 80px;
 }
 
+.banner_part3 {
+  background-image: url(../img/colorful_door.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  background-color: #ffdab9;
+  margin-bottom: 80px;
+}
+
 @media (max-width: 991px) {
   /* line 2, /Applications/MAMP/htdocs/palash/cl/july 2019/189 travel/189 travel html/sass/_banner.scss */
   .banner_part {
@@ -3814,6 +3824,10 @@ ul {
 
 /**********************footer part css*******************/
 /* line 2, /Applications/MAMP/htdocs/palash/cl/july 2019/189 travel/189 travel html/sass/_footer.scss */
+.footer_top{
+	margin-top: -160px;
+}
+
 .footer_part {
   padding: 180px 0px 25px;
   position: relative;
