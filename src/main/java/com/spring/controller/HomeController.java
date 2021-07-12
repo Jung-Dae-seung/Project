@@ -26,32 +26,11 @@ public class HomeController {
 		return "index";
 	}
 	
-	@GetMapping("/login")
-	public String loginGet() {
-		log.info("login page");
-		
-		return "login";
-	}
-	
-	@GetMapping("/login2")
-	public String loginGet2() {
-		log.info("login page");
-		
-		return "login2";
-	}
-	
 	@GetMapping("/community")
 	public String community() {
 		log.info("community page");
 		
 		return "community";
-	}
-	
-	@GetMapping("/signUp")
-	public String signUpGet() {
-		log.info("signUp page");
-		
-		return "signUp";
 	}
 	
 	@GetMapping("/food")

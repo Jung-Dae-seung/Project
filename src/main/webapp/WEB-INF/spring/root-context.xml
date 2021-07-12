@@ -14,6 +14,8 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:component-scan base-package="com.spring.service"/>
+	<mybatis-spring:scan base-package="com.spring.mapper"/>
 	
 	<!-- mybatis -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -31,7 +33,6 @@
         <property name="maxPoolSize" value="20" />
         <property name="initialPoolSize" value="5" />
     </bean>	
-	
 	
 	<!-- 트랜잭션 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

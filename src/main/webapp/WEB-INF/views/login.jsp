@@ -24,6 +24,10 @@
 <link rel="stylesheet" href="resources/css/slick.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
+<!-- login CSS -->
+<link rel="stylesheet" href="resources/css/login.css">
+<!-- jquery cdn -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -32,12 +36,11 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-12">
-
-					<a class="navbar-brand" href="index.jsp"> <img
-						src="resources/img/logo.png" alt="<logo></logo>">
-					</a> <a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
-
+					<a class="navbar-brand" href="/"> 
+					<img src="resources/img/logo.png" alt="<logo></logo>">
+					</a> 
+					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a> 
+					<a class="btn_1 d-none d-lg-block" href="/">index</a>
 				</div>
 			</div>
 		</div>
@@ -45,45 +48,63 @@
 	<!-- Header part end-->
 
 
-	<form class="form-signin" name="#" action="/login" method="post">
-		<section class="cta_part section_padding">
-			<div class="container">
-				<div class="row justify-content-center align-items-center">
-					<div class="col-lg-8 col-xl-5">
-						<div class="cta_text text-center">
-							<h2>로그인</h2>
-						</div>
-						<div class="col py-2 px-lg-5">
-							<label for="userid" class="sr-only">로그인 아이디</label> <input
-								type="text" id="username" name="username" class="form-control"
-								placeholder="아이디를 입력해 주세요" required autofocus>
-						</div>
-						<div class="col py-2 px-lg-5">
-							<label for="password" class="sr-only">비밀번호</label> <input
-								type="password" id="password" name="password"
-								class="form-control" placeholder="비밀번호를 입력해 주세요" required>
-						</div>
-						<div class="checkbox px-lg-5">
-							<label> <input type="checkbox" value="remember-me">
-								<strong style="color:white;font-style: italic;" >로그인 정보 기억하기</strong>
-							</label>
-						</div>
-						<div class="col py-2 px-lg-5">
-							<button type="button" class="btn btn-danger btn-lg btn-block">회원가입</button>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col-5">
-								<button type="submit" class="btn btn-warning btn-lg btn-block">로그인</button>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="resources/img/logo.png" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form class="form-signin" name="#" action="/login" method="post">
+						<div class="input-group mb-4">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<div class="col-5">
-								<button type="button" class="btn btn-primary btn-lg btn-block">ID/PW
-									찾기</button>
+							<input type="text" name="userid" class="form-control input_user"
+								value="" placeholder="username">
+						</div>
+						<div class="input-group mb-4">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="current_password" class="form-control input_pass"
+								value="" placeholder="password">
+						</div>
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input"
+									id="customControlInline"> <label
+									class="custom-control-label" for="customControlInline">Remember
+									me</label>
 							</div>
 						</div>
+						<div class="d-flex justify-content-center mt-4 login_container">
+							<button type="submit" name="button" class="btn login_btn">Login</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a href="/signup" class="ml-2">Sign Up</a>
+					</div>
+					<div class="d-flex justify-content-center links">
+						<a href="#">Forgot your password?</a>
 					</div>
 				</div>
 			</div>
-		</section>
-	</form>
+		</div>
+	</div>
+<script>
+$(function () {
+	let error = '${error}';
+	
+	if(error){
+		alert(error);
+	}
+})
+</script>
 </body>
 </html>
