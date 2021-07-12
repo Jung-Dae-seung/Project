@@ -7914,7 +7914,8 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover
 	margin-right: 1rem !important
 }
 
-.mb-3{
+/* foodlist -새로 추가*/
+.mb-3-2{
 	float:left;
 	display:inline-block;
 }
@@ -7927,7 +7928,8 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover
 	margin-left: 1rem !important
 }
 
-.m-4 {
+/* foodlist -새로 추가 */
+.m-4-2 {
 	width:1000px;
 	height: 200px;
 	margin: 1.5rem !important

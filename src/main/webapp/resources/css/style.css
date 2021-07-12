@@ -2488,6 +2488,16 @@ ul {
   margin-bottom: 80px;
 }
 
+.banner_part4 {
+  background-image: url(../img/background4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  background-color: #ffffff;
+  margin-bottom: 80px;
+}
+
 @media (max-width: 991px) {
   /* line 2, /Applications/MAMP/htdocs/palash/cl/july 2019/189 travel/189 travel html/sass/_banner.scss */
   .banner_part {

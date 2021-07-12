@@ -1,157 +1,335 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>음식점 부가 페이지</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="resources/css/foodstyles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <!-- 맨 위에 배너(나중에 있던걸로 교체하기)-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container px-5">
-        <a class="navbar-brand" href="#!">음식점이름(or 홈페이지 이동)</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <!-- 각종 배너 요소 -->
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#!">Home</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="#!">Services</a></li>
-          </ul>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>travel</title>
+<link rel="icon" href="resources/img/favicon.png">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<!-- animate CSS -->
+<link rel="stylesheet" href="resources/css/animate.css">
+<!-- owl carousel CSS -->
+<link rel="stylesheet" href="resources/css/owl.carousel.min.css">
+<!-- font awesome CSS -->
+<link rel="stylesheet" href="resources/css/all.css">
+<!-- flaticon CSS -->
+<link rel="stylesheet" href="resources/css/flaticon.css">
+<link rel="stylesheet" href="resources/css/themify-icons.css">
+<link rel="stylesheet" href="resources/css/nice-select.css">
+<!-- font awesome CSS -->
+<link rel="stylesheet" href="resources/css/magnific-popup.css">
+<!-- swiper CSS -->
+<link rel="stylesheet" href="resources/css/slick.css">
+<!-- style CSS -->
+<link rel="stylesheet" href="resources/css/style.css">
+<!-- food CSS -->
+<link rel="stylesheet" href="resources/css/food.css">
+</head>
+
+<body>
+	<!--::header part start::-->
+	<header class="main_menu home_menu">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-12">
+
+					<a class="navbar-brand" href="index.jsp"> <img
+						src="resources/img/logo.png" alt="<logo></logo>">
+					</a> 
+					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
+					<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Header part end-->
+	
+<!-- banner part start -->
+<section class="banner_part4"></section>
+<!-- banner part start -->
+
+	
+<!-- Page Content-->
+<div class="container px-4 px-lg-5">
+  <!-- Heading Row-->
+ <div class="row gx-4 gx-lg-5 align-items-center my-5">
+   <div class="col-lg-7">
+     <img
+       class="img-fluid rounded mb-4 mb-lg-0"
+       src="resources/img/restaurant2.jpg"
+       alt="..." />
+   </div>
+   <div class="col-lg-5">
+     <h1 class="font-weight-light">음식점 이름</h1>
+     <p>주소</p>
+     <p>오픈시간</p>
+     <a class="btn btn-primary" href="#!">지도 보기</a >
+     <br/>
+     <br/>
+     <a class="btn btn-primary" href="#!">리뷰 작성</a >
+   </div>
+ </div>
+
+
+<!-- 식당 및 음식 사진들 -->
+<div class="container">
+	<div class= row>
+		<div class="col-sm-3">
+			<img src="resources/img/salad2.jpg" alt="" />
+		</div>
+		<div class="col-sm-3">
+			<img src="resources/img/naan.jpg" alt="" />
+		</div>
+		<div class="col-sm-3">
+			<img src="resources/img/beef.jpg" alt="" />
+		</div>
+		<div class="col-sm-3">
+			<img src="resources/img/cake.jpg" alt="" />
+		</div>
+	</div>
+</div>
+		
+
+<!-- 리뷰 바 -->
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-10 col-12 text-center mb-5">
+            <div class="card">
+                <div class="row justify-content-left d-flex">
+                    <div class="col-md-4 d-flex flex-column">
+                        <div class="rating-box">
+                            <h1 class="pt-4">4.0</h1>
+                            <p class="">out of 5</p>
+                        </div>
+                        <div> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-inactive mx-1"></span> </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="rating-bar0 justify-content-center">
+                            <table class="text-left mx-auto">
+                                <tr>
+                                    <td class="rating-label">Excellent</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-5"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">123</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Good</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-4"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Average</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-3"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">10</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Poor</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-2"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Terrible</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-1"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+<!--             한줄평1 -->
+            <div class="card">
+                <div class="row d-flex">
+                    <div class=""> <img class="profile-pic" src="resources/img/GongYoo.jpg"> </div>
+                    <div class="d-flex flex-column">
+                        <h3 class="mt-2 mb-0">Gong Yoo</h3>
+                        <div>
+                            <p class="text-left"><span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-inactive"></span></p>
+                        </div>
+                    </div>
+                    <div class="ml-auto">
+                        <p class="text-muted pt-5 pt-sm-3">10 Sept</p>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <h4 class="blue-text mt-3">"An awesome activity to experience"</h4>
+                    <p class="content">If you really enjoy spending your vacation 'on water' or would like to try something new and exciting for the first time.</p>
+                </div>
+                <div class="row text-left mt-4">
+                    <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"><span class="blue-text pl-2">20</span> </div>
+                    <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2">4</span> </div>
+                </div>
+            </div>
+            
+<!--             한줄평2 -->
+            <div class="card">
+                <div class="row d-flex">
+                    <div class=""> <img class="profile-pic" src="resources/img/IU.jpg"> </div>
+                    <div class="d-flex flex-column">
+                        <h3 class="mt-2 mb-0">JiEun Lee</h3>
+                        <div>
+                            <p class="text-left"><span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-inactive"></span></p>
+                        </div>
+                    </div>
+                    <div class="ml-auto">
+                        <p class="text-muted pt-5 pt-sm-3">10 Sept</p>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <h4 class="blue-text mt-3">"An awesome activity to experience"</h4>
+                    <p class="content">If you really enjoy spending your vacation 'on water' or would like to try something new and exciting for the first time.</p>
+                </div>
+                <div class="row text-left mt-4">
+                    <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"><span class="blue-text pl-2">20</span> </div>
+                    <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2">4</span> </div>
+                </div>
+            </div>
+				<br/>
+				<p> See more  </p>
+            
         </div>
-      </div>
-    </nav>
-    <!-- Page Content-->
-    <div class="container px-4 px-lg-5">
-      <!-- Heading Row-->
-      <div class="row gx-4 gx-lg-5 align-items-center my-5">
-        <div class="col-lg-7">
-          <img
-            class="img-fluid rounded mb-4 mb-lg-0"
-            src="https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg"
-            alt="..."
-          />
-        </div>
-        <div class="col-lg-5">
-          <h1 class="font-weight-light">음식점 이름 넣기</h1>
-          <p>해당 음식점의 설명 넣기</p>
-          <p>설명 및 오는길</p>
-          <a class="btn btn-primary" href="#!"
-            >버튼 클릭시 지도 이동(지도 url 넣기)</a
-          >
-        </div>
-      </div>
-      <!-- 별점 및 다른것 -->
-       <div class="card text-white bg-secondary my-2 py-4 text-center">
-      <p>리뷰 출력</p>
-        <div class="card-body">
-         <!-- 해당 위치에 리뷰를 집어 넣자 -->
-        </div> 
-      </div>
-      <!-- 만족도 및 리뷰(댓글)//로그인 구현? or not? -->
-     	 <form action="practice.jsp" method="post">
-      		
-      <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="bbs_view" style="margin-top:50px;margin-bottom:20px">
-    <table class="view_1">
-        <tr>
-            <th style="width:20%">만족도</th>
-            <td class="name">
-                 <input type="radio" name="review_point" id="review_point" value="5" /> 매우 만족
-                 <input type="radio" name="review_point" id="review_point" value="4" /> 만족
-                 <input type="radio" name="review_point" id="review_point" value="3" /> 보통
-                 <input type="radio" name="review_point" id="review_point" value="2" /> 불만족
-                 <input type="radio" name="review_point" id="review_point" value="1" /> 매우 불만족
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type = "submit" value = "등록">
-            </td>
-        </tr>
-        <tr>
-        	<td>
-        	<p>  </p>
-        	</td>
-        </tr>
-        <tr>
-            <th scope="row">만족도내용</th>
-            <td class="name">
-                <textarea id=review_point_content name=review_point_content rows="10" cols="120"></textarea>
-            </td>
-        </tr>
-        <!-- 사람, 내용, 별점, 음식점이름  -->
-    </table>
     </div>
-      </div>
-      
-     	 </form>
-      
-      
-      
-      
-      <!-- 다른 연관 식당 -->
-      <div class="row gx-8 gx-lg-5">
-      
-        <div class="card" style="width: 26rem;">
-  		<img src="https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg" class="card-img-top" alt="...">
-  			<div class="card-body">
-  			  <h5 class="card-title">음식점 이름</h5>
-  			  <p class="card-text">음식점 부과설명</p>
-  			  <a href="#" class="btn btn-primary">이동경로()</a>
-  			</div>
-		</div>
-        <div class="card" style="width: 26rem;">
-  		<img src="https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg" class="card-img-top" alt="...">
-  			<div class="card-body">
-  			  <h5 class="card-title">음식점 이름</h5>
-  			  <p class="card-text">음식점 부과설명</p>
-  			  <a href="#" class="btn btn-primary">이동경로()</a>
-  			</div>
-		</div>
-        <div class="card" style="width: 26rem;">
-  		<img src="https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg" class="card-img-top" alt="...">
-  			<div class="card-body">
-  			  <h5 class="card-title">음식점 이름</h5>
-  			  <p class="card-text">음식점 부과설명</p>
-  			  <a href="#" class="btn btn-primary">이동경로()</a>
-  			</div>
-		</div>
-      </div>
+</div>
+
+
+
+<!-- 비슷한 추천 레스토랑 -->
+<p2><strong> You might find it interesting..</strong></p2>
+<div class="card-deck">
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-      <div class="container px-4 px-lg-5">
-        <p class="m-0 text-center text-white">
-          Copyright &copy; Your Website 2021
-        </p>
-      </div>
-    </footer>
-    
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="resources/js/foodscripts.js"></script>
-  </body>
+  </div>
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    </div>
+  </div>
+</div>
+	
+	
+	
+	
+	<!-- 	<section class="feature_part padding_top"> -->
+	<div class="container">
+		<div class="row align-items-center justify-content-between">
+		</div>	
+	
+	
+	<!--::footer_part start::-->
+<footer class="footer_top footer_part">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-lg-3">
+				<div class="footer_img">
+					<a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
+					<a href="#"><img src="img/footer_img/footer_2.png" alt=""></a>
+					<a href="#"><img src="img/footer_img/footer_3.png" alt=""></a>
+					<a href="#"><img src="img/footer_img/footer_4.png" alt=""></a>
+					<a href="#"><img src="img/footer_img/footer_5.png" alt=""></a>
+					<a href="#"><img src="img/footer_img/footer_6.png" alt=""></a>
+					<a href="#"><img src="img/footer_img/footer_7.png" alt=""></a>
+					<a href="#"><img src="img/footer_img/footer_8.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-lg-8">
+			<div class="copyright_text">
+				<P>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		Copyright &copy;
+		<script>
+			document.write(new Date().getFullYear());
+		</script>
+		All rights reserved | <a
+			href="https://colorlib.com" target="_blank">EatAtLine4</a>
+		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		</P>
+	</div>
+</div>
+<div class="col-lg-4">
+	<div class="footer_icon social_icon">
+		<ul class="list-unstyled">
+			<li><a href="#" class="single_social_icon"><i
+					class="fab fa-facebook-f"></i></a></li>
+			<li><a href="#" class="single_social_icon"><i
+					class="fab fa-twitter"></i></a></li>
+			<li><a href="#" class="single_social_icon"><i
+					class="fas fa-globe"></i></a></li>
+			<!--                             <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</footer>
+
+<!--::footer_part end::-->
+
+<!-- jquery plugins here-->
+<!-- jquery -->
+<script src="resources/js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="resources/js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="resources/js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="resources/js/jquery.magnific-popup.js"></script>
+<!-- particles js -->
+<script src="resources/js/owl.carousel.min.js"></script>
+<script src="resources/js/jquery.nice-select.min.js"></script>
+<!-- slick js -->
+<script src="resources/js/slick.min.js"></script>
+<script src="resources/js/jquery.counterup.min.js"></script>
+<script src="resources/js/waypoints.min.js"></script>
+<script src="resources/js/contact.js"></script>
+<script src="resources/js/jquery.ajaxchimp.min.js"></script>
+<script src="resources/js/jquery.form.js"></script>
+<script src="resources/js/jquery.validate.min.js"></script>
+<script src="resources/js/mail-script.js"></script>
+<!-- custom js -->
+		<script src="resources/js/custom.js"></script>
+</body>
 </html>

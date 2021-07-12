@@ -58,7 +58,7 @@
  <header class="py-5">
      <div class="container px-lg-5">
          <div class="p-4 p-lg-5 bg-light rounded-3">
-             <div class="m-4 m-lg-5" >
+             <div class="m-4-2 m-lg-5" >
                  <h1 class="display-5 fw-bold">명동역 주변 맛집</h1>
                  <p class="fs-4">지도API 가져오기</p>
              </div>
@@ -73,7 +73,7 @@
         <!-- Page Features-->
     <div class="row align-items-center justify-content-between">
 		<!--    카드 4개 순서대로 -->
-		<div class="card mb-3" style="max-width: 540px;">
+		<div class="card mb-3-2" style="max-width: 540px;">
 		  <div class="row no-gutters">
 		    <div class="col-md-4">
 		      <img src="resources/img/salad.png" class="card-img" alt="...">
@@ -88,7 +88,7 @@
 		  </div>
 		</div>
 		
-		<div class="card mb-3" style="max-width: 540px;">
+		<div class="card mb-3-2" style="max-width: 540px;">
 		  <div class="row no-gutters">
 		    <div class="col-md-4">
 		      <img src="resources/img/pizza.jpg" class="card-img" alt="...">
@@ -103,7 +103,7 @@
 		  </div>
 		</div>
 		
-		<div class="card mb-3" style="max-width: 540px;">
+		<div class="card mb-3-2" style="max-width: 540px;">
 		  <div class="row no-gutters">
 		    <div class="col-md-4">
 		      <img src="resources/img/hamburger.jpg" class="card-img" alt="...">
@@ -118,7 +118,7 @@
 		  </div>
 		</div>
 		
-		<div class="card mb-3" style="max-width: 540px;">
+		<div class="card mb-3-2" style="max-width: 540px;">
 		  <div class="row no-gutters">
 		    <div class="col-md-4">
 		      <img src="resources/img/salad.png" class="card-img" alt="...">
