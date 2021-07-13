@@ -164,6 +164,41 @@
                 </div>
             </div>
             
+<!--            리뷰 작성페이지 -->
+<div class="card bg-secondary2 text-center align-items-center">
+		<div class="bbs_view" style="margin-bottom:-5px">
+		    <table class="view_1">
+		        <tr>
+		            <th scope="row">Rating &emsp; &emsp; </th>
+		            <td class="name">
+			                 <input type="radio" name="review_point" id="review_point" value="5" /> Excellent &ensp; &ensp;  
+			                 <input type="radio" name="review_point" id="review_point" value="4" /> Good &ensp; &ensp; 
+			                 <input type="radio" name="review_point" id="review_point" value="3" /> Average &ensp; &ensp; 
+			                 <input type="radio" name="review_point" id="review_point" value="2" /> Poor &ensp; &ensp; 
+			                 <input type="radio" name="review_point" id="review_point" value="1" /> Terrible &ensp; &ensp;
+		            </td>
+		        </tr>
+		   
+		      	 <tr>
+		        	<td><p><br/></p>
+		        	</td>
+		        </tr>
+		        
+		        <tr>
+		            <th scope="row" >Comments &emsp; </th>
+		            <td class="name">
+		                <textarea placeholder="Did you enjoy your meal? &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;  (Any comments or suggestions are welcomed)" rows="6" cols="58"></textarea>
+		            </td>
+		        </tr>
+		    </table>
+		    	<br/>
+				<input type = "submit" value = "submit">
+			</div>
+</div>
+
+            
+
+            
 <!--             한줄평1 -->
             <div class="card">
                 <div class="row d-flex">
@@ -219,39 +254,8 @@
 </div>
 
 
-
-<!-- 비슷한 추천 레스토랑 -->
-<p2><strong> You might find it interesting..</strong></p2>
-<div class="card-deck">
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-  </div>
-</div>
 	
 	
-	
-	<!-- 	<section class="feature_part padding_top"> -->
-	<div class="container">
-		<div class="row align-items-center justify-content-between">
-		</div>	
 	
 	
 	<!--::footer_part start::-->
