@@ -51,7 +51,7 @@ public class HomeController {
 	public String subwayGet() {
 		log.info("subway page");
 		
-		return "/subway/subway";
+		return "subway";
 	}
 	
 	@GetMapping("/review")

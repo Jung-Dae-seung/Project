@@ -25,6 +25,7 @@
     </style>
 </head>
 <body id="subwayBody">
+	<jsp:include page="include/header.jsp"></jsp:include>
     <div class="subway-map" data-columns="15" data-rows="15" data-cellSize="80" data-legendId="legend" data-textClass="textSubway" data-gridNumbers="true" data-grid="false" data-lineWidth="15">
         <ul data-color="#50bcdf" data-label="4호선">          
             <li data-coords="1,1" data-marker="@station">창동</li>
@@ -131,6 +132,7 @@
 	
     </div>
     <div id="legend_subway"></div>
+    <jsp:include page="include/footer.jsp"></jsp:include>
     
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.0.min.js"></script>
     <script type="text/javascript" src="/resources/js/jquery.subwayMap-0.5.3.js"></script>
