@@ -54,5 +54,12 @@ public class HomeController {
 		return "/subway/subway";
 	}
 	
+	@GetMapping("/review")
+	public String reviewGet() {
+		log.info("foodlist page");
+		
+		return "review";
+	}
+	
 	
 }
