@@ -64,7 +64,7 @@
      <img
        class="img-fluid rounded mb-4 mb-lg-0"
        src="resources/img/restaurant2.jpg"
-       alt="..." />
+       alt="..." width="500" height="250" />
    </div>
    <div class="col-lg-5">
      <h1 class="font-weight-light">음식점 이름</h1>
@@ -245,7 +245,30 @@
     </div>
   </div>
 </div>
-	
+
+<br>
+	<p> </p>
+<br/>
+
+
+<!-- 하단 페이지 번호 -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 	
 	
 	

@@ -6466,6 +6466,10 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 	background-color: #6c757d !important
 }
 
+.bg-secondary2 {
+	background-color: #b3b3b3 !important
+}
+
 a.bg-secondary:focus, a.bg-secondary:hover, button.bg-secondary:focus,
 	button.bg-secondary:hover {
 	background-color: #545b62 !important
@@ -9602,5 +9606,8 @@ a.text-dark:focus, a.text-dark:hover {
 		color: inherit;
 		border-color: #dee2e6
 	}
+	
+	
+	
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
