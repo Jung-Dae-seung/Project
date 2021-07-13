@@ -41,7 +41,7 @@
 					<div class="search_form">
 						<form action="#">
 							<div class="form-row">
-								<div class="col-lg-9">
+								<div class="col-lg-11 col-xs-5">
 									<div class="search_form_iner">
 										<select class="custom_select" id="inlineFormCustomSelect" onchange="subwayStation(this)">
 											<option selected>Choose the subway line</option>
@@ -54,15 +54,10 @@
 											</option>
 											<option value="5">Line 5</option>
 
-										</select> <select class="custom_select" id="inlineFormCustomSelect1">
-											<option selected>Station</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
 										</select>
 									</div>
 								</div>
-								<div class="col-lg-3">
+								<div class="col-lg-1">
 									<a href="#" class="search_btn">search</a>
 								</div>
 							</div>
