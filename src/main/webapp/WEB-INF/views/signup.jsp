@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="resources/css/slick.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
-<!-- signUp CSS -->
+<!-- signup CSS -->
 <link rel="stylesheet" href="resources/css/signup.css">
 
 <!-- jquery -->
@@ -61,10 +61,10 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form id="regist" method="post" action="signup">
+					<form id="regist" method="post" action="signup" class="">
 						<div class="input-group mb-3">
 							<label for="userid" class="col-sm-4 col-form-label">아이디</label>
-							<div class="col">
+							<div class="col-sm-8">
 								<input type="text" name="userid" id="userid"
 									class="form-control" placeholder="아이디 입력"
 									value="${member.userid}" /> <small id="userid"
@@ -73,7 +73,7 @@
 						</div>
 						<div class="input-group mb-3">
 							<label for="pass1" class="col-sm-4 col-form-label">비밀번호</label>
-							<div class="col">
+							<div class="col-sm-8">
 								<input type="password" name="password" id="password"
 									class="form-control" placeholder="비밀번호 입력" /> <small
 									id="password" class="text-info"></small>
@@ -82,7 +82,7 @@
 						<div class="input-group mb-3">
 							<label for="pass2" class="col-sm-4 col-form-label">비밀번호
 								확인 </label>
-							<div class="col">
+							<div class="col-sm-8">
 								<input type="password" name="confirm_password"
 									id="confirm_password" class="form-control"
 									placeholder="비밀번호 확인 입력" /> <small id="confirm_password"
@@ -92,7 +92,7 @@
 						<div class="input-group mb-3">
 							<label for="username" class="col-sm-4 col-form-label">이름
 							</label>
-							<div class="col">
+							<div class="col-sm-8">
 								<input type="text" name="name" id="name" class="form-control"
 									placeholder="이름 입력" value="${member.name}" /> <small id="name"
 									class="text-info"></small>
@@ -100,7 +100,7 @@
 						</div>
 						<div class="input-group mb-1">
 							<label for="pass2" class="col-sm-4 col-form-label">성별 </label>
-							<div class="col">
+							<div class="col-sm-8">
 								<div class="form-check form-check-inline">
 									<input type="radio" id="gender" name="gender" value="남"
 										class="form-check-input" />남
@@ -114,7 +114,7 @@
 						</div>
 						<div class="input-group mb-3">
 							<label for="age" class="col-sm-4 col-form-label">나이</label>
-							<div class="col">
+							<div class="col-sm-8">
 								<input type="text" name="age" id="age" class="form-control"
 									placeholder="나이 입력" value="" /> <small id="email"
 									class="text-info"></small>
@@ -122,7 +122,7 @@
 						</div>
 						<div class="input-group mb-3">
 							<label for="mobile" class="col-sm-4 col-form-label">모바일</label>
-							<div class="col">
+							<div class="col-sm-8">
 								<input type="text" name="mobile" id="mobile"
 									class="form-control" placeholder="010-1234-5678"
 									value="${member.mobile}" /> <small id="mobile"

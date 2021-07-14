@@ -8,9 +8,9 @@
 			background-size: cover;
 		}
 		.user_card {
-			height: 600px;
+			height: auto;
 			width: 450px;
-			margin-top: auto;
+			margin-top: 200px;
 			margin-bottom: auto;
 			background: #f39c12;
 			position: relative;
