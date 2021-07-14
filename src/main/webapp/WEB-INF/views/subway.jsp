@@ -71,7 +71,7 @@
 	
 <!-- banner part start -->
 <section class="banner_part4"></section>
-    <div class="subway-map" data-columns="15" data-rows="15" data-cellSize="80" data-legendId="legend" data-textClass="textSubway" data-gridNumbers="true" data-grid="false" data-lineWidth="15">
+    <div class="subway-map" data-columns="15" data-rows="15" data-cellSize="65" data-legendId="legend" data-textClass="textSubway" data-gridNumbers="true" data-grid="false" data-lineWidth="15">
         <ul data-color="#50bcdf" data-label="4호선">          
             <li data-coords="1,1" data-marker="@station">당고개</li>
             <li data-coords="1.5,1"></li>   

@@ -34,31 +34,23 @@
 	<jsp:include page="include/header.jsp"></jsp:include>
 
 	<!-- banner part start-->
-	<section class="search_your_country">
+	<section class="search_your_country" style="padding:0px">
 		<div class="container-fluid">
-			<div class="row justify-content-md-center">
-				<div class="col-lg-6">
-					<form action="#">
-						<div class="form-row align-items-center">
-							<div class="col-lg-12">
-								<div class="subway_select">
-									<select class="form-select form-select-lg mb-3 bg-info" id="inlineFormCustomSelect" onchange="subwayStation(this)" style="margin-top:0px;">
-										<option selected>Choose the subway line</option>
-										<option value="1">Line 1</option>
-										<option value="2">Line 2</option>
-										<option value="3">Line 3</option>
-										<!-- 여기까지는 적용되어있음 -->
-										<option value="4">
-											Line 4
-										</option>
-										<option value="5">Line 5</option>
-
-									</select>
-								</div>
-							</div>
+			<div class="row justify-content-md-center" style="top:0">
+				<form action="#">
+					<div class="form-row align-items-center">
+							<div class="subway_select" style="width:500px;height:300px">
+								<select class="form-select bg-light text-dark" id="inlineFormCustomSelect" onchange="subwayStation(this)" aria-label=".form-select-lg example" style="height:50px">
+									<option selected>Choose the subway line</option>
+									<option value="1">1호선</option>
+									<option value="2">2호선</option>
+									<option value="3">3호선</option>
+									<option value="4">4호선</option>
+									<option value="5">5호선</option>
+							</select>
 						</div>
-					</form>
-				</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</section>
@@ -92,7 +84,7 @@
 						</div>
 					</div>
 					
-					<div class="col-md-4 col-lg-3-2">
+					<div class="col-md-4 col-lg-3-4">
 						<img src="resources/img/couple.png" alt="" class="" />
 					</div>
 					
