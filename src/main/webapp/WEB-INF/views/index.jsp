@@ -36,33 +36,28 @@
 	<!-- banner part start-->
 	<section class="search_your_country">
 		<div class="container-fluid">
-			<div class="row align-items-center">
-				<div class="col-lg-12">
-					<div class="search_form">
-						<form action="#">
-							<div class="form-row">
-								<div class="col-lg-11 col-xs-5">
-									<div class="search_form_iner">
-										<select class="custom_select" id="inlineFormCustomSelect" onchange="subwayStation(this)">
-											<option selected>Choose the subway line</option>
-											<option value="1">Line 1</option>
-											<option value="2">Line 2</option>
-											<option value="3">Line 3</option>
-											<!-- 여기까지는 적용되어있음 -->
-											<option value="4">
-												Line 4
-											</option>
-											<option value="5">Line 5</option>
+			<div class="row justify-content-md-center">
+				<div class="col-lg-6">
+					<form action="#">
+						<div class="form-row align-items-center">
+							<div class="col-lg-12">
+								<div class="subway_select">
+									<select class="form-select form-select-lg mb-3 bg-info" id="inlineFormCustomSelect" onchange="subwayStation(this)" style="margin-top:0px;">
+										<option selected>Choose the subway line</option>
+										<option value="1">Line 1</option>
+										<option value="2">Line 2</option>
+										<option value="3">Line 3</option>
+										<!-- 여기까지는 적용되어있음 -->
+										<option value="4">
+											Line 4
+										</option>
+										<option value="5">Line 5</option>
 
-										</select>
-									</div>
-								</div>
-								<div class="col-lg-1">
-									<a href="#" class="search_btn">search</a>
+									</select>
 								</div>
 							</div>
-						</form>
-					</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
