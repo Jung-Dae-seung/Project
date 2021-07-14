@@ -28,6 +28,11 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.dupId(userid);
 	}
 
+	@Override
+	public MemberVO memberInfo(String userid, String password) {
+		return mapper.memberInfo(userid, password);
+	}
+
 
 
 }

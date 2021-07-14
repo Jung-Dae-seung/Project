@@ -17,6 +17,11 @@
 		select * from memberTBL where userid=#{userid}
 	</select>
 	
+	<!-- 회원정보 받아오기 : memberInfo -->
+	<select id="memberInfo" resultType="com.spring.domain.MemberVO">
+		select * from memberTBL where userid=#{userid} and password=#{password}
+	</select>
+	
 	<!--  탈퇴 : leave -->
 	<!-- <delete id="leave">
 		delete from memberTBL where userid=#{userid} and password=#{password}

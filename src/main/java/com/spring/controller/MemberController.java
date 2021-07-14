@@ -79,4 +79,36 @@ public class MemberController {
 		}
 		return "true";
 	}
+	
+	//회원 정보 수정 페이지
+	@GetMapping("/changememberinfo")
+	public String changeMemberInfoGet() {
+		log.info("changeMemberInfo page");
+		
+		return "changememberinfo";
+	}
+	//회원 정보 수정 페이지 전 비밀번호 확인 페이지
+	@GetMapping("/checkpsw")
+	public String CheckPswGet() {
+		log.info("checkpsw page 요청");
+		
+		return "checkpsw";
+	}
+	//비밀번호 확인 후 멤버 정보를 세션에 담아 changeMemberInfo 페이지로 이동
+	@PostMapping("/checkpsw")
+	public String CheckPswPost(String userid,@RequestParam("current_password")String password,HttpSession session, RedirectAttributes rttr) {
+		log.info("checkpsw 멤버 정보 가져오기");
+		log.info("유저 아이디 : "+userid);
+		log.info("패스워드 : "+password);
+		
+		MemberVO memberinfo = service.memberInfo(userid, password);
+		
+		if(memberinfo==null) {
+			rttr.addFlashAttribute("error","비밀번호를 확인해 주세요");
+			return "redirect:checkpsw";
+		}else {
+			session.setAttribute("memberinfo", memberinfo);	
+			return "redirect:/changememberinfo";
+		}
+	}
 }

@@ -9,4 +9,5 @@ public interface MemberMapper {
 	public int signup(MemberVO vo);
 	public LoginVO login(@Param("userid")String userid,@Param("password")String password);
 	public MemberVO dupId(String userid);
+	public MemberVO memberInfo(@Param("userid")String userid,@Param("password")String password);
 }
