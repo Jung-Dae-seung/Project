@@ -61,7 +61,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form id="changepassword" method="post" action="" class="">
+					<form id="changepassword" method="post" action="changepassword" class="">
 						<div class="input-group mb-3">
 							<label for="userid" class="col-sm-4 col-form-label">아이디</label>
 							<div class="col-sm-8">
@@ -77,6 +77,7 @@
 								<input type="text" name="name" id="name" class="form-control"
 									value="${memberinfo.name}" readonly="readonly" />
 							</div>
+							<input type="hidden" name="current_password" id="current_password" value="${memberinfo.password}"/>
 						</div>
 						<div class="input-group mb-3">
 							<label for="pass2" class="col-sm-4 col-form-label">새 비밀번호
@@ -109,7 +110,7 @@
 				</div>
 
 				<div class="d-flex justify-content-center form_container">
-					<form id="changemobile" method="post" action="" class="">
+					<form id="changemobile" method="post" action="changemobile" class="">
 						<div class="input-group mb-3">
 							<label for="mobile" class="col-sm-4 col-form-label">새 모바일</label>
 							<div class="col-sm-8">
@@ -128,7 +129,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form id="changeemail" method="post" action="" class="">
+					<form id="changeemail" method="post" action="changeemail" class="">
 
 						<div class="input-group mb-3">
 							<label for="email" class="col-sm-4 col-form-label">새 이메일</label>
