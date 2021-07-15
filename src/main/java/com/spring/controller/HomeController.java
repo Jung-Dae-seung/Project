@@ -54,6 +54,38 @@ public class HomeController {
 		return "subway";
 	}
 	
+	@GetMapping("/main")
+	public String mainGet() {
+		log.info("main page");
+		
+		return "community/main";
+	}
 	
+	@GetMapping("/freeBoard")
+	public String freeBoardGet() {
+		log.info("freeBoard page");
+		
+		return "community/freeBoard";
+	}
 	
+	@GetMapping("/write")
+	public String writeGet() {
+		log.info("write page");
+		
+		return "community/write";
+	}
+	
+	@GetMapping("/view")
+	public String viewGet() {
+		log.info("view page");
+		
+		return "community/view";
+	}
+	
+	@GetMapping("/update")
+	public String updateGet() {
+		log.info("update page");
+		
+		return "community/update";
+	}
 }
