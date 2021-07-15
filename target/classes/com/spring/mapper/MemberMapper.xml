@@ -27,12 +27,26 @@
 		delete from memberTBL where userid=#{userid} and password=#{password}
 	</delete> -->
 	
-	<!-- 비밀번호 변경 : update -->
-	<!-- <update id="update">
+	<!-- 비밀번호 변경 : updatepsw -->
+	<update id="updatePsw">
 		update memberTBL
 		set password=#{new_password}
-		where userid=#{userid} and password=#{current_password}
-	</update> -->
+		where userid=#{userid} and password=#{password}
+	</update>
+	
+	<!-- 모바일 변경 : updatemobile  -->
+	<update id="updateMobile">
+		update memberTBL
+		set mobile=#{new_mobile}
+		where userid=#{userid} and password=#{password}
+	</update>
+
+	<!-- 이메일 변경 : updateemail  -->
+		<update id="updateEmail">
+		update memberTBL
+		set email=#{new_email}
+		where userid=#{userid} and password=#{password}
+	</update>
 	
 </mapper>
 
