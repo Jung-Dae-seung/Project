@@ -56,6 +56,7 @@
 						<th style="background-color: #eeeeee; text-align: center">제목</th>
 						<th style="background-color: #eeeeee; text-align: center">작성자</th>
 						<th style="background-color: #eeeeee; text-align: center">작성일</th>
+						<th style="background-color: #eeeeee; text-align: center">수정일</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -64,6 +65,7 @@
 						<td>안녕하세요..</td>
 						<td>홍길동</td>
 						<td>2021-07-14</td>
+						<td>2021-07-15</td>
 					</tr>
 				</tbody>
 			</table>

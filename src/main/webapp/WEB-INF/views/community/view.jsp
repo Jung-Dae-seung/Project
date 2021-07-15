@@ -69,6 +69,10 @@
 						<td colspan="2"></td>
 					</tr>
 					<tr>
+						<td>수정일자</td>
+						<td colspan="2"></td>
+					</tr>
+					<tr>
 						<td>내용</td>
 						<td colspan="2" style="min-height: 200px; text-align: left;"></td>
 					</tr>
