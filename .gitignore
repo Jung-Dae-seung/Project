@@ -20,8 +20,14 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+
+## 별도 추가 ##
 pom.properties
 MANIFEST.MF
+mybatis-config.xml
+log4j2.xml
+target
+lecture
 
 # External tool builders
 .externalToolBuilders/
