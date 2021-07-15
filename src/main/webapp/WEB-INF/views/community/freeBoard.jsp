@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,16 +62,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>안녕하세요..</td>
-						<td>홍길동</td>
-						<td>2021-07-14</td>
-						<td>2021-07-15</td>
-					</tr>
+				<!-- 게시판 리스트 반복문 -->
+					<c:forEach var="vo" items="${list }">
+						<tr>
+							<td>${vo.bno }</td>
+							<td><a href="${vo.bno }" class="move">${vo.title }</a> <strong>[${vo.replycnt }]</strong></td>
+							<td>${vo.writer }</td>
+							<td><fmt:formatDate pattern="yyy-MM-dd HH:mm" value="${vo.regdate }" /></td>
+							<td><fmt:formatDate pattern="yyy-MM-dd HH:mm" value="${vo.updatedate }" /></td>
+							</tr>
+					</c:forEach>
 				</tbody>
 			</table>
-			
 				<a href="" class="btn btn-success btn-arrow-left">이전</a>
 				<a href="" class="btn btn-success btn-arrow-left">다음</a>
 				
@@ -77,7 +81,9 @@
 		</div>
 	</div>
 
-	
+<script>
+	let result = '${result}';
+</script>	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="resources/community/js/bootstrap.js"></script>
 	
@@ -137,7 +143,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+
 </footer>
 
 <!--::footer_part end::-->
