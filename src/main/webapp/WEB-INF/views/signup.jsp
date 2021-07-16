@@ -34,7 +34,7 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
 <!-- validation 사용자 작성 코드 삽입-->
-<script src="/resources/js/register.js"></script>
+<script src="/resources/js/signup.js"></script>
 </head>
 <body>
 	<!--::header part start::-->
@@ -61,7 +61,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form id="regist" method="post" action="signup" class="">
+					<form id="signup" method="post" action="signup" class="">
 						<div class="input-group mb-3">
 							<label for="userid" class="col-sm-4 col-form-label">아이디</label>
 							<div class="col-sm-8">

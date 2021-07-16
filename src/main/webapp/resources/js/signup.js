@@ -1,8 +1,8 @@
 /**
- * step2.jsp 검증하기
+ * signup 페이지 유효성 검사
  */
 $(function() {
-  $("#regist").validate({
+  $("#signup").validate({
     errorPlacement: function(error, element) {
       $(element)
         .closest("form")

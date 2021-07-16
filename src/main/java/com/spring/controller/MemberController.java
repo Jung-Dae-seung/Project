@@ -108,15 +108,8 @@ public class MemberController {
 			return "redirect:checkpsw";
 		}else {
 			session.setAttribute("memberinfo", memberinfo);	
-			return "redirect:/changememberinfo";
+			return "redirect:changememberinfo";
 		}
 	}
 	
-	//비밀번호 변경 Post 
-	
-	
-	//이메일 변경 Post
-	
-	
-	//모바일 변경 Post
 }
