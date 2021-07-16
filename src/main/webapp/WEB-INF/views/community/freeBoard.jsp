@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -36,6 +37,7 @@
 				<li><a href="bbs.jsp">홍보 게시판</a></li>
 				<li><a href="bbs.jsp">문의 게시판</a></li>
 			</ul>
+			
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"
@@ -76,10 +78,25 @@
 			</table>
 				<a href="" class="btn btn-success btn-arrow-left">이전</a>
 				<a href="" class="btn btn-success btn-arrow-left">다음</a>
+
+
+		<!--  지금 스타일이 display:none 으로 되어 있어서 안보였던건데...디자인이 코드랑 다른거 같은데요? 알겠습니다 -->
 				
+			<div  style="padding-left:70%; margin-right: 15px">
+				<form action="freeBoard.do" method="get">
+					<select name = "condition">
+	                  <option value="title" <c:if test="${condition eq 'title' }">selected</c:if>>제목</option>
+	                  <option value="writer" <c:if test="${condition eq 'writer' }">selected</c:if>>작성자</option>
+	                  </select>          
+                        <input type = "text" name = "keyword" placeholder="검색어" value = "${keyword }"/>
+                        <button type="submit">검색</button>
+				</form>	
+			</div>	
+
 			<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
 		</div>
 	</div>
+	
 
 <script>
 	let result = '${result}';
@@ -167,7 +184,9 @@
 <script src="resources/js/contact.js"></script>
 <script src="resources/js/jquery.ajaxchimp.min.js"></script>
 <script src="resources/js/jquery.form.js"></script>
+<%--
 <script src="resources/js/jquery.validate.min.js"></script>
+		--%>
 <script src="resources/js/mail-script.js"></script>
 <!-- custom js -->
 		<script src="resources/js/custom.js"></script>
