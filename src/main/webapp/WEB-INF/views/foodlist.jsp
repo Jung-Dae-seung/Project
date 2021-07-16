@@ -1,6 +1,8 @@
+<%@page import="com.spring.domain.SubwayDataVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,18 +55,16 @@
 	<section class="banner_part3"></section>
 	<!-- banner part start-->
 	
-
  <!-- 재현님 Header-->
- <header class="py-5">
-     <div class="container px-lg-5">
-         <div class="p-4 p-lg-5 bg-light rounded-3">
-             <div class="m-4-2 m-lg-5" >
-                 <h1 class="display-5 fw-bold">명동역 주변 맛집</h1>
-                 <p class="fs-4">지도API 가져오기</p>
-             </div>
-         </div>
-     </div>
- </header>
+<header class="py-5">
+    <div class="container px-lg-5">
+    		<div class="float-right" style="padding-right:350px">
+               <h1 class="">${vo.subway_name}</h1>
+               <p class="">지도가져오기</p>
+           	</div>
+       	<div id="staticMap" style="width:450px;height:300px;"></div> 
+    </div>
+</header>
  
 
 <!-- Page Content-->
@@ -222,8 +222,6 @@
 
 <!--::footer_part end::-->
 
-<!-- jquery plugins here-->
-<!-- jquery -->
 <script src="resources/js/jquery-1.12.1.min.js"></script>
 <!-- popper js -->
 <script src="resources/js/popper.min.js"></script>
@@ -234,16 +232,31 @@
 <!-- particles js -->
 <script src="resources/js/owl.carousel.min.js"></script>
 <script src="resources/js/jquery.nice-select.min.js"></script>
-<!-- slick js -->
-<script src="resources/js/slick.min.js"></script>
-<script src="resources/js/jquery.counterup.min.js"></script>
-<script src="resources/js/waypoints.min.js"></script>
-<script src="resources/js/contact.js"></script>
-<script src="resources/js/jquery.ajaxchimp.min.js"></script>
-<script src="resources/js/jquery.form.js"></script>
-<script src="resources/js/jquery.validate.min.js"></script>
-<script src="resources/js/mail-script.js"></script>
 <!-- custom js -->
-		<script src="resources/js/custom.js"></script>
+<script src="resources/js/custom.js"></script>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b35c281dbc3e2a74b144079a4af860e3"></script>
+<script>
+// 이미지 지도에서 마커가 표시될 위치입니다 
+var longitude = "${vo.subway_longitude}";
+var latitude = "${vo.subway_latitude}";
+var markerPosition  = new kakao.maps.LatLng(latitude, longitude); 
+
+// 이미지 지도에 표시할 마커입니다
+// 이미지 지도에 표시할 마커는 Object 형태입니다
+var marker = {
+    position: markerPosition
+};
+
+var staticMapContainer  = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
+    staticMapOption = { 
+        center: new kakao.maps.LatLng(latitude, longitude), // 이미지 지도의 중심좌표
+        level: 3, // 이미지 지도의 확대 레벨
+        marker: marker // 이미지 지도에 표시할 마커 
+    };    
+
+// 이미지 지도를 생성합니다
+var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
+</script>
 </body>
 </html>

@@ -1,13 +1,19 @@
 package com.spring.controller;
 
 import java.util.Locale;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.spring.domain.SubwayDataVO;
+import com.spring.service.SubwayService;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -17,6 +23,9 @@ import lombok.extern.log4j.Log4j2;
 @Controller
 @Log4j2
 public class HomeController {
+	
+	@Autowired
+	private SubwayService service;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -41,18 +50,15 @@ public class HomeController {
 	}
 	
 	@GetMapping("/foodlist")
-	public String foodlistGet() {
-		log.info("foodlist page");
+	public void foodlistGet(@RequestParam("subway_name") String subway_name, Model model) {
+		log.info("지하철 값 넘기기");
+		log.info(subway_name);
+		SubwayDataVO vo = service.subwaySelect(subway_name);
+		  
+		model.addAttribute("vo", vo);
 		
-		return "foodlist";
 	}
-	
-	@GetMapping("/subway")
-	public String subwayGet() {
-		log.info("subway page");
-		
-		return "subway";
-	}
+	 
 	
 	@GetMapping("/main")
 	public String mainGet() {
