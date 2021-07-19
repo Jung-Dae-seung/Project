@@ -15,6 +15,12 @@
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
+<script>
+	let bno = ${vo.bno};
+</script>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="resources/community/js/bootstrap.js"></script>
 </head>
 
 <body>
@@ -76,12 +82,7 @@
 			</form>
 		</div>
 	</div>
-<script>
-	let bno = ${vo.bno};
-</script>
 
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="resources/community/js/bootstrap.js"></script>
 	
 	
 <!-- footer부분	 -->

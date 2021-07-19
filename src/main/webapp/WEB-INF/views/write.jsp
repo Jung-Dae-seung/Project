@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="resources/community/js/bootstrap.js"></script>
 </head>
 
 <body>
@@ -73,8 +75,6 @@
 		</div>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="resources/community/js/bootstrap.js"></script>
 	
 	
 <!-- footer부분	 -->
