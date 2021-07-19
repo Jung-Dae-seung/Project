@@ -7,6 +7,7 @@
 <meta name="veiwport" content="width=device-width", initial-scale="1"/>
 <link rel="stylesheet" href="resources/community/css/bootstrap.css" />
 <link rel="stylesheet" href="resources/community/css/custom.css" />
+<link rel="stylesheet" href="resources/community/css/attach.css" />
 <title>Community</title>
 
 <!-- font awesome CSS -->
@@ -75,67 +76,32 @@
 		</div>
 	</div>
 
-	
-	
-<!-- footer부분	 -->
-<!-- 	<section class="feature_part padding_top"> -->
-	<div class="container">
-		<div class="row align-items-center justify-content-between">
-		</div>	
-	
-	
-	<!--::footer_part start::-->
-<footer class="footer_top footer_part">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-lg-3">
-				<div class="footer_img">
-					<a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_2.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_3.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_4.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_5.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_6.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_7.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_8.png" alt=""></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="col-lg-8">
-			<div class="copyright_text">
-				<P>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-		Copyright &copy;
-		<script>
-			document.write(new Date().getFullYear());
-		</script>
-		All rights reserved | <a
-			href="https://colorlib.com" target="_blank">EatAtLine4</a>
-		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-		</P>
-	</div>
-</div>
-<div class="col-lg-4">
-	<div class="footer_icon social_icon">
-		<ul class="list-unstyled">
-			<li><a href="#" class="single_social_icon"><i
-					class="fab fa-facebook-f"></i></a></li>
-			<li><a href="#" class="single_social_icon"><i
-					class="fab fa-twitter"></i></a></li>
-			<li><a href="#" class="single_social_icon"><i
-					class="fas fa-globe"></i></a></li>
-			<!--                             <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li> -->
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-</footer>
 
-<!--::footer_part end::-->
+<!-- 파일첨부 -->
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				File 첨부
+			</div>
+			<div class="panel-body">
+				<div class="form-group uploadDiv">
+					<input type="file" name="uploadFile" multiple/>
+				</div>
+				<div class="uploadResult">
+					<ul></ul>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>  
+<script src="resources/community/js/register.js"></script>
+
+	
+	
+
+
+
 
 <!-- jquery plugins here-->
 <!-- jquery -->

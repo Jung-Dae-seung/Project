@@ -10,6 +10,7 @@
 <meta name="veiwport" content="width=device-width" , initial-scale="1" />
 <link rel="stylesheet" href="resources/community/css/bootstrap.css" />
 <link rel="stylesheet" href="resources/community/css/custom.css" />
+<link rel="stylesheet" href="resources/community/css/attach.css" />
 <title>Community</title>
 
 <!-- font awesome CSS -->
@@ -26,6 +27,7 @@
 </script>
 <script src="resources/js/view.js"></script>
 <script src="resources/js/reply.js"></script>
+<script src="resources/community/js/read.js"></script>
 </head>
 
 <body>
@@ -100,6 +102,27 @@
 		<div>
 			<p>&nbsp;</p>
 		</div>
+		
+<!-- 파일첨부 -->
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fas fa-file"></i> Files
+			</div>
+			<div class="panel-body">				
+				<div class="uploadResult">
+					<ul></ul>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div> 
+<div class="bigPictureWrapper">
+	<div class="bigPicture"></div>
+</div> 
+		
+		
 		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-heading">

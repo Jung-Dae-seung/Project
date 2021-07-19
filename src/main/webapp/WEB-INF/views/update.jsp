@@ -7,6 +7,7 @@
 <meta name="veiwport" content="width=device-width", initial-scale="1"/>
 <link rel="stylesheet" href="resources/community/css/bootstrap.css" />
 <link rel="stylesheet" href="resources/community/css/custom.css" />
+<link rel="stylesheet" href="resources/community/css/attach.css" />
 <title>Community</title>
 
 <!-- font awesome CSS -->
@@ -15,6 +16,7 @@
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
+<script src="resources/community/js/modify.js"></script>
 <script>
 	let bno = ${vo.bno};
 </script>
@@ -82,6 +84,26 @@
 			</form>
 		</div>
 	</div>
+
+
+<!-- 파일첨부 -->
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fas fa-file"></i> Files				
+			</div>
+			<div class="panel-body">	
+				<div class="form-group uploadDiv">
+					<input type="file" name="uploadFile" multiple/>
+				</div>			
+				<div class="uploadResult">
+					<ul></ul>
+				</div>
+			</div>			
+		</div>
+	</div>
+
 
 	
 	
