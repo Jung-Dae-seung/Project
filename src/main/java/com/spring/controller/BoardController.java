@@ -75,6 +75,15 @@ public class BoardController {
 			
 		}
 		
+		//첨부물 가져오기
+		@GetMapping("/getAttachList")
+		public ResponseEntity<List<FreeAttachFileDTO>> getAttachList(int bno){
+			log.info("첨부물 가져오기 "+bno);
+			
+			return new ResponseEntity<List<FreeAttachFileDTO>>(service.getAttachList_f(bno),HttpStatus.OK);
+		}
+		
+		
 		@GetMapping("/register")
 		public void register() {
 			log.info("새글 등록 폼 요청");

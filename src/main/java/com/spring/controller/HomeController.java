@@ -39,7 +39,7 @@ public class HomeController {
 	public String community() {
 		log.info("community page");
 		
-		return "community";
+		return "community/main";
 	}
 	
 	@GetMapping("/food")
