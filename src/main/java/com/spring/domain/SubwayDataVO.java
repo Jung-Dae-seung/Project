@@ -13,6 +13,6 @@ import lombok.ToString;
 @NoArgsConstructor
 public class SubwayDataVO {
 	private String subway_name;
-	private float subway_longitude;
-	private float subway_latitude;
+	private double subway_longitude;
+	private double subway_latitude;
 }

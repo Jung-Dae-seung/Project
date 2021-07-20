@@ -1,5 +1,7 @@
 package com.spring.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +18,6 @@ public class SubwayServiceImpl implements SubwayService {
 	public SubwayDataVO subwaySelect(String subway_name) {
 		return mapper.subwaySelect(subway_name);
 	}
+
 
 }
