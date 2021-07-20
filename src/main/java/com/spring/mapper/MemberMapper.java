@@ -11,7 +11,8 @@ public interface MemberMapper {
 	public LoginVO login(@Param("userid")String userid,@Param("password")String password);
 	public MemberVO dupId(String userid);
 	public MemberVO memberInfo(@Param("userid")String userid,@Param("password")String password);
-	public int updatePws(changeMemberInfoVO vo);
-	public int updateMobile(changeMemberInfoVO vo);
-	public int updateEmail(changeMemberInfoVO vo);
+	public int updatePsw(@Param("userid")String userid,@Param("password")String password,@Param("new_password")String new_password);
+	public int updateMobile(@Param("userid")String userid,@Param("password")String password,@Param("new_mobile")String new_mobile);
+	public int updateEmail(@Param("userid")String userid,@Param("password")String password,@Param("new_email")String new_email);
+	public int leave(@Param("userid")String userid,@Param("password")String password);
 }

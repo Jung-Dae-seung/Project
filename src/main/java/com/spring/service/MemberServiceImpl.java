@@ -35,18 +35,23 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public boolean updatePws(changeMemberInfoVO vo) {
-		return mapper.updatePws(vo)>0? true:false;
+	public boolean updatePsw(String userid,String password,String new_password) {
+		return mapper.updatePsw(userid, password, new_password)>0? true:false;
 	}
 
 	@Override
-	public boolean updateMobile(changeMemberInfoVO vo) {
-		return mapper.updateMobile(vo)>0? true:false;
+	public boolean updateMobile(String userid,String password,String new_mobile) {
+		return mapper.updateMobile(userid, password, new_mobile)>0? true:false;
 	}
 
 	@Override
-	public boolean updateEmail(changeMemberInfoVO vo) {
-		return mapper.updateEmail(vo)>0? true:false;
+	public boolean updateEmail(String userid,String password,String new_email) {
+		return mapper.updateEmail(userid, password, new_email)>0? true:false;
+	}
+
+	@Override
+	public boolean leave(String userid, String password) {
+		return mapper.leave(userid, password)>0? true:false;
 	}
 
 

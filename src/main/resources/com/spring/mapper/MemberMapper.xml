@@ -23,9 +23,9 @@
 	</select>
 	
 	<!--  탈퇴 : leave -->
-	<!-- <delete id="leave">
+	<delete id="leave">
 		delete from memberTBL where userid=#{userid} and password=#{password}
-	</delete> -->
+	</delete>
 	
 	<!-- 비밀번호 변경 : updatepsw -->
 	<update id="updatePsw">

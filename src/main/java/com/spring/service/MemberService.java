@@ -9,7 +9,8 @@ public interface MemberService {
 	public LoginVO login(String userid,String password);
 	public MemberVO dupId(String userid);
 	public MemberVO memberInfo(String userid,String password);
-	public boolean updatePws(changeMemberInfoVO vo);
-	public boolean updateMobile(changeMemberInfoVO vo);
-	public boolean updateEmail(changeMemberInfoVO vo);	
+	public boolean updatePsw(String userid,String password,String new_password);
+	public boolean updateMobile(String userid,String password,String new_mobile);
+	public boolean updateEmail(String userid,String password,String new_email);	
+	public boolean leave(String userid, String password);
 }
