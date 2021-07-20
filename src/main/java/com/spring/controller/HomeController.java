@@ -35,11 +35,11 @@ public class HomeController {
 		return "index";
 	}
 	
-	@GetMapping("/community")
-	public String community() {
-		log.info("community page");
+	@RequestMapping(value= "/except", method = RequestMethod.GET)
+	public String except() {
+		log.info("except ฟไรป");
 		
-		return "community/main";
+		return "except";
 	}
 	
 	@GetMapping("/food")

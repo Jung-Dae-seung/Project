@@ -75,14 +75,6 @@ public class BoardController {
 			
 		}
 		
-		//첨부물 가져오기
-		@GetMapping("/getAttachList")
-		public ResponseEntity<List<FreeAttachFileDTO>> getAttachList(int bno){
-			log.info("첨부물 가져오기 "+bno);
-			
-			return new ResponseEntity<List<FreeAttachFileDTO>>(service.getAttachList_f(bno),HttpStatus.OK);
-		}
-		
 		
 		@GetMapping("/register")
 		public void register() {
@@ -131,10 +123,14 @@ public class BoardController {
 		public String delete_f(int bno,Criteria cri, RedirectAttributes rttr) {
 			log.info("삭제 요청");
 			
+			//서버(폴더)에 저장된 첨부파일 삭제
+			// 1) bno에 해당하는 첨부파일 목록 알아내기
+			List<FreeAttachFileDTO> attachList=service.getAttachList_f(bno);
 			
 			//게시글 삭제 + 첨부파일 삭제
 			if(service.delete_f(bno)) {
 				// 2) 폴더 파일 삭제
+				deleteFiles(attachList);
 				rttr.addFlashAttribute("result","성공");
 			}
 			
@@ -145,6 +141,40 @@ public class BoardController {
 			return "redirect:freeBoard";
 		}
 		
+		
+		//첨부물 가져오기
+		@GetMapping("/getAttachList")
+		public ResponseEntity<List<FreeAttachFileDTO>> getAttachList(int bno){
+			log.info("첨부물 가져오기 "+bno);
+			
+			return new ResponseEntity<List<FreeAttachFileDTO>>(service.getAttachList_f(bno),HttpStatus.OK);
+		}
+		
+		
+		private void deleteFiles(List<FreeAttachFileDTO> attachList) {
+			log.info("첨부파일 삭제 "+attachList);
+			
+			if(attachList==null || attachList.size()<=0) {
+				return;
+			}
+			
+			for(FreeAttachFileDTO dto:attachList) {
+				Path path = Paths.get("d:\\upload\\", dto.getUploadPath()+"\\"+dto.getUuid()+"_"+dto.getFileName());
+				
+				try {
+					Files.deleteIfExists(path);
+					
+					if(Files.probeContentType(path).startsWith("image")) {
+						Path thumbnail = Paths.get("d:\\upload\\", 
+								dto.getUploadPath()+"\\s_"+dto.getUuid()+"_"+dto.getFileName());
+						Files.delete(thumbnail);
+					}
+				} catch (IOException e) {				
+					e.printStackTrace();
+				}
+				
+			}
+		}
 
 }
 

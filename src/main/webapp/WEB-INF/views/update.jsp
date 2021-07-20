@@ -4,25 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="veiwport" content="width=device-width", initial-scale="1"/>
+<meta name="veiwport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" href="resources/community/css/bootstrap.css" />
 <link rel="stylesheet" href="resources/community/css/custom.css" />
 <link rel="stylesheet" href="resources/community/css/attach.css" />
-<title>Community</title>
-
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/all.css">
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
-<script src="resources/community/js/modify.js"></script>
-<script>
-	let bno = ${vo.bno};
-</script>
-
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="resources/community/js/bootstrap.js"></script>
+<title>Community</title>
 </head>
 
 <body>
@@ -75,101 +67,59 @@
 						<tr>
 							<td><textarea class="form-control" id="content" name="content" maxlength="2000"  style="height: 350px;" >${vo.content }</textarea></td>
 						</tr>
+						<tr>
+							<td>
+								<i class="fa fas fa-file"></i>첨부파일
+								<div class="uploadDiv">
+									<input type="file" name="uploadFile" multiple class="form-control" placeholder="파일 첨부" maxlength="50" />
+								</div>		
+										<div class="uploadResult">
+											<ul></ul>
+										</div>
+							</td>
+						</tr>
+						
 					</tbody>
 				</table>
 				<input type="hidden" name="bno" value="${vo.bno}">
 				<button type="submit" data-oper="update" class="btn btn-primary pull-right">수정</button>
-				<!-- <button type="submit" data-oper="remove" class="btn btn-primary pull-right">삭제</button>
-				<button type="submit" data-oper="list" class="btn btn-primary pull-right">목록</button> -->
+				<button type="submit" data-oper="remove" class="btn btn-primary pull-right">삭제</button>
+				<button type="submit" data-oper="list" class="btn btn-primary pull-right">목록</button> 
 			</form>
 		</div>
 	</div>
 
 
 <!-- 파일첨부 -->
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<i class="fa fas fa-file"></i> Files				
-			</div>
-			<div class="panel-body">	
-				<div class="form-group uploadDiv">
-					<input type="file" name="uploadFile" multiple/>
-				</div>			
-				<div class="uploadResult">
-					<ul></ul>
-				</div>
-			</div>			
-		</div>
-	</div>
+<!-- <div class="row"> -->
+<!-- 	<div class="col-lg-12"> -->
+<!-- 		<div class="panel panel-default"> -->
+<!-- 			<div class="panel-heading"> -->
+<!-- 				<i class="fa fas fa-file"></i> Files				 -->
+<!-- 			</div> -->
+<!-- 			<div class="panel-body">	 -->
+<!-- 				<div class="form-group uploadDiv"> -->
+<!-- 					<input type="file" name="uploadFile" multiple/> -->
+<!-- 				</div>			 -->
+<!-- 				<div class="uploadResult"> -->
+<!-- 					<ul></ul> -->
+<!-- 				</div> -->
+<!-- 			</div>			 -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+<!-- </div> -->
 
-
 	
 	
-<!-- footer부분	 -->
-<!-- 	<section class="feature_part padding_top"> -->
-	<div class="container">
-		<div class="row align-items-center justify-content-between">
-		</div>	
-	
-	
-	<!--::footer_part start::-->
-<footer class="footer_top footer_part">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-lg-3">
-				<div class="footer_img">
-					<a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_2.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_3.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_4.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_5.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_6.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_7.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_8.png" alt=""></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="col-lg-8">
-			<div class="copyright_text">
-				<P>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-		Copyright &copy;
-		<script>
-			document.write(new Date().getFullYear());
-		</script>
-		All rights reserved | <a
-			href="https://colorlib.com" target="_blank">EatAtLine4</a>
-		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-		</P>
-	</div>
-</div>
-<div class="col-lg-4">
-	<div class="footer_icon social_icon">
-		<ul class="list-unstyled">
-			<li><a href="#" class="single_social_icon"><i
-					class="fab fa-facebook-f"></i></a></li>
-			<li><a href="#" class="single_social_icon"><i
-					class="fab fa-twitter"></i></a></li>
-			<li><a href="#" class="single_social_icon"><i
-					class="fas fa-globe"></i></a></li>
-			<!--                             <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li> -->
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-</footer>
-
-<!--::footer_part end::-->
 
 <!-- jquery plugins here-->
-<!-- jquery -->
-<script src="resources/js/jquery-1.12.1.min.js"></script>
+<!-- jquery 이게 오래된 버전이라서 아마 3.1 버전이 커버 될거에요-->
+<!-- <script src="resources/js/waypoints.min.js"></script> 
+<script src="resources/js/jquery-1.12.1.min.js"></script> -->
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="resources/community/js/bootstrap.js"></script>
 <!-- popper js -->
 <script src="resources/js/popper.min.js"></script>
 <!-- bootstrap js -->
@@ -182,14 +132,17 @@
 <!-- slick js -->
 <script src="resources/js/slick.min.js"></script>
 <script src="resources/js/jquery.counterup.min.js"></script>
-<script src="resources/js/waypoints.min.js"></script>
 <script src="resources/js/contact.js"></script>
 <script src="resources/js/jquery.ajaxchimp.min.js"></script>
 <script src="resources/js/jquery.form.js"></script>
 <script src="resources/js/jquery.validate.min.js"></script>
 <script src="resources/js/mail-script.js"></script>
-<!-- custom js -->
-		<script src="resources/js/custom.js"></script>
 	
+<script>
+	let bno = ${vo.bno};
+</script>
+<!-- custom js -->
+<script src="resources/community/js/modify.js"></script>
+<script src="resources/js/custom.js"></script>
 </body>
 </html>

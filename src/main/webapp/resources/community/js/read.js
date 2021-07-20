@@ -56,10 +56,6 @@ $(function(){
 	
 	
 	
-	
-	
-	
-	
 	//확대된 사진 영역 없애기
 	$(".bigPictureWrapper").click(function(){
 		//원본 사진 줄이기
@@ -70,10 +66,6 @@ $(function(){
 			$(".bigPictureWrapper").hide();
 		},1000);		
 	})
-	
-	
-	
-	
 	
 	
 	

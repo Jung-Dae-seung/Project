@@ -7,27 +7,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="veiwport" content="width=device-width" , initial-scale="1" />
+<meta name="veiwport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="resources/community/css/bootstrap.css" />
 <link rel="stylesheet" href="resources/community/css/custom.css" />
 <link rel="stylesheet" href="resources/community/css/attach.css" />
-<title>Community</title>
-
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/all.css">
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-	crossorigin="anonymous"></script>
-<script>
-	let bno = ${vo.bno};
-</script>
-<script src="resources/js/view.js"></script>
-<script src="resources/js/reply.js"></script>
-<script src="resources/community/js/read.js"></script>
+<title>Community</title>
 </head>
 
 <body>
@@ -91,6 +81,18 @@
 						<td>내용</td>
 						<td colspan="2" style="min-height: 200px; text-align: left;">${vo.content }</td>
 					</tr>
+					<tr>
+						<td>
+							<i class="fa fas fa-file"></i>첨부파일
+								<div class="uploadResult">
+									<ul></ul>
+								</div>
+							<div class="bigPictureWrapper">
+								<div class="bigPicture"></div>
+							</div>
+						</td>
+					</tr>
+					
 				</tbody>
 			</table>
 			<div style="float: right">
@@ -104,23 +106,23 @@
 		</div>
 		
 <!-- 파일첨부 -->
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<i class="fa fas fa-file"></i> Files
-			</div>
-			<div class="panel-body">				
-				<div class="uploadResult">
-					<ul></ul>
-				</div>
-			</div>			
-		</div>
-	</div>
-</div> 
-<div class="bigPictureWrapper">
-	<div class="bigPicture"></div>
-</div> 
+<!-- <div class="row"> -->
+<!-- 	<div class="col-lg-12"> -->
+<!-- 		<div class="panel panel-default"> -->
+<!-- 			<div class="panel-heading"> -->
+<!-- 				<i class="fa fas fa-file"></i> Files -->
+<!-- 			</div> -->
+<!-- 			<div class="panel-body">				 -->
+<!-- 				<div class="uploadResult"> -->
+<!-- 					<ul></ul> -->
+<!-- 				</div> -->
+<!-- 			</div>			 -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+<!-- </div>  -->
+<!-- <div class="bigPictureWrapper"> -->
+<!-- 	<div class="bigPicture"></div> -->
+<!-- </div>  -->
 		
 		
 		<div class="row">
@@ -196,87 +198,40 @@
 
 
 
-	<!-- footer부분	 -->
-	<!-- 	<section class="feature_part padding_top"> -->
-	<div class="container">
-		<div class="row align-items-center justify-content-between"></div>
+<!-- jquery plugins here-->
+<!-- jquery 
+<script src="resources/js/waypoints.min.js"></script>
+<script src="resources/js/jquery-1.12.1.min.js"></script>-->
 
 
-		<!--::footer_part start::-->
-		<footer class="footer_top footer_part">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6 col-lg-3">
-						<div class="footer_img">
-							<a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
-							<a href="#"><img src="img/footer_img/footer_2.png" alt=""></a>
-							<a href="#"><img src="img/footer_img/footer_3.png" alt=""></a>
-							<a href="#"><img src="img/footer_img/footer_4.png" alt=""></a>
-							<a href="#"><img src="img/footer_img/footer_5.png" alt=""></a>
-							<a href="#"><img src="img/footer_img/footer_6.png" alt=""></a>
-							<a href="#"><img src="img/footer_img/footer_7.png" alt=""></a>
-							<a href="#"><img src="img/footer_img/footer_8.png" alt=""></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="copyright_text">
-						<P>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;
-							<script>
-								document.write(new Date().getFullYear());
-							</script>
-							All rights reserved | <a href="https://colorlib.com"
-								target="_blank">EatAtLine4</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</P>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="footer_icon social_icon">
-						<ul class="list-unstyled">
-							<li><a href="#" class="single_social_icon"><i
-									class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" class="single_social_icon"><i
-									class="fab fa-twitter"></i></a></li>
-							<li><a href="#" class="single_social_icon"><i
-									class="fas fa-globe"></i></a></li>
-							<!--                             <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li> -->
-						</ul>
-					</div>
-				</div>
-			</div>
-	</div>
-	</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"></script>
+<!-- popper js -->
+<script src="resources/js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="resources/js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="resources/js/jquery.magnific-popup.js"></script>
+<!-- particles js -->
+<script src="resources/js/owl.carousel.min.js"></script>
+<script src="resources/js/jquery.nice-select.min.js"></script>
+<!-- slick js -->
+<script src="resources/js/slick.min.js"></script>
+<script src="resources/js/jquery.counterup.min.js"></script>
+<script src="resources/js/contact.js"></script>
+<script src="resources/js/jquery.ajaxchimp.min.js"></script>
+<script src="resources/js/jquery.form.js"></script>
+<script src="resources/js/jquery.validate.min.js"></script>
+<script src="resources/js/mail-script.js"></script>
 
-	<!--::footer_part end::-->
-	<!-- jquery plugins here-->
-	<!-- jquery -->
-	<script src="resources/js/jquery-1.12.1.min.js"></script>
-	<!-- popper js -->
-	<script src="resources/js/popper.min.js"></script>
-	<!-- bootstrap js -->
-	<script src="resources/js/bootstrap.min.js"></script>
-	<!-- easing js -->
-	<script src="resources/js/jquery.magnific-popup.js"></script>
-	<!-- particles js -->
-	<script src="resources/js/owl.carousel.min.js"></script>
-	<script src="resources/js/jquery.nice-select.min.js"></script>
-	<!-- slick js -->
-	<script src="resources/js/slick.min.js"></script>
-	<script src="resources/js/jquery.counterup.min.js"></script>
-	<script src="resources/js/waypoints.min.js"></script>
-	<script src="resources/js/contact.js"></script>
-	<script src="resources/js/jquery.ajaxchimp.min.js"></script>
-	<script src="resources/js/jquery.form.js"></script>
-	<script src="resources/js/jquery.validate.min.js"></script>
-	<script src="resources/js/mail-script.js"></script>
-	<!-- custom js -->
-	<script src="resources/js/custom.js"></script>
-
+<script>
+let bno = ${vo.bno};
+</script>
+<!-- custom js -->
+<script src="resources/community/js/read.js"></script>
+<script src="resources/js/custom.js"></script>
+<script src="resources/js/view.js"></script>
+<script src="resources/js/reply.js"></script>
 </body>
 </html>

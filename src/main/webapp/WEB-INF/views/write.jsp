@@ -4,20 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="veiwport" content="width=device-width", initial-scale="1"/>
+<meta name="veiwport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" href="resources/community/css/bootstrap.css" />
 <link rel="stylesheet" href="resources/community/css/custom.css" />
 <link rel="stylesheet" href="resources/community/css/attach.css" />
-<title>Community</title>
-
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/all.css">
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="resources/community/js/bootstrap.js"></script>
+<title>Community</title>
 </head>
 
 <body>
@@ -69,6 +66,16 @@
 						<tr>
 							<td><textarea class="form-control" placeholder="글 내용" id="content" name="content" maxlength="2000"  style="height: 350px;"/></textarea>
 						</tr>
+						<tr>
+							<td>
+								<div class="uploadDiv">
+									<input type="file" name="uploadFile" multiple class="form-control" placeholder="파일 첨부" maxlength="50" />
+											<div class="uploadResult">
+												<ul></ul>
+											</div>
+								</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 				<button type="submit" class="btn btn-primary pull-right">글쓰기</button>
@@ -77,35 +84,37 @@
 	</div>
 
 
-<!-- 파일첨부 -->
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				File 첨부
-			</div>
-			<div class="panel-body">
-				<div class="form-group uploadDiv">
-					<input type="file" name="uploadFile" multiple/>
-				</div>
-				<div class="uploadResult">
-					<ul></ul>
-				</div>
-			</div>			
-		</div>
-	</div>
-</div>  
-<script src="resources/community/js/register.js"></script>
-
-	
+<!-- 파일첨부 --> 
+<!-- <div class="row"> -->
+<!-- 	<div class="col-lg-12"> -->
+<!-- 		<div class="panel panel-default"> -->
+<!-- 			<div class="panel-heading"> -->
+<!-- 				File 첨부 -->
+<!-- 			</div> -->
+<!-- 			<div class="panel-body"> -->
+<!-- 				<div class="form-group uploadDiv"> -->
+<!-- 					<input type="file" name="uploadFile" multiple/> -->
+<!-- 				</div> -->
+<!-- 				<div class="uploadResult"> -->
+<!-- 					<ul></ul> -->
+<!-- 				</div> -->
+<!-- 			</div>			 -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+<!-- </div>   -->	
 	
 
 
 
 
 <!-- jquery plugins here-->
-<!-- jquery -->
+<!-- jquery
 <script src="resources/js/jquery-1.12.1.min.js"></script>
+<script src="resources/js/waypoints.min.js"></script>-->
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="resources/community/js/bootstrap.js"></script>
 <!-- popper js -->
 <script src="resources/js/popper.min.js"></script>
 <!-- bootstrap js -->
@@ -118,14 +127,13 @@
 <!-- slick js -->
 <script src="resources/js/slick.min.js"></script>
 <script src="resources/js/jquery.counterup.min.js"></script>
-<script src="resources/js/waypoints.min.js"></script>
 <script src="resources/js/contact.js"></script>
 <script src="resources/js/jquery.ajaxchimp.min.js"></script>
 <script src="resources/js/jquery.form.js"></script>
 <script src="resources/js/jquery.validate.min.js"></script>
 <script src="resources/js/mail-script.js"></script>
 <!-- custom js -->
-		<script src="resources/js/custom.js"></script>
-	
+<script src="resources/community/js/register.js"></script>
+<script src="resources/js/custom.js"></script>
 </body>
 </html>
