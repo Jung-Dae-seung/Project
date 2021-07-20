@@ -98,7 +98,6 @@
 			<div style="float: right">
 				<button type="button" class="btn btn-primary" id="listbtn">목록</button>
 				<button type="button" class="btn btn-primary" id="modifybtn">수정</button>
-				<button type="button" class="btn btn-primary" id="removebtn">삭제</button>
 			</div>
 		</div>
 		<div>

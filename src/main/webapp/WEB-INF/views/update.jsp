@@ -49,7 +49,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<form method="post"  action="update">
+			<form method="post"  action="" role="form">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>
@@ -82,13 +82,24 @@
 					</tbody>
 				</table>
 				<input type="hidden" name="bno" value="${vo.bno}">
-				<button type="submit" data-oper="update" class="btn btn-primary pull-right">수정</button>
-				<button type="submit" data-oper="remove" class="btn btn-primary pull-right">삭제</button>
-				<button type="submit" data-oper="list" class="btn btn-primary pull-right">목록</button> 
+				<div style="float: right">
+					<button type="submit" data-oper="update" class="btn btn-primary">수정</button>
+					<button type="submit" data-oper="remove" class="btn btn-primary">삭제</button>
+					<button type="submit" data-oper="list" class="btn btn-primary">목록</button> 
+				</div>
 			</form>
 		</div>
 	</div>
 
+<form action="" id="operForm" method="post">
+	<input type="hidden" name="type" value="${cri.type }" />
+	<input type="hidden" name="keyword" value="${cri.keyword }" />
+	<input type="hidden" name="bno" value="${vo.bno }" />
+	<input type="hidden" name="pageNum" value="${cri.pageNum }" />
+	<input type="hidden" name="amount" value="${cri.amount }" />
+	
+	<input type="hidden" name="writer" value="${vo.writer }" />
+</form>
 
 <!-- 파일첨부 -->
 <!-- <div class="row"> -->
@@ -142,7 +153,7 @@
 	let bno = ${vo.bno};
 </script>
 <!-- custom js -->
-<script src="resources/community/js/modify.js"></script>
+<script src="resources/js/update.js"></script>
 <script src="resources/js/custom.js"></script>
 </body>
 </html>

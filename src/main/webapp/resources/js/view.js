@@ -17,11 +17,6 @@ $(function(){
 		operForm.attr('action','/freeBoard');
 		operForm.submit();
 	})
-	//remove
-	$("#removebtn").click(function(){
-		operForm.attr('action','/remove');
-		operForm.submit();
-	})
 	
 	//댓글이 보여질 영역 가져오기
 	let replyUl = $(".chat");
