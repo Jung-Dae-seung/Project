@@ -67,16 +67,16 @@
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
 							<input type="text" name="userid" class="form-control input_user"
-								value="${login.userid}" readonly="readonly">
+								value="${userid}" readonly="readonly">
 						</div>
 						<div class="input-group mb-4">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="current_password" class="form-control input_pass"
+							<input type="password" name="password" class="form-control input_pass"
 								value="" placeholder="password">
 						</div>
-						
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 						<div class="mt-5">
 							<div class="d-flex justify-content-center mt-4 login_container">
 								<div class="col">

@@ -7,10 +7,15 @@
 		values(#{userid},#{password},#{name},#{gender},#{age},#{mobile},#{email})
 	</insert>
 	
+	<!-- 회원 가입시 auth 생성 -->
+	<insert id="signup_auth">
+		insert into login_auth(userid,auth) values(#{userid},'ROLE_USER')
+	</insert>
+	
 	<!-- 로그인 : login(userid,name) -->
-	<select id="login" resultType="com.spring.domain.LoginVO">
+	<!-- <select id="login" resultType="com.spring.domain.LoginVO">
 		select userid,name from memberTBL where userid=#{userid} and password=#{password}
-	</select>
+	</select> -->
 	
 	<!-- 중복된 아이디 검사: dupId -->
 	<select id="dupId" resultType="com.spring.domain.MemberVO">
@@ -19,7 +24,7 @@
 	
 	<!-- 회원정보 받아오기 : memberInfo -->
 	<select id="memberInfo" resultType="com.spring.domain.MemberVO">
-		select * from memberTBL where userid=#{userid} and password=#{password}
+		select * from memberTBL where userid=#{userid}
 	</select>
 	
 	<!--  탈퇴 : leave -->
@@ -27,6 +32,11 @@
 		delete from memberTBL where userid=#{userid} and password=#{password}
 	</delete>
 	
+	<!--탈퇴시 auth 삭제 -->
+	<delete id="leave_auth">
+		delete from login_auth where userid=#{userid}
+	</delete>
+		
 	<!-- 비밀번호 변경 : updatepsw -->
 	<update id="updatePsw">
 		update memberTBL
@@ -47,6 +57,29 @@
 		set email=#{new_email}
 		where userid=#{userid} and password=#{password}
 	</update>
+	
+	<!-- 시큐리티 로그인 -->
+	<resultMap type="com.spring.domain.MemberAuthVO" id="memberAuth">
+		<id property="userid" column="userid"/>
+		<result property="password" column="password"/>
+		<result property="name" column="name"/>
+		<result property="gender" column="gender"/>
+		<result property="age" column="age"/>
+		<result property="mobile" column="mobile"/>
+		<result property="email" column="email"/>
+		<collection property="authList" resultMap="authList"/>
+	</resultMap>
+
+	<resultMap type="com.spring.domain.AuthVO" id="authList">
+		<result property="userid" column="userid"/>
+		<result property="auth" column="auth"/>
+	</resultMap>
+
+	<select id="memberAuth" resultMap="memberAuth">
+		select mem.userid,password,name,gender,age,mobile,email,auth
+		from memberTBL mem left outer join login_auth auth on mem.userid = auth.userid
+		where mem.userid=#{userid}
+	</select>
 	
 </mapper>
 

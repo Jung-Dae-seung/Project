@@ -29,7 +29,7 @@ public class MemberRestController {
 		log.info("changepassword REST 수정"+vo);
 		
 		if(vo.newPasswordEqualsConfirmPassword()) { // 수정 성공
-			service.updatePsw(vo.getUserid(),vo.getCurrent_password(),vo.getNew_password());
+			service.updatePsw(vo.getUserid(),vo.getPassword(),vo.getNew_password());
 			sessoin.invalidate();
 			return new ResponseEntity<String>("passwordsuccess",HttpStatus.OK);		
 
@@ -42,7 +42,7 @@ public class MemberRestController {
 	public ResponseEntity<String> changeEmail(@RequestBody changeMemberInfoVO vo,HttpSession sessoin) {
 		log.info("changeemail REST 수정"+vo);
 		
-		service.updateEmail(vo.getUserid(), vo.getCurrent_password(), vo.getNew_email());
+		service.updateEmail(vo.getUserid(), vo.getPassword(), vo.getNew_email());
 		sessoin.invalidate();
 		return new ResponseEntity<String>("emailsuccess",HttpStatus.OK);				
 	}
@@ -51,7 +51,7 @@ public class MemberRestController {
 	public ResponseEntity<String> changeMobile(@RequestBody changeMemberInfoVO vo,HttpSession sessoin) {
 		log.info("changemobile REST 수정"+vo);
 		
-		service.updateMobile(vo.getUserid(),vo.getCurrent_password(),vo.getNew_mobile());
+		service.updateMobile(vo.getUserid(),vo.getPassword(),vo.getNew_mobile());
 		sessoin.invalidate();
 		return new ResponseEntity<String>("mobilesuccess",HttpStatus.OK);		
 	}
@@ -61,7 +61,7 @@ public class MemberRestController {
 	public ResponseEntity<String> memberLeave(@RequestBody changeMemberInfoVO vo, HttpSession session) {
 		log.info("memberleave 회원 탈퇴 요청 ..."+vo);
 		
-		service.leave(vo.getUserid(), vo.getCurrent_password());
+		service.leave(vo.getUserid(), vo.getPassword());
 		session.invalidate();
 		return new ResponseEntity<String>("leavesuccess",HttpStatus.OK);		
 	}

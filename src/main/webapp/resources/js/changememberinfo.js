@@ -62,7 +62,7 @@ $(function() {
 
 				let param = {
 					userid: $("input[name='userid']").val(),
-					current_password: $("#current_password").val(),
+					password: $("#password").val(),
 					new_password: $("#new_password").val(),
 					confirm_password: $("#confirm_password").val()
 				}
@@ -121,7 +121,7 @@ $(function() {
 
 				let param = {
 					userid: $("input[name='userid']").val(),
-					current_password: $("#current_password").val(),
+					password: $("#password").val(),
 					new_email: $("#new_email").val()
 				}
 
@@ -170,7 +170,7 @@ $(function() {
 
 				let param = {
 					userid: $("input[name='userid']").val(),
-					current_password: $("#current_password").val(),
+					password: $("#password").val(),
 					new_mobile: $("#new_mobile").val()
 				}
 
@@ -201,7 +201,7 @@ $(function() {
 		if (confirm("정말 탈퇴 하시겠습니까?") == true) {
 			let param = {
 				userid: $("input[name='userid']").val(),
-				current_password: $("#current_password").val()
+				password: $("#password").val()
 			}
 
 			$.ajax({
