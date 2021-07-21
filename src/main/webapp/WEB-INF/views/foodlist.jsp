@@ -59,6 +59,7 @@
 	
  <!-- 재현님 Header-->
 <header class="py-1" style="text-align:center;font-size:40px">${vo.subway_name}
+	<h3>지도 마커를 클릭하여 넘어갑니다</h3>
     <div class="container px-lg-5">
     	<div class="map_wrap">
     		<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
@@ -159,6 +160,11 @@
 	</div>
 </div>
 </footer>
+<form action="food" method="post" id="actionForm">
+	<input type="hidden" name="address" value="" id="address"/>
+	<input type="hidden" name="storeName" value="" id="storeName"/>
+	<input type="hidden" name="phone" value="" id="phone"/>
+</form>
 
 <!--::footer_part end::-->
 
@@ -240,6 +246,8 @@ function displayPlaces(places) {
     bounds = new kakao.maps.LatLngBounds(), 
     listStr = '';
     
+    var form = document.getElementById("myForm");
+    
     // 검색 결과 목록에 추가된 항목들을 제거합니다
     removeAllChildNods(listEl);
 
@@ -256,11 +264,17 @@ function displayPlaces(places) {
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
         // LatLngBounds 객체에 좌표를 추가합니다
         bounds.extend(placePosition);
-
+        
         // 마커와 검색결과 항목에 mouseover 했을때
         // 해당 장소에 인포윈도우에 장소명을 표시합니다
         // mouseout 했을 때는 인포윈도우를 닫습니다
         (function(marker, title) {
+        	//console.log(places[i].phone,places[i].address_name);
+        	//form 
+        	
+        	var phone = places[i].phone;
+        	var address = places[i].address_name;
+        	
             kakao.maps.event.addListener(marker, 'mouseover', function() {
                 displayInfowindow(marker, title);
             });
@@ -268,6 +282,18 @@ function displayPlaces(places) {
             kakao.maps.event.addListener(marker, 'mouseout', function() {
                 infowindow.close();
             });
+            
+            kakao.maps.event.addListener(marker, 'click', function() {
+            	console.log(phone);
+            	console.log(address);
+            	
+            	actionForm = document.getElementById('actionForm');
+            	document.getElementById('address').value=address;
+            	document.getElementById('storeName').value=title;
+            	document.getElementById('phone').value=phone;
+            	
+            	actionForm.submit();
+        	});
 
             itemEl.onmouseover =  function () {
                 displayInfowindow(marker, title);
@@ -287,12 +313,6 @@ function displayPlaces(places) {
 
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
     map.setBounds(bounds);
-    
-    console.log(places[1]);
-    kakao.maps.event.addListener(marker, 'click', function() {
-		var link = "/food?place_name=" + places[1].place_name;
-	    location.href = link;
-	});
     
     
 }
@@ -338,10 +358,6 @@ function addMarker(position, idx, title) {
             position: position, // 마커의 위치
             image: markerImage 
         });
-    
-    kakao.maps.event.addListener(marker, 'click', function() {
-        location.href = "/food";
-    });
     
     marker.setMap(map); // 지도 위에 마커를 표출합니다
     markers.push(marker);  // 배열에 생성된 마커를 추가합니다

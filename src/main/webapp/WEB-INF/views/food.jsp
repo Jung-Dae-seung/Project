@@ -31,7 +31,11 @@
 <!-- food CSS -->
 <link rel="stylesheet" href="resources/css/food.css">
 </head>
-
+<%
+	String store_name = request.getParameter("storeName");
+	String address = request.getParameter("address");
+	String phone = request.getParameter("phone");
+%>
 <body>
 	<!--::header part start::-->
 	<header class="main_menu home_menu">
@@ -67,9 +71,9 @@
        alt="..." width="500" height="250" />
    </div>
    <div class="col-lg-5">
-     <h1 class="font-weight-light">음식점 이름</h1>
-     <p>주소</p>
-     <p>오픈시간</p>
+     <h1 class="font-weight-light"><%=store_name%></h1>
+     <p><%=address%></p>
+     <p><%=phone%></p>
      <a class="btn btn-primary" href="#!">지도 보기</a >
      <br/>
      <br/>
