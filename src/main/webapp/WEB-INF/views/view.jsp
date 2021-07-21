@@ -230,7 +230,6 @@ let bno = ${vo.bno};
 <!-- custom js -->
 <script src="resources/community/js/read.js"></script>
 <script src="resources/js/custom.js"></script>
-<script src="resources/js/view.js"></script>
 <script src="resources/js/reply.js"></script>
 </body>
 </html>

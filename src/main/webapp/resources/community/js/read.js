@@ -74,15 +74,15 @@ $(function(){
 	var operForm = $("#operForm");
 	
 	//Modify버튼 클릭시  get방식 /board/modify
-	$(".btn-default").click(function(){
-		operForm.attr('action','/board/modify');
+	$("#modifybtn").click(function(){
+		operForm.attr('action','/update');
 		operForm.submit();
 	})
 	
 	//List버튼 클릭시 get /board/list
-	$(".btn-info").click(function(){
+	$("#listbtn").click(function(){
 		operForm.find("input[name='bno']").remove();
-		operForm.attr('action','/board/list');
+		operForm.attr('action','/freeBoard');
 		operForm.submit();
 	})
 	
@@ -177,7 +177,7 @@ $(function(){
 				str+="<div>"
 				str+="<div class='header'>"
 				str+="<strong class='primary-font'>"+data[i].replyer+"</strong>"
-				str+="<small class='pull-right text-muted'>"+replyService.displayTime(data[i].replyDate)+"</small>"
+				str+="<small class='pull-right text-muted'>"+replyService.displayTime(data[i].replydate)+"</small>"
 				str+="<p>"+data[i].reply+"</p>";
 				str+="</div></div></li>";
 			}
