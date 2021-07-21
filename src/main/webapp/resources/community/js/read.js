@@ -74,11 +74,11 @@ $(function(){
 	var operForm = $("#operForm");
 	
 	//Modify버튼 클릭시  get방식 /board/modify
+
 	$("#modifybtn").click(function(){
 		operForm.attr('action','/update');
 		operForm.submit();
 	})
-	
 	//List버튼 클릭시 get /board/list
 	$("#listbtn").click(function(){
 		operForm.find("input[name='bno']").remove();
@@ -307,13 +307,6 @@ $(function(){
 	
 	
 })
-
-
-
-
-
-
-
 
 
 
