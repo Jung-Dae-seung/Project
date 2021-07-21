@@ -29,21 +29,21 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">커뮤니티</a>
+			<a class="navbar-brand" href="/community">커뮤니티</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">자유 게시판</a></li>
-				<li><a href="bbs.jsp">홍보 게시판</a></li>
-				<li><a href="bbs.jsp">문의 게시판</a></li>
+				<li class="active"><a href="/freeBoard">자유 게시판</a></li>
+				<li><a href="#">홍보 게시판</a></li>
+				<li><a href="#">문의 게시판</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="logoutAction.jsp">로그아웃</a></li>
+						<li class="active"><a href="/logout">로그아웃</a></li>
 					</ul></li>
 			</ul>
 		</div>
@@ -83,16 +83,17 @@
 					</tr>
 					<tr>
 						<td>
-							<i class="fa fas fa-file"></i>첨부파일
-								<div class="uploadResult">
-									<ul></ul>
-								</div>
-							<div class="bigPictureWrapper">
-								<div class="bigPicture"></div>
+							<div class="col-lg-12">
+								<i class="fa fas fa-file"></i>첨부파일
+									<div class="uploadResult">
+										<ul></ul>
+									</div>
 							</div>
+								<div class="bigPictureWrapper">
+									<div class="bigPicture"></div>
+								</div>
 						</td>
 					</tr>
-					
 				</tbody>
 			</table>
 			<div style="float: right">
@@ -102,28 +103,7 @@
 		</div>
 		<div>
 			<p>&nbsp;</p>
-		</div>
-		
-<!-- 파일첨부 -->
-<!-- <div class="row"> -->
-<!-- 	<div class="col-lg-12"> -->
-<!-- 		<div class="panel panel-default"> -->
-<!-- 			<div class="panel-heading"> -->
-<!-- 				<i class="fa fas fa-file"></i> Files -->
-<!-- 			</div> -->
-<!-- 			<div class="panel-body">				 -->
-<!-- 				<div class="uploadResult"> -->
-<!-- 					<ul></ul> -->
-<!-- 				</div> -->
-<!-- 			</div>			 -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- </div>  -->
-<!-- <div class="bigPictureWrapper"> -->
-<!-- 	<div class="bigPicture"></div> -->
-<!-- </div>  -->
-		
-		
+		</div>		
 		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-heading">

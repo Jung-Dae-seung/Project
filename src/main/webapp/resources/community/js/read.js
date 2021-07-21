@@ -75,14 +75,14 @@ $(function(){
 	
 	//Modify버튼 클릭시  get방식 /board/modify
 	$(".btn-default").click(function(){
-		operForm.attr('action','/board/modify');
+		operForm.attr('action','/update');
 		operForm.submit();
 	})
 	
 	//List버튼 클릭시 get /board/list
 	$(".btn-info").click(function(){
 		operForm.find("input[name='bno']").remove();
-		operForm.attr('action','/board/list');
+		operForm.attr('action','/freeBoard');
 		operForm.submit();
 	})
 	
@@ -307,13 +307,6 @@ $(function(){
 	
 	
 })
-
-
-
-
-
-
-
 
 
 

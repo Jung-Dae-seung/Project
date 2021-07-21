@@ -1,130 +1,99 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>travel</title>
-<link rel="icon" href="resources/img/favicon.png">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<!-- animate CSS -->
-<link rel="stylesheet" href="resources/css/animate.css">
-<!-- owl carousel CSS -->
-<link rel="stylesheet" href="resources/css/owl.carousel.min.css">
+<meta charset="UTF-8">
+<meta name="veiwport" content="width=device-width", initial-scale="1.0"/>
+<link rel="stylesheet" href="resources/community/css/bootstrap.css" />
+<link rel="stylesheet" href="resources/community/css/custom.css" />
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/all.css">
-<!-- flaticon CSS -->
-<link rel="stylesheet" href="resources/css/flaticon.css">
-<link rel="stylesheet" href="resources/css/themify-icons.css">
-<link rel="stylesheet" href="resources/css/nice-select.css">
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
-<!-- swiper CSS -->
-<link rel="stylesheet" href="resources/css/slick.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
+<title>Community</title>
 </head>
-
 <body>
-	<!--::header part start::-->
-	<header class="main_menu home_menu">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-12">
-
-					<a class="navbar-brand" href="index.jsp"> <img
-						src="resources/img/logo.png" alt="<logo></logo>">
-					</a> 
-<!-- 					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a> -->
-					<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
-
-				</div>
+	<nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+			aria-expanded="false">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/community">커뮤니티</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="/freeBoard">자유 게시판</a></li>
+				<li><a href="#">홍보 게시판</a></li>
+				<li><a href="#">문의 게시판</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">회원관리 <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li class="active"><a href="/logout">로그아웃</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	
+	<div class="container">
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Community</h1>
+				<p> Life is short! Don't waste your time looking for Restaurants outside. We do that job for you! <br /> Feel free to explore our website and take a look at the reviews other diners have given.  <br /> You're welcome to share your dining experiences to recommend places for other food enthusiasts. </p>
+				<p><a class="btn btn-primary btn-pull" href="/freeBoard">Learn more</a></p>
 			</div>
 		</div>
-	</header>
-	<!-- Header part end-->
-
-	<!-- banner part start-->
-	<section class="banner_part2"></section>
-	<!-- banner part start-->
-
-	<!-- banner part start-->
-<!-- 	<section class="search_your_country">	</section> -->
+	</div>
+	<div class="container">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="resources/community/image/coffee.jpg" alt="" />
+				</div>
+				<div class="item">
+					<img src="resources/community/image/dining_table.jpg" alt="" />
+				</div>
+				<div class="item">
+					<img src="resources/community/image/restaurant2.jpg" alt="" />
+				</div>
+			</div>
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
 	
-
-<!-- feature_part start-->
+	
+<!-- footer부분	 -->
 <!-- 	<section class="feature_part padding_top"> -->
 	<div class="container">
 		<div class="row align-items-center justify-content-between">
-			<div class="col-6">
-			</div>
-			<div class="col-6">
-			</div> 
 		</div>	
-
-
-<!-- 커뮤니티 게시판 -->
-<%-- <jsp:include page = "/WEB-INF/views/community/topLayout.jsp" flush = "false"/> --%>
-
-<!-- <div class="row"> -->
-  <div class="col-4-2">
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">자유 게시판</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">홍보 게시판</a>
-      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">문의 게시판</a>
-    </div>
-  </div>
-
-
-<div class="table1 col-md-6">
-	<table class="table table-hover">
-	  <thead>
-	    <tr>
-	      <th scope="col">#</th>
-	      <th scope="col">First</th>
-	      <th scope="col">Last</th>
-	      <th scope="col">Handle</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <th scope="row">1</th>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <td>Jacob</td>
-	      <td>Thornton</td>
-	      <td>@fat</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">3</th>
-	      <td colspan="2">Larry the Bird</td>
-	      <td>@twitter</td>
-	    </tr>
-	  </tbody>
-	</table>
-</div>
-
-
-
-
+	
+	
 <!--::footer_part start::-->
-<footer class="footer_part">
+<footer class="footer_top footer_part">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">
-				<div class="single_footer_part">
-				</div>
-			</div>
-			
 			<div class="col-sm-6 col-lg-3">
 				<div class="footer_img">
 					<a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
@@ -169,13 +138,17 @@
 			</div>
 		</div>
 	</div>
-	</div>
+</div>
 </footer>
 <!--::footer_part end::-->
 
 <!-- jquery plugins here-->
-<!-- jquery -->
-<script src="resources/js/jquery-1.12.1.min.js"></script>
+<!-- jquery
+<script src="resources/js/waypoints.min.js"></script>
+<script src="resources/js/jquery-1.12.1.min.js"></script>-->
+ 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="resources/community/js/bootstrap.js"></script>
 <!-- popper js -->
 <script src="resources/js/popper.min.js"></script>
 <!-- bootstrap js -->
@@ -188,13 +161,12 @@
 <!-- slick js -->
 <script src="resources/js/slick.min.js"></script>
 <script src="resources/js/jquery.counterup.min.js"></script>
-<script src="resources/js/waypoints.min.js"></script>
 <script src="resources/js/contact.js"></script>
 <script src="resources/js/jquery.ajaxchimp.min.js"></script>
 <script src="resources/js/jquery.form.js"></script>
 <script src="resources/js/jquery.validate.min.js"></script>
 <script src="resources/js/mail-script.js"></script>
 <!-- custom js -->
-		<script src="resources/js/custom.js"></script>
+<script src="resources/js/custom.js"></script>	
 </body>
 </html>

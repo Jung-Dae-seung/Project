@@ -4,11 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>travel</title>
 <link rel="icon" href="resources/img/favicon.png">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -28,8 +26,8 @@
 <link rel="stylesheet" href="resources/css/slick.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
+<title>EatAtLine4</title>
 </head>
-
 <body>
 	<jsp:include page="include/header.jsp"></jsp:include>
 
@@ -63,7 +61,6 @@
 	</div>
 
 		<!--::footer_part start::-->
-	
 		<footer class="footer_part" id="footerPart">
 			<div class="container">
 				<div class="row">
@@ -134,12 +131,13 @@
 				</div>
 			</div>
 		</footer>
-		
 		<!--::footer_part end::-->
 
 		<!-- jquery plugins here-->
-		<!-- jquery -->
-		<script src="resources/js/jquery-1.12.1.min.js"></script>
+		<!-- jquery 
+		<script src="resources/js/waypoints.min.js"></script>
+		<script src="resources/js/jquery-1.12.1.min.js"></script>		
+		-->
 		<!-- popper js -->
 		<script src="resources/js/popper.min.js"></script>
 		<!-- bootstrap js -->
@@ -152,7 +150,6 @@
 		<!-- slick js -->
 		<script src="resources/js/slick.min.js"></script>
 		<script src="resources/js/jquery.counterup.min.js"></script>
-		<script src="resources/js/waypoints.min.js"></script>
 		<script src="resources/js/contact.js"></script>
 		<script src="resources/js/jquery.ajaxchimp.min.js"></script>
 		<script src="resources/js/jquery.form.js"></script>
