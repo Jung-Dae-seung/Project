@@ -6,24 +6,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="veiwport" content="width=device-width" , initial-scale="1" />
+<meta name="veiwport" content="width=device-width" , initial-scale="1.0" />
 <link rel="stylesheet" href="resources/community/css/bootstrap.css" />
 <link rel="stylesheet" href="resources/community/css/custom.css" />
-<title>Community</title>
-
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/all.css">
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
-	<script>
-		let result = '${result}';
-	</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="/resources/js/freeBoard.js"></script>
+<title>Community</title>
 </head>
-
 <body>
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
@@ -33,28 +26,28 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">커뮤니티</a>
+			<a class="navbar-brand" href="/community">커뮤니티</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">자유 게시판</a></li>
-				<li><a href="bbs.jsp">홍보 게시판</a></li>
-				<li><a href="bbs.jsp">문의 게시판</a></li>
+				<li class="active"><a href="/freeBoard">자유 게시판</a></li>
+				<li><a href="#">홍보 게시판</a></li>
+				<li><a href="#">문의 게시판</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="logoutAction.jsp">로그아웃</a></li>
+						<li class="active"><a href="/logout">로그아웃</a></li>
 					</ul></li>
 			</ul>
 		</div>
 	</nav>
 
 	<div class="container">
-			<!-- start search -->
+		<!-- start search -->
 		<div class="row">
 		<div style="float:right">
 			<form action="" method="get" id="searchForm">
@@ -129,5 +122,10 @@
 			type="hidden" name="pageNum" value="${pageVO.cri.pageNum }" /> <input
 			type="hidden" name="amount" value="${pageVO.cri.amount }" />
 	</form>
+		<script>
+		let result = '${result}';
+	</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="/resources/js/freeBoard.js"></script>
 </body>
 </html>

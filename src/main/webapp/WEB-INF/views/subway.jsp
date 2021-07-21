@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
-
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>travel</title>
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <link rel="icon" href="resources/img/favicon.png">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -49,6 +47,7 @@
     }
     
     </style>
+<title>EatAtLine4</title>
 </head>
 <body id="subwayBody">
 	<header class="main_menu home_menu">
@@ -56,11 +55,11 @@
 			<div class="row align-items-center">
 				<div class="col-lg-12">
 
-					<a class="navbar-brand" href="index.jsp"> <img
+					<a class="navbar-brand" href="/"> <img
 						src="resources/img/logo.png" alt="<logo></logo>">
 					</a> 
-					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
+					<a class="btn_1 d-none d-lg-block" href="/community">Community</a>
+					<a class="btn_1 d-none d-lg-block" href="/logout">Logout</a>
 
 				</div>
 			</div>
@@ -229,8 +228,9 @@
     
 
     <!--  jquery plugins here -->
-	<!-- jquery -->
-	<script src="resources/js/jquery-1.12.1.min.js"></script>
+	<!-- jquery 
+	<script src="resources/js/waypoints.min.js"></script>
+	<script src="resources/js/jquery-1.12.1.min.js"></script>-->
 	<!-- popper js -->
 	<script src="resources/js/popper.min.js"></script>
 	<!-- bootstrap js -->
@@ -243,7 +243,6 @@
 	<!-- slick js -->
 	<script src="resources/js/slick.min.js"></script>
 	<script src="resources/js/jquery.counterup.min.js"></script>
-	<script src="resources/js/waypoints.min.js"></script>
 	<script src="resources/js/contact.js"></script>
 	<script src="resources/js/jquery.ajaxchimp.min.js"></script>
 	<script src="resources/js/jquery.form.js"></script>
@@ -268,3 +267,5 @@
 		})
 		
     </script>
+</body>
+</html>

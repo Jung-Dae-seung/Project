@@ -43,6 +43,14 @@ public class HomeController {
 		return "except";
 	}
 	
+	@GetMapping("/community")
+	public String communityGet() {
+		log.info("community page");
+		
+		return "community";
+	}
+	
+	
 	@PostMapping("food")
 	public String foodGet() {
 		log.info("food page");
@@ -58,16 +66,6 @@ public class HomeController {
 		  
 		model.addAttribute("vo", vo);
 		
-	}
-	 
-	
-	@GetMapping("/main")
-	public String mainGet() {
-		log.info("main page");
-		
-		return "community/main";
-	}
-	
-	
+	}	
 	
 }

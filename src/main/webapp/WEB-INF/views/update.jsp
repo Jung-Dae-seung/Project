@@ -26,13 +26,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">커뮤니티</a>
+			<a class="navbar-brand" href="/community">커뮤니티</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">자유 게시판</a></li>
-				<li><a href="bbs.jsp">홍보 게시판</a></li>
-				<li><a href="bbs.jsp">문의 게시판</a></li>
+				<li class="active"><a href="/freeBoard">자유 게시판</a></li>
+				<li><a href="#">홍보 게시판</a></li>
+				<li><a href="#">문의 게시판</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
@@ -40,7 +40,7 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="logoutAction.jsp">로그아웃</a></li>
+						<li class="active"><a href="/logout">로그아웃</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -49,7 +49,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<form method="post"  action="" role="form">
+			<form method="post"  action="update" role="form">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>
@@ -69,16 +69,17 @@
 						</tr>
 						<tr>
 							<td>
-								<i class="fa fas fa-file"></i>첨부파일
-								<div class="uploadDiv">
-									<input type="file" name="uploadFile" multiple class="form-control" placeholder="파일 첨부" maxlength="50" />
-								</div>		
+								<div class="col-lg-12">
+									<i class="fa fas fa-file"></i>첨부파일
+										<div class="form-group uploadDiv">
+											<input type="file" name="uploadFile" multiple class="form-control" maxlength="50" />
+										</div>		
 										<div class="uploadResult">
 											<ul></ul>
 										</div>
+								</div>
 							</td>
 						</tr>
-						
 					</tbody>
 				</table>
 				<input type="hidden" name="bno" value="${vo.bno}">
@@ -90,7 +91,7 @@
 			</form>
 		</div>
 	</div>
-
+<%-- remove와 list를 위한 폼--%>
 <form action="" id="operForm" method="post">
 	<input type="hidden" name="type" value="${cri.type }" />
 	<input type="hidden" name="keyword" value="${cri.keyword }" />
@@ -101,28 +102,7 @@
 	<input type="hidden" name="writer" value="${vo.writer }" />
 </form>
 
-<!-- 파일첨부 -->
-<!-- <div class="row"> -->
-<!-- 	<div class="col-lg-12"> -->
-<!-- 		<div class="panel panel-default"> -->
-<!-- 			<div class="panel-heading"> -->
-<!-- 				<i class="fa fas fa-file"></i> Files				 -->
-<!-- 			</div> -->
-<!-- 			<div class="panel-body">	 -->
-<!-- 				<div class="form-group uploadDiv"> -->
-<!-- 					<input type="file" name="uploadFile" multiple/> -->
-<!-- 				</div>			 -->
-<!-- 				<div class="uploadResult"> -->
-<!-- 					<ul></ul> -->
-<!-- 				</div> -->
-<!-- 			</div>			 -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- </div> -->
-
 	
-	
-
 <!-- jquery plugins here-->
 <!-- jquery 이게 오래된 버전이라서 아마 3.1 버전이 커버 될거에요-->
 <!-- <script src="resources/js/waypoints.min.js"></script> 
@@ -153,7 +133,7 @@
 	let bno = ${vo.bno};
 </script>
 <!-- custom js -->
-<script src="resources/js/update.js"></script>
+<script src="resources/community/js/modify.js"></script>
 <script src="resources/js/custom.js"></script>
 </body>
 </html>

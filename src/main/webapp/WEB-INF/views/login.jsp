@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <link rel="icon" href="resources/img/favicon.png">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -28,7 +27,7 @@
 <link rel="stylesheet" href="resources/css/login.css">
 <!-- jquery cdn -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+<title>EatAtLine4</title>
 </head>
 <body>
 	<!--::header part start::-->
@@ -39,8 +38,8 @@
 					<a class="navbar-brand" href="/"> 
 					<img src="resources/img/logo.png" alt="<logo></logo>">
 					</a> 
-					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a> 
-					<a class="btn_1 d-none d-lg-block" href="/">index</a>
+					<a class="btn_1 d-none d-lg-block" href="/community">Community</a> 
+					<a class="btn_1 d-none d-lg-block" href="/">Home</a>
 				</div>
 			</div>
 		</div>

@@ -52,6 +52,27 @@ public class BoardController {
 		model.addAttribute("pageVO", new PageVO(cri, total));
 	}	
 	
+	
+	@GetMapping("/write")
+	public void view() {
+		log.info("새글 등록 폼 요청");
+	}
+	
+	//자유게시판 - 게시글 등록
+	@PostMapping("/write")
+	public String viewPost_f(FreeBoardVO vo,RedirectAttributes rttr) {
+		log.info("새글 등록 요청 "+vo);
+		
+		if(service.insert_f(vo)) {
+			//log.info("입력된 글 번호 "+vo.getBno());
+			rttr.addFlashAttribute("result", vo.getBno());
+			return "redirect:freeBoard";    //   redirect:/board/list
+		}else {
+			return "redirect:write"; //  redirect:/board/register
+		}
+	}
+	
+	
 	//자유게시판 글 하나 읽기
 	@GetMapping({"/view","/update"})
 	public void read_f(int bno,@ModelAttribute("cri") Criteria cri,Model model) {
@@ -66,62 +87,35 @@ public class BoardController {
 		public String modify_f(FreeBoardVO vo,Criteria cri,RedirectAttributes rttr) {
 			log.info("수정 요청 "+vo+" 페이지 나누기 "+cri);
 			
-			if(service.update_f(vo)) {
-				return "redirect:/freeBoard";
-			}else {
-				rttr.addFlashAttribute("tab","modify");
-				return "redirect:/";			
-			}
-			
-		}
-		
-		
-		@GetMapping("/register")
-		public void register() {
-			log.info("새글 등록 폼 요청");
-		}
-		
-		@PostMapping("/register")
-		public String registerPost_f(FreeBoardVO vo,RedirectAttributes rttr) {
-			log.info("새글 등록 요청 "+vo);
-			
 			//첨부 파일 확인
 			if(vo.getAttachList()!=null) {
 				vo.getAttachList().forEach(attach -> log.info(""+attach));
 			}	
 			
+			service.update_f(vo);		
 			
-			if(service.insert_f(vo)) {
-				//log.info("입력된 글 번호 "+vo.getBno());
-				rttr.addFlashAttribute("result", vo.getBno());
-				return "redirect:freeBoard";    //   redirect:/board/list
-			}else {
-				return "redirect:register"; //  redirect:/board/register
-			}
+			rttr.addFlashAttribute("result","성공");
+
+			rttr.addAttribute("type", cri.getType());
+			rttr.addAttribute("keyword", cri.getKeyword());
+			rttr.addAttribute("pageNum", cri.getPageNum());
+			rttr.addAttribute("amount", cri.getAmount());
+			return "redirect:freeBoard";
+			
+			
+//			if(service.update_f(vo)) {
+//				return "redirect:/freeBoard";
+//			}else {
+//				rttr.addFlashAttribute("tab","modify");
+//				return "redirect:/";			
+//			}
+			
 		}
 		
-		@GetMapping("/write")
-		public void view() {
-			log.info("새글 등록 폼 요청");
-		}
-		
-		//자유게시판 - 게시글 등록
-		@PostMapping("/write")
-		public String viewPost_f(FreeBoardVO vo,RedirectAttributes rttr) {
-			log.info("새글 등록 요청 "+vo);
-			
-			if(service.insert_f(vo)) {
-				//log.info("입력된 글 번호 "+vo.getBno());
-				rttr.addFlashAttribute("result", vo.getBno());
-				return "redirect:freeBoard";    //   redirect:/board/list
-			}else {
-				return "redirect:write"; //  redirect:/board/register
-			}
-		}
 		
 		@PostMapping("/remove")
 		public String delete_f(int bno,Criteria cri, RedirectAttributes rttr) {
-			log.info("삭제 요청");
+			log.info("삭제 요청"+bno);
 			
 			//서버(폴더)에 저장된 첨부파일 삭제
 			// 1) bno에 해당하는 첨부파일 목록 알아내기
@@ -175,22 +169,7 @@ public class BoardController {
 				
 			}
 		}
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
