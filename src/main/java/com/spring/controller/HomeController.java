@@ -37,7 +37,7 @@ public class HomeController {
 	
 	@RequestMapping(value= "/except", method = RequestMethod.GET)
 	public String except() {
-		log.info("except ¿äÃ»");
+		log.info("except ï¿½ï¿½Ã»");
 		
 		return "except";
 	}
@@ -51,7 +51,7 @@ public class HomeController {
 	
 	@GetMapping("/foodlist")
 	public void foodlistGet(@RequestParam("subway_name") String subway_name, Model model) {
-		log.info("ÁöÇÏÃ¶ °ª ³Ñ±â±â");
+		log.info("ï¿½ï¿½ï¿½ï¿½Ã¶ ï¿½ï¿½ ï¿½Ñ±ï¿½ï¿½");
 		log.info(subway_name);
 		SubwayDataVO vo = service.subwaySelect(subway_name);
 		  
