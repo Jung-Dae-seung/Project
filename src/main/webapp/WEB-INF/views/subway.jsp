@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
+
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>travel</title>
 <link rel="icon" href="resources/img/favicon.png">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -47,7 +49,6 @@
     }
     
     </style>
-<title>EatAtLine4</title>
 </head>
 <body id="subwayBody">
 	<header class="main_menu home_menu">
@@ -55,11 +56,11 @@
 			<div class="row align-items-center">
 				<div class="col-lg-12">
 
-					<a class="navbar-brand" href="/"> <img
+					<a class="navbar-brand" href="index.jsp"> <img
 						src="resources/img/logo.png" alt="<logo></logo>">
 					</a> 
-					<a class="btn_1 d-none d-lg-block" href="/community">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="/logout">Logout</a>
+					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
+					<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
 
 				</div>
 			</div>
@@ -71,8 +72,10 @@
 	<section class="banner_part3"></section>
 	<!-- banner part start-->
 	
-    <div class="subway-map" data-columns="15" data-rows="15" data-cellSize="60" data-legendId="legend" data-textClass="textSubway" data-gridNumbers="true" data-grid="false" data-lineWidth="15">
-        <ul data-color="#50bcdf" data-label="4호선">          
+    <div class="subway-map" data-columns="20" data-rows="10" data-cellSize="60" 
+    	data-legendId="legend" data-textClass="textSubway" 
+    	data-gridNumbers="true" data-grid="false" data-lineWidth="15">
+        <ul data-color="#50bcdf">          
             <li data-coords="1,1" data-marker="@station"><a href="#">당고개</a></li>
             <li data-coords="1.5,1"></li>   
             <li data-coords="2,1 " data-marker="@station"><a href="#">상계</a></li>
@@ -171,11 +174,26 @@
             <li data-coords="2.5,7"></li>
             <li data-coords="2,7" ><a href="#">정왕</a></li>
             <li data-coords="1.5,7"></li>
-            <li data-coords="1,7" ><a href="#">오이도</a></li>        
+            <li data-coords="1,7" ><a href="#">오이도</a></li>   
+            
+            
         </ul>
-	
+    
+    
+        <ul data-color="#50bcdf" data-label="jQuery Interactions" data-shiftCoords="0,-1">
+	        	<li data-coords="14.7,1"></li>
+	        	<li data-coords="17,1"></li>
+        </ul>
+        
     </div>
-    <div id="legend_subway"></div>
+    
+    <div id=box>
+    	<div style="text-align:right;position:relative;bottom:375px;right:230px">
+    		4호선(정거장 이름을 클릭하여 이동합니다)
+    	</div>
+    </div>
+
+        
     
     	<!--::footer_part start::-->
 	<footer class="footer_top footer_part">
@@ -228,9 +246,8 @@
     
 
     <!--  jquery plugins here -->
-	<!-- jquery 
-	<script src="resources/js/waypoints.min.js"></script>
-	<script src="resources/js/jquery-1.12.1.min.js"></script>-->
+	<!-- jquery -->
+	<script src="resources/js/jquery-1.12.1.min.js"></script>
 	<!-- popper js -->
 	<script src="resources/js/popper.min.js"></script>
 	<!-- bootstrap js -->
@@ -243,6 +260,7 @@
 	<!-- slick js -->
 	<script src="resources/js/slick.min.js"></script>
 	<script src="resources/js/jquery.counterup.min.js"></script>
+	<script src="resources/js/waypoints.min.js"></script>
 	<script src="resources/js/contact.js"></script>
 	<script src="resources/js/jquery.ajaxchimp.min.js"></script>
 	<script src="resources/js/jquery.form.js"></script>
@@ -267,5 +285,3 @@
 		})
 		
     </script>
-</body>
-</html>

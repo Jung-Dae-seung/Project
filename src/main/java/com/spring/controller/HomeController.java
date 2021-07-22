@@ -5,6 +5,7 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,9 +51,9 @@ public class HomeController {
 		return "community";
 	}
 	
-	
+	@PreAuthorize("isAnonymous")
 	@PostMapping("food")
-	public String foodGet() {
+	public String foodPost() {
 		log.info("food page");
 		
 		return "food";
@@ -60,7 +61,7 @@ public class HomeController {
 	
 	@GetMapping("/foodlist")
 	public void foodlistGet(@RequestParam("subway_name") String subway_name, Model model) {
-		log.info("ï¿½ï¿½ï¿½ï¿½Ã¶ ï¿½ï¿½ ï¿½Ñ±ï¿½ï¿½");
+		log.info("ÁöÇÏÃ¶ ³ë¼±µµ ºÒ·¯¿À±â");
 		log.info(subway_name);
 		SubwayDataVO vo = service.subwaySelect(subway_name);
 		  
