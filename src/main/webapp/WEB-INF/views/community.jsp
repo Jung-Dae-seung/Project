@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
-<title>Community</title>
+<title>EatAtLine4</title>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -38,7 +38,9 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="/logout">로그아웃</a></li>
+						<li class="active"><a href="/login">로그인</a></li>
+						<li><a href="/logout">로그아웃</a></li>
+						<li><a href="/">Home</a></li>
 					</ul>
 				</li>
 			</ul>

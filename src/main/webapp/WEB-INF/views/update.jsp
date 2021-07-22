@@ -14,9 +14,8 @@
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
-<title>Community</title>
+<title>EatAtLine4</title>
 </head>
-
 <body>
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
@@ -40,7 +39,9 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="/logout">로그아웃</a></li>
+						<li class="active"><a href="/login">로그인</a></li>
+						<li><a href="/logout">로그아웃</a></li>
+						<li><a href="/">Home</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -49,7 +50,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<form method="post"  action="update" role="form">
+			<form action="" method="post" role="form">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>
@@ -82,8 +83,8 @@
 						</tr>
 					</tbody>
 				</table>
-				<input type="hidden" name="bno" value="${vo.bno}">
-				<div style="float: right">
+<%-- 				<input type="hidden" name="bno" value="${vo.bno}"> --%>
+ 				<div style="float: right">
 					<button type="submit" data-oper="update" class="btn btn-primary">수정</button>
 					<button type="submit" data-oper="remove" class="btn btn-primary">삭제</button>
 					<button type="submit" data-oper="list" class="btn btn-primary">목록</button> 
@@ -98,7 +99,6 @@
 	<input type="hidden" name="bno" value="${vo.bno }" />
 	<input type="hidden" name="pageNum" value="${cri.pageNum }" />
 	<input type="hidden" name="amount" value="${cri.amount }" />
-	
 	<input type="hidden" name="writer" value="${vo.writer }" />
 </form>
 

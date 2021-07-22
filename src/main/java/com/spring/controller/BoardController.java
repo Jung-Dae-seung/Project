@@ -54,14 +54,19 @@ public class BoardController {
 	
 	
 	@GetMapping("/write")
-	public void view() {
+	public void write_f() {
 		log.info("새글 등록 폼 요청");
 	}
 	
 	//자유게시판 - 게시글 등록
 	@PostMapping("/write")
-	public String viewPost_f(FreeBoardVO vo,RedirectAttributes rttr) {
+	public String writePost_f(FreeBoardVO vo,RedirectAttributes rttr) {
 		log.info("새글 등록 요청 "+vo);
+		
+		//첨부 파일 확인
+		if(vo.getAttachList()!=null) {
+			vo.getAttachList().forEach(attach -> log.info(""+attach));
+		}	
 		
 		if(service.insert_f(vo)) {
 			//log.info("입력된 글 번호 "+vo.getBno());
