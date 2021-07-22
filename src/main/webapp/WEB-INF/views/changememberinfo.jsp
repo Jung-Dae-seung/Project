@@ -78,8 +78,8 @@
 								<input type="text" name="name" id="name" class="form-control"
 									value="${memberinfo.name}" readonly="readonly" />
 							</div>
-							<input type="hidden" name="current_password"
-								id="current_password" value="${memberinfo.password}" />
+							<input type="hidden" name="password"
+								id="password" value="${memberinfo.password}" />
 						</div>
 						<div class="input-group mb-3">
 							<label for="pass2" class="col-sm-4 col-form-label">새 비밀번호
@@ -120,8 +120,8 @@
 									<small id="new_mobile" class="text-info"></small>
 								</div>
 							</div>
-							<input type="hidden" name="current_password"
-								id="current_password" value="${memberinfo.password}" /> <input
+							<input type="hidden" name="password"
+								id="password" value="${memberinfo.password}" /> <input
 								type="hidden" name="userid" id="userid"
 								value="${memberinfo.userid}" />
 						</div>
@@ -145,8 +145,8 @@
 									<small id="new_email" class="text-info"></small>
 								</div>
 							</div>
-							<input type="hidden" name="current_password"
-								id="current_password" value="${memberinfo.password}" /> <input
+							<input type="hidden" name="password"
+								id="password" value="${memberinfo.password}" /> <input
 								type="hidden" name="userid" id="userid"
 								value="${memberinfo.userid}" />
 						</div>
@@ -161,8 +161,8 @@
 				<div>
 					<form id="memberLeave" method="post" action="" class="">
 						<div class="mt-4">
-							<input type="hidden" name="current_password"
-								id="current_password" value="${memberinfo.password}" /> <input
+							<input type="hidden" name="password"
+								id="password" value="${memberinfo.password}" /> <input
 								type="hidden" name="userid" id="userid"
 								value="${memberinfo.userid}" />
 							<div class="col">

@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
+<meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
+<meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
 <title>Insert title here</title>
 <link rel="icon" href="resources/img/favicon.png">
 <!-- Bootstrap CSS -->
@@ -61,7 +62,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form id="signup" method="post" action="signup" class="">
+					<form id="signup" method="post" action="insertMember" class="">
 						<div class="input-group mb-3">
 							<label for="userid" class="col-sm-4 col-form-label">아이디</label>
 							<div class="col-sm-8">
@@ -145,6 +146,7 @@
 										class="ml-2">회원 가입 약관 동의</a> <small id="tac" class="text-info"></small>
 								</div>
 							</div>
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 							<div class="d-flex justify-content-center mt-4 login_container">
 								<div class="col">
 									<button type="submit" name="button" class="btn login_btn">sign
@@ -161,7 +163,7 @@
 		</div>
 	</div>
 	<script>
-		$(function() {
+ 		$(function() {
 			//gender 값 가져온 후 남이면 radio 부분에 남이 체크되도록 / 여이면 여자 체크
 			let gender = '${mamber.gender}'
 

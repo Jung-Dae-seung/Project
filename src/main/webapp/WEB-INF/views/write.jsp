@@ -26,13 +26,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">커뮤니티</a>
+			<a class="navbar-brand" href="/community">커뮤니티</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">자유 게시판</a></li>
-				<li><a href="bbs.jsp">홍보 게시판</a></li>
-				<li><a href="bbs.jsp">문의 게시판</a></li>
+				<li class="active"><a href="/freeBoard">자유 게시판</a></li>
+				<li><a href="#">홍보 게시판</a></li>
+				<li><a href="#">문의 게시판</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
@@ -40,7 +40,7 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="logoutAction.jsp">로그아웃</a></li>
+						<li class="active"><a href="/logout">로그아웃</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -68,11 +68,13 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="uploadDiv">
-									<input type="file" name="uploadFile" multiple class="form-control" placeholder="파일 첨부" maxlength="50" />
-											<div class="uploadResult">
-												<ul></ul>
-											</div>
+								<div class="col-lg-12">
+									<div class="form-group uploadDiv">
+										<input type="file" name="uploadFile" multiple class="form-control" maxlength="50" />
+									</div>		
+									<div class="uploadResult">
+										<ul></ul>
+									</div>
 								</div>
 							</td>
 						</tr>
@@ -82,30 +84,7 @@
 			</form>
 		</div>
 	</div>
-
-
-<!-- 파일첨부 --> 
-<!-- <div class="row"> -->
-<!-- 	<div class="col-lg-12"> -->
-<!-- 		<div class="panel panel-default"> -->
-<!-- 			<div class="panel-heading"> -->
-<!-- 				File 첨부 -->
-<!-- 			</div> -->
-<!-- 			<div class="panel-body"> -->
-<!-- 				<div class="form-group uploadDiv"> -->
-<!-- 					<input type="file" name="uploadFile" multiple/> -->
-<!-- 				</div> -->
-<!-- 				<div class="uploadResult"> -->
-<!-- 					<ul></ul> -->
-<!-- 				</div> -->
-<!-- 			</div>			 -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- </div>   -->	
 	
-
-
-
 
 <!-- jquery plugins here-->
 <!-- jquery

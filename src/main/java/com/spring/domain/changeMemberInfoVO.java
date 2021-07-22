@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 public class changeMemberInfoVO {
 	private String userid; 
-	private String current_password;
+	private String password;
 	private String new_password;
 	private String confirm_password;
 	private String new_mobile;

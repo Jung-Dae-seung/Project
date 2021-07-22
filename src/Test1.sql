@@ -1,14 +1,14 @@
 
---¸â¹ö Å×ÀÌºí
+--ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 create table memberTBL(userid varchar2(15) constraint memberTBL_pk primary key,
-						password varchar2(30) not null,
+						password varchar2(100) not null,
 						name varchar2(20) not null,
 						gender varchar2(10) not null,
                         age number(5) not null,
                         mobile varchar2(15) not null,
 						email varchar2(50));
 
--- ¸®ºä Å×ÀÌºí    
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½    
 create table reviewTBL(reviewer varchar2(15) not null,
                         bno number(10,0) constraint reviewTBL_pk primary key,
                         review varchar2(2000),
@@ -17,11 +17,11 @@ create table reviewTBL(reviewer varchar2(15) not null,
                         updatedate date default sysdate,
                         restaurent varchar2(100) not null);
                         
--- ¸®ºäÅ×ÀÌºí ½ÃÄö½º
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 create sequence seq_review;
 
                 
--- ÀÚÀ¯°Ô½ÃÆÇ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 create table freeBoardTBL(bno number(10,0) constraint freeBoardTBL_pk primary key,
                       title varchar2(200) not null,
                       content varchar2(2000) not null,
@@ -30,10 +30,10 @@ create table freeBoardTBL(bno number(10,0) constraint freeBoardTBL_pk primary ke
                       updatedate date default sysdate,
                       REPLYCNT number);
                       
--- ÀÚÀ¯°Ô½ÃÆÇ ½ÃÄö½º
+-- ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 create sequence seq_freeBoard;
                       
--- È«º¸°Ô½ÃÆÇ Å×ÀÌºí
+-- È«ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 create table proBoardTBL(bno number(10,0) constraint proBoardTBL_pk primary key,
                       title varchar2(200) not null,
                       content varchar2(2000) not null,
@@ -42,10 +42,10 @@ create table proBoardTBL(bno number(10,0) constraint proBoardTBL_pk primary key,
                       updatedate date default sysdate,
                       REPLYCNT number);
 
--- È«º¸°Ô½ÃÆÇ ½ÃÄö½º
+-- È«ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 create sequence seq_proBoard;
 
--- ¹®ÀÇ°Ô½ÃÆÇ Å×ÀÌºí 
+-- ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ 
 create table inqBoardTBL(bno number(10,0) constraint inqBoardTBL_pk primary key,
                       title varchar2(200) not null,
                       content varchar2(2000) not null,
@@ -54,46 +54,46 @@ create table inqBoardTBL(bno number(10,0) constraint inqBoardTBL_pk primary key,
                       updatedate date default sysdate,
                       REPLYCNT number);
                       
--- ¹®ÀÇ°Ô½ÃÆÇ ½ÃÄö½º
+-- ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 create sequence seq_inqBoard;
 
--- ÀÚÀ¯°Ô½ÃÆÇ ´ñ±Û Å×ÀÌºí           
-create table freeReplyTBL(rno number(10,0) constraint pk_freereply primary key, --´ñ±Û ±Û¹øÈ£
-						  bno number(10,0) not null, --¿ø¹ø ±Û¹øÈ£
-						  reply varchar2(1000) not null, --´ñ±Û ³»¿ë
-						  replyer varchar2(50) not null, --´ñ±Û ÀÛ¼ºÀÚ
+-- ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½           
+create table freeReplyTBL(rno number(10,0) constraint pk_freereply primary key, --ï¿½ï¿½ï¿½ ï¿½Û¹ï¿½È£
+						  bno number(10,0) not null, --ï¿½ï¿½ï¿½ï¿½ ï¿½Û¹ï¿½È£
+						  reply varchar2(1000) not null, --ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+						  replyer varchar2(50) not null, --ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½
 						  replydate date default sysdate,
 						  updatedate date default sysdate,
 						  constraint fk_freeReplyTBL foreign key(bno) references freeBoardTBL(bno));
 
--- ÀÚÀ¯°Ô½ÃÆÇ ´ñ±Û ½ÃÄö½º	  
+-- ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	  
 create sequence seq_freeReply;
 
--- È«º¸ °Ô½ÃÆÇ ´ñ±Û Å×ÀÌºí           
-create table proReplyTBL(rno number(10,0) constraint pk_proreply primary key, --´ñ±Û ±Û¹øÈ£
-						  bno number(10,0) not null, --¿ø¹ø ±Û¹øÈ£
-						  reply varchar2(1000) not null, --´ñ±Û ³»¿ë
-						  replyer varchar2(50) not null, --´ñ±Û ÀÛ¼ºÀÚ
+-- È«ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½           
+create table proReplyTBL(rno number(10,0) constraint pk_proreply primary key, --ï¿½ï¿½ï¿½ ï¿½Û¹ï¿½È£
+						  bno number(10,0) not null, --ï¿½ï¿½ï¿½ï¿½ ï¿½Û¹ï¿½È£
+						  reply varchar2(1000) not null, --ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+						  replyer varchar2(50) not null, --ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½
 						  replydate date default sysdate,
 						  updatedate date default sysdate,
 						  constraint fk_proReplyTBL foreign key(bno) references proboardTBL(bno));
 
--- È«º¸°Ô½ÃÆÇ ´ñ±Û ½ÃÄö½º	  
+-- È«ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	  
 create sequence seq_proReply;
 
--- ¹®ÀÇ°Ô½ÃÆÇ ´ñ±Û Å×ÀÌºí           
-create table inqReplyTBL(rno number(10,0) constraint pk_inqreply primary key, --´ñ±Û ±Û¹øÈ£
-						  bno number(10,0) not null, --¿ø¹ø ±Û¹øÈ£
-						  reply varchar2(1000) not null, --´ñ±Û ³»¿ë
-						  replyer varchar2(50) not null, --´ñ±Û ÀÛ¼ºÀÚ
+-- ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½           
+create table inqReplyTBL(rno number(10,0) constraint pk_inqreply primary key, --ï¿½ï¿½ï¿½ ï¿½Û¹ï¿½È£
+						  bno number(10,0) not null, --ï¿½ï¿½ï¿½ï¿½ ï¿½Û¹ï¿½È£
+						  reply varchar2(1000) not null, --ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+						  replyer varchar2(50) not null, --ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½
 						  replydate date default sysdate,
 						  updatedate date default sysdate,
 						  constraint fk_inqReplyTBL foreign key(bno) references inqboardTBL(bno));
 
--- ¹®ÀÇ°Ô½ÃÆÇ ´ñ±Û ½ÃÄö½º	  
+-- ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	  
 create sequence seq_inqReply;
 
--- ÀÚÀ¯ °Ô½ÃÆÇ ÆÄÀÏÃ·ºÎ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 create table free_file_attach(uuid varchar2(100) not null,
                          uploadPath varchar2(200) not null,
                          fileName varchar2(100) not null,
@@ -103,7 +103,7 @@ create table free_file_attach(uuid varchar2(100) not null,
 alter table file_attach add constraint pk_attach primary key(uuid);
 alter table file_attach add constraint fk_file_attach foreign key(bno) references freeboardTBL(bno);
 
--- È«º¸ °Ô½ÃÆÇ ÆÄÀÏÃ·ºÎ Å×ÀÌºí
+-- È«ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 create table pro_file_attach(uuid varchar2(100) not null,
                          uploadPath varchar2(200) not null,
                          fileName varchar2(100) not null,
@@ -113,7 +113,7 @@ create table pro_file_attach(uuid varchar2(100) not null,
 alter table pro_file_attach add constraint pk_proattach primary key(uuid);
 alter table pro_file_attach add constraint fk_file_attach foreign key(bno) references proboardTBL(bno);
 
--- ¹®ÀÇ °Ô½ÃÆÇ ÆÄÀÏÃ·ºÎ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 create table inq_file_attach(uuid varchar2(100) not null,
                          uploadPath varchar2(200) not null,
                          fileName varchar2(100) not null,
@@ -123,7 +123,7 @@ create table inq_file_attach(uuid varchar2(100) not null,
 alter table inq_file_attach add constraint pk_inqattach primary key(uuid);
 alter table inq_file_attach add constraint fk_inqfile_attach foreign key(bno) references inqboardTBL(bno);
 
--- ¸®ºä °Ô½ÃÆÇ ÆÄÀÏÃ·ºÎ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 create table review_file_attach(uuid varchar2(100) not null,
                          uploadPath varchar2(200) not null,
                          fileName varchar2(100) not null,
@@ -135,7 +135,7 @@ alter table review_file_attach add constraint fk_reviewfile_attach foreign key(b
 
 drop table reviewTBL;
                          
--- ±ÇÇÑ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 create table login_auth(userid varchar2(50) not null,
                         auth varchar2(50) not null,
                         constraint fk_member_auth foreign key(userid) references memberTBL(userid));

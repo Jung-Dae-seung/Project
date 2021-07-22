@@ -13,7 +13,7 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MemberVO {
+public class MemberAuthVO {
 	private String userid; 
 	private String password;
 	private String name;
@@ -21,6 +21,8 @@ public class MemberVO {
 	private int age;
 	private String mobile;
 	private String email;
+	
+	private List<AuthVO> authList; 
 }
 
 
