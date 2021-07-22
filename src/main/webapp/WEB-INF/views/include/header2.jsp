@@ -56,20 +56,22 @@
 							members
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-					          <li><a class="btn_1 d-none d-lg-block" href="/login">log in</a></li>
-					          <li><hr class="dropdown-divider"></li>
+					          <li>
+					          	<sec:authorize access="isAnonymous()">
+					          		<a class="btn_1 d-none d-lg-block" href="/login">log in</a>
+									<li><hr class="dropdown-divider"></li>
+					          	</sec:authorize>
+					          </li>
 					          <li><a class="btn_1 d-none d-lg-block" href="/checkpsw">profile modify</a></li>
-					          <li><hr class="dropdown-divider"></li>
-					          
+					          <li><hr class="dropdown-divider"></li>					          
 					          <li>
 								<sec:authentication property="principal" var="info"/>
 				                <sec:authorize access="isAuthenticated()"> <!-- 로그인 여부 확인 -->
-				                	<c:if test="${info.username}">
-							          	<form action="" method="post" id="logoutForm">
-							          		<a class="btn_1 d-none d-lg-block" href="/logout" id="logout">log out</a>
+							          	<form action="/logout" method="post">
+							          		<!-- <a class="btn_1 d-none d-lg-block" href="/logout" id="logout">log out</a> -->
 							          		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+							          		<button class="btn_1 d-none d-lg-block" type="submit">log out</button>
 							          	</form>
-									</c:if>
 								</sec:authorize>
 					          </li>
 					          <li><hr class="dropdown-divider"></li>
@@ -105,11 +107,5 @@
 	<script src="resources/js/mail-script.js"></script>
 	<!-- custom js -->
 	<script src="resources/js/custom.js"></script>
-	<!-- header2.js -->
-	<script src="resources/js/header2.js"></script>
-	<script>
-		var csrfHeaderName="${_csrf.headerName}";
-		var csrfTokenValue="${_csrf.token}";
-	</script>
 </body>
 </html>

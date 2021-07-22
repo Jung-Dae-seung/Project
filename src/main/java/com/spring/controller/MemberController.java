@@ -33,10 +33,16 @@ public class MemberController {
 		log.info("loginget 요청");
 		
 	}
-	
 	@GetMapping("/logout")
-	public void logoutGet() {
-		log.info("logoutGet 요청");
+	public void logoutget() {
+		log.info("logoutget 요청");
+		
+	}
+	
+	
+	@PostMapping("/logout")
+	public void logoutpost() {
+		log.info("logoupost 요청");
 		
 	}
 	
