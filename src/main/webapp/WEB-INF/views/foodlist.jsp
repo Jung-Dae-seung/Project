@@ -164,6 +164,8 @@
 	<input type="hidden" name="address" value="" id="address"/>
 	<input type="hidden" name="storeName" value="" id="storeName"/>
 	<input type="hidden" name="phone" value="" id="phone"/>
+	<input type="hidden" name="${_csrf.parameterName}"
+							value="${_csrf.token}" id="token"/>
 </form>
 
 <!--::footer_part end::-->
@@ -272,6 +274,7 @@ function displayPlaces(places) {
         	//console.log(places[i].phone,places[i].address_name);
         	//form 
         	
+        	var token = "${_csrf.token}";
         	var phone = places[i].phone;
         	var address = places[i].address_name;
         	
@@ -291,6 +294,7 @@ function displayPlaces(places) {
             	document.getElementById('address').value=address;
             	document.getElementById('storeName').value=title;
             	document.getElementById('phone').value=phone;
+            	document.getElementById('token').value=token;
             	
             	actionForm.submit();
         	});
