@@ -40,6 +40,7 @@ $(function(){
 		
 		// enctype="multipart/form-data" => processData:false,contentType:false,
 		
+		
 		$.ajax({
 			url:'/uploadAjax', //도착지
 			type:'post',
