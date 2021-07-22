@@ -47,7 +47,7 @@ public class ReplyController {
 		return new ResponseEntity<>(service.replyRead(rno),HttpStatus.OK);
 	}
 	
-	//@PreAuthorize("principal.username == #reply.replyer")
+	@PreAuthorize("principal.username == #reply.replyer")
 	@PutMapping("/{rno}")
 	public ResponseEntity<String> update(@PathVariable("rno") int rno,@RequestBody FreeReplyVO reply){
 		log.info("댓글 수정 "+rno+" 수정 내용 "+reply);
@@ -58,7 +58,7 @@ public class ReplyController {
 			new ResponseEntity<String>("fail",HttpStatus.BAD_REQUEST);
 	}
 	
-	//@PreAuthorize("principal.username == #vo.replyer")
+	@PreAuthorize("principal.username == #vo.replyer")
 	@DeleteMapping("/{rno}")
 	public ResponseEntity<String> delete(@PathVariable("rno") int rno,@RequestBody FreeReplyVO vo){
 		log.info("댓글 삭제 "+rno);

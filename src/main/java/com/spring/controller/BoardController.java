@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,7 +53,7 @@ public class BoardController {
 		model.addAttribute("pageVO", new PageVO(cri, total));
 	}	
 	
-	
+	@PreAuthorize("isAuthenticated()")
 	@GetMapping("/write")
 	public void write_f() {
 		log.info("새글 등록 폼 요청");
@@ -88,6 +89,7 @@ public class BoardController {
 	}
 	
 	// modify+post 수정한 후 list - 자유게시판
+	 	@PreAuthorize("principal.username == #vo.writer")
 		@PostMapping("/update")
 		public String modify_f(FreeBoardVO vo,Criteria cri,RedirectAttributes rttr) {
 			log.info("수정 요청 "+vo+" 페이지 나누기 "+cri);
@@ -117,7 +119,7 @@ public class BoardController {
 			
 		}
 		
-		
+		@PreAuthorize("principal.username == #vo.writer")
 		@PostMapping("/remove")
 		public String delete_f(int bno,Criteria cri, RedirectAttributes rttr) {
 			log.info("삭제 요청"+bno);

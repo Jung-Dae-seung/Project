@@ -98,7 +98,12 @@
 				</tbody>
 			</table>
 			<div style="float: right">
-				<button type="button" class="btn btn-primary" id="listbtn">목록</button>
+				<sec:authentication property="principal" var="info"/>
+                <sec:authorize access="isAuthenticated()"> <!-- 로그인 여부 확인 -->
+                	<c:if test="${info.username == vo.writer}">
+						<button type="button" class="btn btn-primary" id="modifybtn">수정</button>
+					</c:if>
+				</sec:authorize>
 				<button type="button" class="btn btn-primary" id="modifybtn">수정</button>
 			</div>
 		</div>
@@ -207,6 +212,13 @@ crossorigin="anonymous"></script>
 
 <script>
 let bno = ${vo.bno};
+var replyer = null;
+<sec:authorize access="isAuthenticated()">
+replyer = '<sec:authentication property="principal.username"/>';
+</sec:authorize>
+
+var csrfHeaderName = "${_csrf.headerName}";
+var csrfTokenValue = "${_csrf.token}";
 </script>
 <!-- custom js -->
 <script src="resources/community/js/read.js"></script>

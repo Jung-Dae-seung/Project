@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,6 +84,7 @@
 						</tr>
 					</tbody>
 				</table>
+				<input type="hidden" name="${_csrf.parameterName}" value=${_csrf.token} />
 				<button type="submit" class="btn btn-primary pull-right">글쓰기</button>
 			</form>
 		</div>
@@ -112,6 +116,12 @@
 <script src="resources/js/jquery.form.js"></script>
 <script src="resources/js/jquery.validate.min.js"></script>
 <script src="resources/js/mail-script.js"></script>
+
+<script>
+		var csrfHeaderName = "${_csrf.headerName}";
+		var csrfTokenValue = "${_csrf.token}";
+</script>
+	
 <!-- custom js -->
 <script src="resources/community/js/register.js"></script>
 <script src="resources/js/custom.js"></script>

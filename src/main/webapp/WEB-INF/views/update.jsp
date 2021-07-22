@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,10 +85,15 @@
 						</tr>
 					</tbody>
 				</table>
-<%-- 				<input type="hidden" name="bno" value="${vo.bno}"> --%>
+				<input type="hidden" name="${_csrf.parameterName}" value=${_csrf.token} />
  				<div style="float: right">
-					<button type="submit" data-oper="update" class="btn btn-primary">수정</button>
-					<button type="submit" data-oper="remove" class="btn btn-primary">삭제</button>
+ 				<sec:authentication property="principal" var="info"/>
+                <sec:authorize access="isAuthenticated()"> <!-- 로그인 여부 확인 -->
+                	<c:if test="${info.username==vo.writer }">
+						<button type="submit" data-oper="update" class="btn btn-primary">수정</button>
+						<button type="submit" data-oper="remove" class="btn btn-primary">삭제</button>
+					</c:if>
+				</sec:authorize>
 					<button type="submit" data-oper="list" class="btn btn-primary">목록</button> 
 				</div>
 			</form>
@@ -99,6 +106,8 @@
 	<input type="hidden" name="bno" value="${vo.bno }" />
 	<input type="hidden" name="pageNum" value="${cri.pageNum }" />
 	<input type="hidden" name="amount" value="${cri.amount }" />
+	
+	<input type="hidden" name="${_csrf.parameterName}" value=${_csrf.token} />
 	<input type="hidden" name="writer" value="${vo.writer }" />
 </form>
 
@@ -131,6 +140,8 @@
 	
 <script>
 	let bno = ${vo.bno};
+	var csrfHeaderName = "${_csrf.headerName}";
+	var csrfTokenValue = "${_csrf.token}";
 </script>
 <!-- custom js -->
 <script src="resources/community/js/modify.js"></script>
