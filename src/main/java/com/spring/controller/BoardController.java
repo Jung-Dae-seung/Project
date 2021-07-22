@@ -60,6 +60,7 @@ public class BoardController {
 	}
 	
 	//자유게시판 - 게시글 등록
+	@PreAuthorize("isAuthenticated()")
 	@PostMapping("/write")
 	public String writePost_f(FreeBoardVO vo,RedirectAttributes rttr) {
 		log.info("새글 등록 요청 "+vo);
