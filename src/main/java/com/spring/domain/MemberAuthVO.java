@@ -14,7 +14,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberAuthVO {
-	private String userid; 
+	private String userid;
 	private String password;
 	private String name;
 	private String gender;

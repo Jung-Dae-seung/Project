@@ -29,7 +29,7 @@
 	
 	<!--  탈퇴 : leave -->
 	<delete id="leave">
-		delete from memberTBL where userid=#{userid} and password=#{password}
+		delete from memberTBL where userid=#{userid}
 	</delete>
 	
 	<!--탈퇴시 auth 삭제 -->
@@ -41,21 +41,21 @@
 	<update id="updatePsw">
 		update memberTBL
 		set password=#{new_password}
-		where userid=#{userid} and password=#{password}
+		where userid=#{userid}
 	</update>
 	
 	<!-- 모바일 변경 : updatemobile  -->
 	<update id="updateMobile">
 		update memberTBL
 		set mobile=#{new_mobile}
-		where userid=#{userid} and password=#{password}
+		where userid=#{userid}
 	</update>
 
 	<!-- 이메일 변경 : updateemail  -->
 		<update id="updateEmail">
 		update memberTBL
 		set email=#{new_email}
-		where userid=#{userid} and password=#{password}
+		where userid=#{userid}
 	</update>
 	
 	<!-- 시큐리티 로그인 -->

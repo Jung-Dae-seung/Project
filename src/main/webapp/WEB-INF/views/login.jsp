@@ -33,21 +33,8 @@
 </head>
 <body>
 	<!--::header part start::-->
-	<header class="main_menu home_menu">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-12">
-					<a class="navbar-brand" href="/"> <img
-						src="resources/img/logo.png" alt="<logo></logo>">
-					</a> <a class="btn_1 d-none d-lg-block" href="/community">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="/">home</a>
-				</div>
-			</div>
-		</div>
-	</header>
+	<jsp:include page="include/header2.jsp"></jsp:include>
 	<!-- Header part end-->
-
-
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">

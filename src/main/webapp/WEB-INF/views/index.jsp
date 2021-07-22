@@ -29,8 +29,24 @@
 <title>EatAtLine4</title>
 </head>
 <body>
-	<jsp:include page="include/header.jsp"></jsp:include>
-
+	<jsp:include page="include/header2.jsp"></jsp:include>
+	
+	<!-- banner part start-->
+	<section class="banner_part">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-7">
+					<div class="banner_text">
+						<div class="banner_text_iner">
+							<h5>Must-go restaurants</h5>
+							<h2>Find out the best-rated restaurants near subway station</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
 	<!-- banner part start-->
 	<section class="search_your_country" style="padding:0px">
 		<div class="container-fluid">
