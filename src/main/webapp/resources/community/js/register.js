@@ -44,8 +44,11 @@ $(function(){
 			url:'/uploadAjax', //도착지
 			type:'post',
 			processData:false,
-			contentType:false,
+			contentType:false,		
 			data:formData,
+			beforeSend:function(xhr){
+				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
+			},
 			success:function(result){
 				console.log(result);
 				showUploadedFile(result);
