@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,15 +39,29 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="/login">로그인</a></li>
-						<li><a href="/logout">로그아웃</a></li>
 						<li><a href="/">Home</a></li>
+						
+						 <!-- 인증된 정보가 있으면 Logout 보여주기 -->
+                        <sec:authorize access="isAuthenticated()">
+	                        <li>
+	                        	<a href="#" id="logout"><i class=""></i>로그아웃</a>
+	                        </li>
+							</sec:authorize>
+	                        <sec:authorize access="!isAuthenticated()">
+		                        <li>
+									<a href="/login"><i class="" ></i>로그인</a>
+								</li>	
+							</sec:authorize>		
 					</ul>
 				</li>
 			</ul>
 		</div>
 	</nav>
 	
+	<%-- 로그아웃을 클릭하면 전송할 폼 --%>
+        <form action="/logout" method="post" id="logoutForm">
+        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
+        </form>
 	
 	<div class="container">
 		<div class="jumbotron">
@@ -148,6 +163,7 @@
 <!-- jquery
 <script src="resources/js/waypoints.min.js"></script>
 <script src="resources/js/jquery-1.12.1.min.js"></script>-->
+
  
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="resources/community/js/bootstrap.js"></script>
@@ -168,6 +184,18 @@
 <script src="resources/js/jquery.form.js"></script>
 <script src="resources/js/jquery.validate.min.js"></script>
 <script src="resources/js/mail-script.js"></script>
+
+ <script>
+$(function(){
+	$("#logout").click(function(e){
+		//a 태그 동작 막기
+		e.preventDefault();
+		
+		//form을 보낼때 csrf 값 포함해서 전송
+		$('#logoutForm').submit();
+	})
+})
+</script>
 <!-- custom js -->
 <script src="resources/js/custom.js"></script>	
 </body>
