@@ -242,6 +242,25 @@ $(function(){
 	//댓글 삭제
 	$("#modalRemoveBtn").click(function(){
 		
+		//로그인 여부 확인
+		if(!replyer){
+			alert("로그인 한 후 삭제가 가능합니다.");
+			modal.modal("hide");
+			return;
+		}		
+		
+		//현재 모달창에 있는 작성자와 로그인 사용자가 같은지 확인
+		
+		//현재 모달창 작성자 가져오기
+		var oriReplyer = modalReplyer.val();
+		//비교
+		if(oriReplyer!=replyer){
+			alert('자신의 댓글만 삭제가 가능합니다.');
+			modal.modal("hide");
+			return;
+		}
+		
+		
 		// rno 가져오기	
 		var rno = modal.data("rno");	
 		
@@ -256,6 +275,25 @@ $(function(){
 	
 	//댓글 수정
 	$("#modalModifyBtn").click(function(){
+		
+		//로그인 여부 확인
+		if(!replyer){
+			alert("로그인 한 후 수정이 가능합니다.");
+			modal.modal("hide");
+			return;
+		}		
+		
+		//현재 모달창에 있는 작성자와 로그인 사용자가 같은지 확인
+		
+		//현재 모달창 작성자 가져오기
+		var oriReplyer = modalReplyer.val();
+		//비교
+		if(oriReplyer!=replyer){
+			alert('자신의 댓글만 수정이 가능합니다.');
+			modal.modal("hide");
+			return;
+		}
+		
 		
 		var reply= {
 			rno:modal.data("rno"),
@@ -303,8 +341,6 @@ $(function(){
 			modal.modal("show");			
 		})		
 	})
-	
-	
 	
 })
 

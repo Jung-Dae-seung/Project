@@ -50,6 +50,7 @@ $(function(){
 			beforeSend:function(xhr){
 				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
 			},
+			data:formData,
 			success:function(result){
 				console.log(result);
 				showUploadedFile(result);
@@ -135,6 +136,9 @@ $(function(){
 		
 		$.ajax({
 			url:'/deleteFile',
+			beforeSend:function(xhr){
+				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
+			},
 			data:{
 				fileName:targetFile,
 				type:type
