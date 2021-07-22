@@ -65,7 +65,7 @@
 							<td><input type="text" class="form-control" placeholder="글 제목" id="title" name="title" maxlength="50" /></td>
 						</tr>
 						<tr>
-							<td><input type="text" class="form-control" placeholder="작성자" id="writer" name="writer" maxlength="50" /></td>
+							<td><input type="text" class="form-control" id="writer" name="writer" maxlength="50" value="<sec:authentication property='principal.username'/>" readonly/></td>
 						</tr>
 						<tr>
 							<td><textarea class="form-control" placeholder="글 내용" id="content" name="content" maxlength="2000"  style="height: 350px;"/></textarea>
