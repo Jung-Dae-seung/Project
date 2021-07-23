@@ -42,14 +42,30 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="/login">로그인</a></li>
-						<li><a href="/logout">로그아웃</a></li>
 						<li><a href="/">Home</a></li>
-					</ul></li>
+						
+						 <!-- 인증된 정보가 있으면 Logout 보여주기 -->
+                        <sec:authorize access="isAuthenticated()">
+	                        <li>
+	                        	<a href="#" id="logout"><i class=""></i>로그아웃</a>
+	                        </li>
+							</sec:authorize>
+	                        <sec:authorize access="!isAuthenticated()">
+		                        <li>
+									<a href="/login"><i class="" ></i>로그인</a>
+								</li>	
+							</sec:authorize>		
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</nav>
-
+	
+	<%-- 로그아웃을 클릭하면 전송할 폼 --%>
+    <form action="/logout" method="post" id="logoutForm">
+    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
+    </form>
+	
 	<div class="container">
 		<!-- start search -->
 		<div class="row">
@@ -134,6 +150,17 @@
 		<script>
 		let result = '${result}';
 	</script>
+	 <script>
+$(function(){
+	$("#logout").click(function(e){
+		//a 태그 동작 막기
+		e.preventDefault();
+		
+		//form을 보낼때 csrf 값 포함해서 전송
+		$('#logoutForm').submit();
+	})
+})
+</script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="/resources/js/freeBoard.js"></script>
 </body>
