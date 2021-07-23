@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <html>
 
 <head>
@@ -47,7 +48,6 @@
     {
         margin: 5px 5px 5px 0;
     }
-    
     </style>
 </head>
 <body id="subwayBody">
@@ -56,12 +56,20 @@
 			<div class="row align-items-center">
 				<div class="col-lg-12">
 
-					<a class="navbar-brand" href="index.jsp"> <img
+					<a class="navbar-brand" href="/"> <img
 						src="resources/img/logo.png" alt="<logo></logo>">
-					</a> 
+					</a>
+					
 					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
-
+					
+					<sec:authorize access="isAnonymous">
+	                	<a class="btn_1 d-none d-lg-block" href="login">Log in</a>
+                    </sec:authorize>
+                    <sec:authorize access="isAuthenticated()">
+	                	<a class="btn_1 d-none d-lg-block" href="logout">Log out</a>
+                    </sec:authorize>
+					
+					
 				</div>
 			</div>
 		</div>

@@ -45,7 +45,13 @@
 						src="resources/img/logo.png" alt="<logo></logo>">
 					</a> 
 					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
+					
+					<sec:authorize access="isAnonymous">
+	                	<a class="btn_1 d-none d-lg-block" href="login">Log in</a>
+                    </sec:authorize>
+                    <sec:authorize access="isAuthenticated()">
+	                	<a class="btn_1 d-none d-lg-block" href="logout">Log out</a>
+                    </sec:authorize>
 
 				</div>
 			</div>
@@ -164,6 +170,7 @@
 	<input type="hidden" name="address" value="" id="address"/>
 	<input type="hidden" name="storeName" value="" id="storeName"/>
 	<input type="hidden" name="phone" value="" id="phone"/>
+	<input type="hidden" name="category" value="" id="category"/>
 	<input type="hidden" name="${_csrf.parameterName}"
 							value="${_csrf.token}" id="token"/>
 </form>
@@ -277,6 +284,13 @@ function displayPlaces(places) {
         	var token = "${_csrf.token}";
         	var phone = places[i].phone;
         	var address = places[i].address_name;
+        	var category = places[i].category_name;
+        	var longitude = places[i].x;
+        	var latitude = places[i].y;
+        	
+        	console.log(longitude);
+        	
+        	
         	
             kakao.maps.event.addListener(marker, 'mouseover', function() {
                 displayInfowindow(marker, title);
@@ -289,11 +303,14 @@ function displayPlaces(places) {
             kakao.maps.event.addListener(marker, 'click', function() {
             	console.log(phone);
             	console.log(address);
+            	console.log(category);
+            	
             	
             	actionForm = document.getElementById('actionForm');
             	document.getElementById('address').value=address;
             	document.getElementById('storeName').value=title;
             	document.getElementById('phone').value=phone;
+            	document.getElementById('category').value=category;
             	document.getElementById('token').value=token;
             	
             	actionForm.submit();

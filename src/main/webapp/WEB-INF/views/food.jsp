@@ -35,6 +35,7 @@
 	String store_name = request.getParameter("storeName");
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
+	String category = request.getParameter("category");
 %>
 <body>
 	<!--::header part start::-->
@@ -46,8 +47,8 @@
 					<a class="navbar-brand" href="index.jsp"> <img
 						src="resources/img/logo.png" alt="<logo></logo>">
 					</a> 
-					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="login.jsp">Log in</a>
+					<a class="btn_1 d-none d-lg-block" href="community">Community</a>
+					<a class="btn_1 d-none d-lg-block" href="login">Log in</a>
 
 				</div>
 			</div>
@@ -65,16 +66,14 @@
   <!-- Heading Row-->
  <div class="row gx-4 gx-lg-5 align-items-center my-5">
    <div class="col-lg-7">
-     <img
-       class="img-fluid rounded mb-4 mb-lg-0"
-       src="resources/img/restaurant2.jpg"
-       alt="..." width="500" height="250" />
+     <div id="map" style="width:90%;height:350px;">
+     </div>
    </div>
    <div class="col-lg-5">
-     <h1 class="font-weight-light"><%=store_name%></h1>
+     <h1 class="font-weight-light" id="store_name"><%=store_name%></h1>
+     <h3 class="font-weight-light"><%=category%></h3>
      <p id="store_address"><%=address%></p>
      <p><%=phone%></p>
-     <a id="map" style="width:100%;height:350px;">지도 보기</a >
      <br/>
      <br/>
      <!-- <a class="btn btn-primary" href="#!">리뷰 작성</a > -->
@@ -355,13 +354,21 @@
 <!-- custom js -->
 		<script src="resources/js/custom.js"></script>
 
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b35c281dbc3e2a74b144079a4af860e3&libraries=LIBRARY,services,clusterer,drawing"></script>
 <script>
 
-var storeAddress = document.getElementById.value('store_address');
+var store_Address = document.getElementById('store_address');
+var storeAddress = String(store_Address.innerHTML);
+var store_name = document.getElementById('store_name');
+var storeName = String(store_name.innerHTML);
+
+console.log(storeName);
 console.log(storeAddress);
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
+		center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
         level: 3 // 지도의 확대 레벨
     };  
 
@@ -386,7 +393,12 @@ geocoder.addressSearch(storeAddress, function(result, status) {
             position: coords
         });
 
-   
+     	// 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+storeName+'</div>'
+        });
+        infowindow.open(map, marker);
+
 
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(coords);
