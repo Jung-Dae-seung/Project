@@ -13,7 +13,7 @@ $(function(){
 		
 		var oper = $(this).data("oper");
 		
-		if(oper==="modify"){
+		if(oper==="update"){ //이름 잘못 들어가 있어서
 			operForm=$("form[role='form']");
 			
 			var str="";
