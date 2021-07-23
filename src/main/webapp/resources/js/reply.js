@@ -9,6 +9,9 @@ var replyService=(function(){
 		
 		$.ajax({
 			type:'post',
+			beforeSend:function(xhr){
+				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
+			},
 			url:'/replies/new',
 			contentType:'application/json',
 			data:JSON.stringify(reply),
