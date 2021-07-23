@@ -76,7 +76,7 @@
      <p><%=phone%></p>
      <br/>
      <br/>
-     <!-- <a href=""></a> -->
+     <!-- <a class="btn btn-primary" href="#!">리뷰 작성</a > -->
    </div>
  </div>
 
