@@ -51,29 +51,8 @@
     </style>
 </head>
 <body id="subwayBody">
-	<header class="main_menu home_menu">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-12">
-
-					<a class="navbar-brand" href="/"> <img
-						src="resources/img/logo.png" alt="<logo></logo>">
-					</a>
-					
-					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
-					
-					<sec:authorize access="isAnonymous">
-	                	<a class="btn_1 d-none d-lg-block" href="login">Log in</a>
-                    </sec:authorize>
-                    <sec:authorize access="isAuthenticated()">
-	                	<a class="btn_1 d-none d-lg-block" href="logout">Log Out</a>
-                    </sec:authorize>
-					
-					
-				</div>
-			</div>
-		</div>
-	</header>
+	<!--::header part start::-->
+	<jsp:include page="include/header.jsp"></jsp:include>
 	<!-- Header part end-->
 	
 	<!-- banner part start-->

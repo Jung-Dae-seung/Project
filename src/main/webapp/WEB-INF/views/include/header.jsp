@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <!DOCTYPE html>
 <html>
-<head>
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -33,58 +33,70 @@
 <!--::header part start::-->
 	<header class="main_menu home_menu">
 		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-12">
-
-					<a class="navbar-brand" href="/"> <img
-						src="resources/img/logo.png" alt="<logo></logo>">
-					</a> <a class="btn_1 d-none d-lg-block" href="/community">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="/login">Log in</a>
-
+			<div class="row">
+				<div class="col">
+					<ul>
+						<li>
+							<a class="navbar-brand" href="/"> <img src="resources/img/logo.png" alt="<logo></logo>"></a> 
+						</li>
+					</ul>
+				</div>
+				<div class="col">
+					<ul class="nav justify-content-end">
+						<li>
+							<a class="btn_1 d-none d-lg-block" href="/community">Community</a>
+						</li>
+						<li>
+							<a class="btn_1 d-none d-lg-block" href="/signup">sign up</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="btn_1 d-none d-lg-block" href="#">
+							members
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+					          <li>
+					          	<sec:authorize access="isAnonymous()"> <!-- 비 로그인 사용자만 볼수 있음 -->
+					          		<a class="btn_1 d-none d-lg-block" href="/login">log in</a>
+									<li><hr class="dropdown-divider"></li>
+					          	</sec:authorize>
+					          </li>
+					          <li>
+					          	<sec:authorize access="isAuthenticated()"> <!-- 로그인 사용자만 볼수 있음 -->
+					          		<a class="btn_1 d-none d-lg-block" href="/checkpsw">profile modify</a>
+					          	</sec:authorize>
+					          </li>
+					          <li><hr class="dropdown-divider"></li>					          
+					          <li>
+								<sec:authentication property="principal" var="info"/>
+				                <sec:authorize access="isAuthenticated()"> <!-- 로그인 사용자만 볼수 있음 -->
+							          	<form action="/logout" method="post" id="logoutForm">
+							          		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" id="token"/>
+							          		<a class="btn_1 d-none d-lg-block" href="#" id="logoutTag">log out</a>
+							          	</form>
+								</sec:authorize>
+					          </li>
+					          <li><hr class="dropdown-divider"></li>
+					        </ul>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</header>
-	<!-- Header part end-->
-	<!-- banner part start-->
-	<section class="banner_part">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-7">
-					<div class="banner_text">
-						<div class="banner_text_iner">
-							<h5>Must-go restaurants</h5>
-							<h2>Find out the best-rated restaurants near subway station</h2>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<!-- Header part end-->
 
+<!-- jquery plugins here-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(function(){	
+			var actionForm = $("#logoutForm");		
+			$("#logoutTag").click(function(e){
+				e.preventDefault(); // 속성 중지
 	
-	<!-- jquery plugins here-->
-		<!-- jquery 
-		<script src="resources/js/waypoints.min.js"></script>
-		<script src="resources/js/jquery-1.12.1.min.js"></script>-->
-		<!-- popper js -->
-		<script src="resources/js/popper.min.js"></script>
-		<!-- bootstrap js -->
-		<script src="resources/js/bootstrap.min.js"></script>
-		<!-- easing js -->
-		<script src="resources/js/jquery.magnific-popup.js"></script>
-		<!-- particles js -->
-		<script src="resources/js/owl.carousel.min.js"></script>
-		<script src="resources/js/jquery.nice-select.min.js"></script>
-		<!-- slick js -->
-		<script src="resources/js/slick.min.js"></script>
-		<script src="resources/js/jquery.counterup.min.js"></script>
-		<script src="resources/js/contact.js"></script>
-		<script src="resources/js/jquery.ajaxchimp.min.js"></script>
-		<script src="resources/js/jquery.form.js"></script>
-		<script src="resources/js/jquery.validate.min.js"></script>
-		<script src="resources/js/mail-script.js"></script>
-		<!-- custom js -->
-		<script src="resources/js/custom.js"></script>
+				//actionForm 보내기
+				actionForm.submit();
+			})
+		})
+	</script>
 </body>
 </html>

@@ -38,7 +38,7 @@
 </head>
 <body>
 	<!--::header part start::-->
-	<jsp:include page="include/header2.jsp"></jsp:include>
+	<jsp:include page="include/header.jsp"></jsp:include>
 	<!-- Header part end-->
 
 	<div class="container h-100">

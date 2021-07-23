@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<head>
+<head>>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"

@@ -29,7 +29,9 @@
 <title>EatAtLine4</title>
 </head>
 <body>
-	<jsp:include page="include/header2.jsp"></jsp:include>
+	<!--::header part start::-->
+	<jsp:include page="include/header.jsp"></jsp:include>
+	<!-- Header part end-->
 	
 	<!-- banner part start-->
 	<section class="banner_part">

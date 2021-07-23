@@ -39,21 +39,7 @@
 %>
 <body>
 	<!--::header part start::-->
-	<header class="main_menu home_menu">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-12">
-
-					<a class="navbar-brand" href="index.jsp"> <img
-						src="resources/img/logo.png" alt="<logo></logo>">
-					</a> 
-					<a class="btn_1 d-none d-lg-block" href="community">Community</a>
-					<a class="btn_1 d-none d-lg-block" href="login">Log in</a>
-
-				</div>
-			</div>
-		</div>
-	</header>
+	<jsp:include page="include/header.jsp"></jsp:include>
 	<!-- Header part end-->
 	
 <!-- banner part start -->
