@@ -305,7 +305,8 @@ function getListItem(index, places) {
     }
                  
     itemStr += '  <span class="tel">' + places.phone  + '</span>' +
-                '</div>';           
+                '</div>';
+	itemStr += '<span style="color:blue">' + places.category_name + '</span>';
                 
     el.innerHTML = itemStr;
     el.className = 'item';

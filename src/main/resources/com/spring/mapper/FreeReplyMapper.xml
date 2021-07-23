@@ -4,7 +4,8 @@
 
 	<!-- insert -->
 	<insert id="insert">
-		insert into freereplytbl(rno,bno,reply,replyer) values(seq_freeReply.nextval,#{bno},#{reply},#{replyer})
+		insert into freereplytbl(rno,bno,reply,replyer)
+		values(seq_freeReply.nextval,#{bno},#{reply},#{replyer})
 	</insert>
 	
 	<!-- 댓글 하나 가져오기 : rno 가 일치 -->

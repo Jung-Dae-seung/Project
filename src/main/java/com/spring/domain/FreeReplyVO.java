@@ -17,6 +17,7 @@ public class FreeReplyVO {
 	private int bno;
 	private String reply;
 	private String replyer;
+	
 	private Date replydate;
 	private Date updatedate;
 }

@@ -28,7 +28,7 @@
 		 <select id="list" resultType="com.spring.domain.FreeBoardVO">
 			<![CDATA[
 					select *
-					from(select /*+INDEX_DESC(freeboardTBL pk_freeboardTBL)*/
+					from(select /*+INDEX_DESC(freeboardTBL freeboardTBL_pk)*/
 					          rownum rn,bno,title,writer,regdate,updatedate,replycnt
 					     from freeboardTBL
 					     where 
@@ -53,7 +53,7 @@
 			select count(*) from freeboardTBL
 			where
 			<include refid="criteria"></include>
-				bno>0
+				bno>0 
 		</select>
 			
 		<!-- 특정번호 조회 : bno에 해당하는 게시물 가져오기(read) -->

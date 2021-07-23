@@ -96,16 +96,15 @@
 				</thead>
 				<tbody>
 					<!-- 게시판 리스트 반복문 -->
-					<c:forEach var="vo" items="${list }">
+					<c:forEach var="vo" items="${list}">
 						<tr>
-							<td>${vo.bno }</td>
-							<td><a href="${vo.bno }" class="move">${vo.title }</a>
-								<strong>[${vo.replycnt }]</strong></td>
-							<td>${vo.writer }</td>
+							<td>${vo.bno}</td>
+							<td><a href="${vo.bno}" class="move">${vo.title}</a> <strong>[${vo.replycnt}]</strong></td>
+							<td>${vo.writer}</td>
 							<td><fmt:formatDate pattern="yyy-MM-dd HH:mm"
-									value="${vo.regdate }" /></td>
+									value="${vo.regdate}" /></td>
 							<td><fmt:formatDate pattern="yyy-MM-dd HH:mm"
-									value="${vo.updatedate }" /></td>
+									value="${vo.updatedate}" /></td>
 						</tr>
 					</c:forEach>
 				</tbody>
