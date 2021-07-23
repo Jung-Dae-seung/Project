@@ -64,36 +64,6 @@
        		</div>
        	</div> 
 </header>
- 
-
-<%-- <!-- Page Content-->
-<section class="pt-4">
-    <div class="container ">
-        <!-- Page Features-->
-    <div class="row align-items-center justify-content-between">
-    	<div class="card mb-3-2" style="max-width: 540px;">
-		  <div class="row no-gutters">
-		    <div class="col-md-4">
-		      <img src="resources/img/salad.png" class="card-img" alt="...">
-		    </div>
-		    <div class="col-md-8">
-		       	<div id="menu_wrap" class="bg_white">
-		       			<div>
-	    					<form onsubmit="searchPlaces(); return false;">
-	               				<h1 class="">${vo.subway_name}</h1>
-	               				<input type="text" value="${vo.subway_name}역 맛집" id="keyword" size="15">  
-	           				</form>
-           				</div>
-		    		<ul id="placesList"></ul>
-        			<div id="pagination"></div>
-        		</div>
-		  	</div>
-		  </div>
-         </div>
-	</div>
-	</div>
-</section> --%>
-
 	
 	
 	<!--::footer_part start::-->
@@ -321,6 +291,7 @@ function displayPlaces(places) {
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem(index, places) {
 
+	console.log(places.category_name);
     var el = document.createElement('li'),
     itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
                 '<div class="info">' +
@@ -333,7 +304,7 @@ function getListItem(index, places) {
         itemStr += '    <span>' +  places.address_name  + '</span>'; 
     }
                  
-      itemStr += '  <span class="tel">' + places.phone  + '</span>' +
+    itemStr += '  <span class="tel">' + places.phone  + '</span>' +
                 '</div>';           
                 
     el.innerHTML = itemStr;

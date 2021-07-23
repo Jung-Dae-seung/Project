@@ -43,7 +43,7 @@ public class UploadAjaxController {
 		
 		
 		String uploadFileName=null;
-		String uploadFolder = "d:\\upload";
+		String uploadFolder = "c:\\upload";
 		
 		String uploadFolderPath = getFolder();
 		
@@ -102,7 +102,7 @@ public class UploadAjaxController {
 	public ResponseEntity<byte[]> getFile(String fileName){
 		log.info("썸네일 요청 "+fileName);
 		
-		File file = new File("d:\\upload\\"+fileName);
+		File file = new File("c:\\upload\\"+fileName);
 		
 		ResponseEntity<byte[]> entity=null;
 		
@@ -121,7 +121,7 @@ public class UploadAjaxController {
 	public ResponseEntity<Resource> downloadFile(String fileName){
 		log.info("download file "+fileName);
 		
-		Resource resource = new FileSystemResource("d:\\upload\\"+fileName);
+		Resource resource = new FileSystemResource("c:\\upload\\"+fileName);
 		
 		//  2021_06_17_4e3c6543-9c97-4e60-8a40-d0e22df6e869_0610.txt
 		
@@ -150,7 +150,7 @@ public class UploadAjaxController {
 		
 		
 		try {
-			File file=new File("d:\\upload\\"+URLDecoder.decode(fileName,"utf-8"));
+			File file=new File("c:\\upload\\"+URLDecoder.decode(fileName,"utf-8"));
 			
 			file.delete(); //일반 파일 삭제, 이미지인 경우 썸네일만 삭제
 			
@@ -197,27 +197,5 @@ public class UploadAjaxController {
 		return str.replace("-", File.separator); // "2021\06\17"
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

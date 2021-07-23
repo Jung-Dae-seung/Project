@@ -62,13 +62,13 @@
 						<tbody>
 						<tr>
 							<td>
-							<input type="text" class="form-control" id="title" name="title" maxlength="50" value="${vo.title }" /></td>
+							<input type="text" class="form-control" id="title" name="title" maxlength="50" value="${vo.title}" /></td>
 						</tr>
 						<tr>
-							<td><input type="text" class="form-control" placeholder="작성자" id="writer" name="writer" maxlength="50" readonly="readonly" value="${vo.writer }" /></td>
+							<td><input type="text" class="form-control" placeholder="작성자" id="writer" name="writer" maxlength="50" readonly="readonly" value="${vo.writer}" /></td>
 						</tr>
 						<tr>
-							<td><textarea class="form-control" id="content" name="content" maxlength="2000"  style="height: 350px;" >${vo.content }</textarea></td>
+							<td><textarea class="form-control" id="content" name="content" maxlength="2000"  style="height: 350px;" >${vo.content}</textarea></td>
 						</tr>
 						<tr>
 							<td>

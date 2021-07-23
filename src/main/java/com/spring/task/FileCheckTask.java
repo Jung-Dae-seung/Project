@@ -49,7 +49,7 @@ public class FileCheckTask {
 		List<FreeAttachFileDTO> oldList=attach.getOldFiles();
 		
 		List<Path> fileListPaths= oldList.stream()
-				                         .map(vo -> Paths.get("d:\\upload",vo.getUploadPath(),vo.getUuid()+"_"+vo.getFileName()))
+				                         .map(vo -> Paths.get("c:\\upload",vo.getUploadPath(),vo.getUuid()+"_"+vo.getFileName()))
 				                         .collect(Collectors.toList());
 		
 		//  List<Path> => e:\\upload\\2021\\06\\20\\dcdfdfee2ddfdf_1.jpg
@@ -59,7 +59,7 @@ public class FileCheckTask {
 		// 데이터베이스 파일 목록에 추가한다.
 		oldList.stream()
 		       .filter(vo -> vo.isFileType() == true)
-		       .map(vo -> Paths.get("d:\\upload",vo.getUploadPath(),"s_"+vo.getUuid()+"_"+vo.getFileName()))
+		       .map(vo -> Paths.get("c:\\upload",vo.getUploadPath(),"s_"+vo.getUuid()+"_"+vo.getFileName()))
 		       .forEach(p -> fileListPaths.add(p));
 		
 		
@@ -67,7 +67,7 @@ public class FileCheckTask {
 		
 		//어제날짜의 파일 목록 가져오기
 		//① 어제날짜 폴더 구하기
-		File targetDir = Paths.get("d:\\upload", getFolderYesterDay()).toFile();
+		File targetDir = Paths.get("c:\\upload", getFolderYesterDay()).toFile();
 		//② targetDir에 접근 후 파일 목록 가져온 후 데이터베이스 파일 목록과 일치하지 않는다면
 		//   removeFiles 에 추가
 		File[] removeFiles = targetDir.listFiles(f -> fileListPaths.contains(f.toPath())==false);

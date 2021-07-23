@@ -24,45 +24,45 @@ public class MemberRestController {
 	@Autowired
 	private MemberService service;
 	
-	//ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ put
+	//ºñ¹Ğ¹øÈ£ º¯°æ put
 	@PutMapping("/changepassword")
 	public ResponseEntity<String> changePassword(@RequestBody changeMemberInfoVO vo,HttpSession sessoin) {
-		log.info("changepassword REST ìˆ˜ì •"+vo);
+		log.info("changepassword REST ¼öÁ¤"+vo);
 		
-		if(vo.newPasswordEqualsConfirmPassword()) { // ë³€ê²½ ë¹„ë°€ë²ˆí˜¸ì™€ í™•ì • ë³€ê²½ë¹„ë°€ë²ˆí˜¸ê°€ ê°™ìŒ
-			if(service.updatePsw(vo)) { //ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ ì„±ê³µì‹œ
+		if(vo.newPasswordEqualsConfirmPassword()) { // º¯°æ ºñ¹Ğ¹øÈ£¿Í È®Á¤ º¯°æºñ¹Ğ¹øÈ£°¡ °°À½
+			if(service.updatePsw(vo)) { //ºñ¹Ğ¹øÈ£ º¯°æ ¼º°ø½Ã
 				sessoin.invalidate();
 				return new ResponseEntity<String>("passwordsuccess",HttpStatus.OK);		
-			}else { //ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ ì‹¤íŒ¨ì‹œ
+			}else { //ºñ¹Ğ¹øÈ£ º¯°æ ½ÇÆĞ½Ã
 				return new ResponseEntity<String>("passwordfail",HttpStatus.BAD_REQUEST);
 			}
-		}else {//ë³€ê²½ ë¹„ë°€ë²ˆí˜¸ì™€ í™•ì •ë³€ê²½ë¹„ë°€ë²ˆí˜¸ê°€ ë‹¤ë¥¸ê²½ìš°
+		}else {//º¯°æ ºñ¹Ğ¹øÈ£¿Í È®Á¤º¯°æºñ¹Ğ¹øÈ£°¡ ´Ù¸¥°æ¿ì
 			return new ResponseEntity<String>("not-equal",HttpStatus.BAD_REQUEST);
 		}				
 	}
-	//ì´ë©”ì¼ ë³€ê²½ put
+	//ÀÌ¸ŞÀÏ º¯°æ put
 	@PutMapping("/changeemail")
 	public ResponseEntity<String> changeEmail(@RequestBody changeMemberInfoVO vo,HttpSession sessoin) {
-		log.info("changeemail REST ìˆ˜ì •"+vo);
+		log.info("changeemail REST ¼öÁ¤"+vo);
 		
 		service.updateEmail(vo.getUserid(), vo.getNew_email());
 		sessoin.invalidate();
 		return new ResponseEntity<String>("emailsuccess",HttpStatus.OK);				
 	}
-	//ëª¨ë°”ì¼ ë³€ê²½ put
+	//¸ğ¹ÙÀÏ º¯°æ put
 	@PutMapping("/changemobile")
 	public ResponseEntity<String> changeMobile(@RequestBody changeMemberInfoVO vo,HttpSession sessoin) {
-		log.info("changemobile REST ìˆ˜ì •"+vo);
+		log.info("changemobile REST ¼öÁ¤"+vo);
 		
 		service.updateMobile(vo.getUserid(), vo.getNew_mobile());
 		sessoin.invalidate();
 		return new ResponseEntity<String>("mobilesuccess",HttpStatus.OK);		
 	}
 	
-	// íšŒì› íƒˆí‡´ delete
+	// È¸¿ø Å»Åğ delete
 	@DeleteMapping("/memberleave")
 	public ResponseEntity<String> memberLeave(@RequestBody changeMemberInfoVO vo, HttpSession session) {
-		log.info("memberleave íšŒì› íƒˆí‡´ ìš”ì²­ ..."+vo);
+		log.info("memberleave È¸¿ø Å»Åğ ¿äÃ» ..."+vo);
 		
 		service.leave(vo.getUserid());
 		session.invalidate();

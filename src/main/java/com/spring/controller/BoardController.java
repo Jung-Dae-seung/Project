@@ -161,13 +161,13 @@ public class BoardController {
 			}
 			
 			for(FreeAttachFileDTO dto:attachList) {
-				Path path = Paths.get("d:\\upload\\", dto.getUploadPath()+"\\"+dto.getUuid()+"_"+dto.getFileName());
+				Path path = Paths.get("c:\\upload\\", dto.getUploadPath()+"\\"+dto.getUuid()+"_"+dto.getFileName());
 				
 				try {
 					Files.deleteIfExists(path);
 					
 					if(Files.probeContentType(path).startsWith("image")) {
-						Path thumbnail = Paths.get("d:\\upload\\", 
+						Path thumbnail = Paths.get("c:\\upload\\", 
 								dto.getUploadPath()+"\\s_"+dto.getUuid()+"_"+dto.getFileName());
 						Files.delete(thumbnail);
 					}

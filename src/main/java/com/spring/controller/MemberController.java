@@ -30,32 +30,32 @@ public class MemberController {
 	
 	@GetMapping("/login")
 	public void loginGet() {
-		log.info("loginget ìš”ì²­");
+		log.info("loginget ¿äÃ»");
 		
 	}
 	@GetMapping("/logout")
 	public void logoutget() {
-		log.info("logoutget ìš”ì²­");
+		log.info("logoutget ¿äÃ»");
 		
 	}
 	
 	
 	@PostMapping("/logout")
 	public void logoutpost() {
-		log.info("logoupost ìš”ì²­");
+		log.info("logoupost ¿äÃ»");
 		
 	}
 	
 //	@PostMapping("/login")
 //	public String loginPost(String userid,String password,HttpSession session, RedirectAttributes rttr) {
-//		log.info("loginpost ë¡œê·¸ì¸ ì •ë³´ ê°€ì ¸ì˜¤ê¸°");
-//		log.info("ìœ ì € ì•„ì´ë”” : "+userid);
-//		log.info("íŒ¨ìŠ¤ì›Œë“œ : "+password);
+//		log.info("loginpost ·Î±×ÀÎ Á¤º¸ °¡Á®¿À±â");
+//		log.info("À¯Àú ¾ÆÀÌµğ : "+userid);
+//		log.info("ÆĞ½º¿öµå : "+password);
 //		
 //		LoginVO login = service.login(userid, password);
 //		
 //		if(login==null) {
-//			rttr.addFlashAttribute("error","ì•„ì´ë””ë‚˜ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ ì£¼ì„¸ìš”");
+//			rttr.addFlashAttribute("error","¾ÆÀÌµğ³ª ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä");
 //			return "redirect:login";
 //		}else {
 //			session.setAttribute("login", login);	
@@ -70,33 +70,33 @@ public class MemberController {
 		return "signup";
 	}
 	
-	//íšŒì› ê°€ì… ìš”ì²­
+	//È¸¿ø °¡ÀÔ ¿äÃ»
 	@PostMapping("/insertMember")
 	public String insertMember(@ModelAttribute("member") MemberVO vo) {
-		log.info("insertMember íšŒì›ê°€ì… ìš”ì²­"+vo);
+		log.info("insertMember È¸¿ø°¡ÀÔ ¿äÃ»"+vo);
 		
 			if(service.signup(vo)) {
-				return "redirect:login"; //íšŒì›ê°€ì… ì„±ê³µ
+				return "redirect:login"; //È¸¿ø°¡ÀÔ ¼º°ø
 			}else {	
-				return "signup"; //íšŒì›ê°€ì… ì‹¤íŒ¨
+				return "signup"; //È¸¿ø°¡ÀÔ ½ÇÆĞ
 			}	
 	}
 
-	//ì¤‘ë³µ ì•„ì´ë”” ê²€ì‚¬
-	@ResponseBody //í…Œì´ë¸” ë°ì´í„° í™•ì¸
+	//Áßº¹ ¾ÆÀÌµğ °Ë»ç
+	@ResponseBody //Å×ÀÌºí µ¥ÀÌÅÍ È®ÀÎ
 	@PostMapping("/checkId")
 	public String checkId(String userid) {
-		log.info("ì¤‘ë³µ ì•„ì´ë”” ê²€ì‚¬ ìš”ì²­... "+userid);
+		log.info("Áßº¹ ¾ÆÀÌµğ °Ë»ç ¿äÃ»... "+userid);
 		
 		MemberVO vo = service.dupId(userid);
 		
-		if(vo!=null) { //ì•„ì´ë””ê°€ ì‚¬ìš©ì¤‘ì¼ë•Œ
+		if(vo!=null) { //¾ÆÀÌµğ°¡ »ç¿ëÁßÀÏ¶§
 			return "false"; 
 		}
 		return "true";
 	}
 	
-	//íšŒì› ì •ë³´ ìˆ˜ì • í˜ì´ì§€
+	//È¸¿ø Á¤º¸ ¼öÁ¤ ÆäÀÌÁö
 	@PreAuthorize("isAuthenticated()")
 	@GetMapping("/changememberinfo")
 	public String changeMemberInfoGet() {
@@ -105,33 +105,33 @@ public class MemberController {
 		return "changememberinfo";
 	}
 	
-	//íšŒì› ì •ë³´ ìˆ˜ì • í˜ì´ì§€ ì „ ë¹„ë°€ë²ˆí˜¸ í™•ì¸ í˜ì´ì§€
+	//È¸¿ø Á¤º¸ ¼öÁ¤ ÆäÀÌÁö Àü ºñ¹Ğ¹øÈ£ È®ÀÎ ÆäÀÌÁö
 	@GetMapping("/checkpsw")
 	public String CheckPswGet(Model model,Authentication authentication) {
-		log.info("checkpsw page ìš”ì²­");
+		log.info("checkpsw page ¿äÃ»");
 	       UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-	       log.info("ìœ ì €ì•„ì´ë”” ë°›ê¸° : "+ userDetails.getUsername());
+	       log.info("À¯Àú¾ÆÀÌµğ ¹Ş±â : "+ userDetails.getUsername());
 	       model.addAttribute("userid",userDetails.getUsername());
 	        
 		
 		return "checkpsw";
 	}
-	//ë¹„ë°€ë²ˆí˜¸ í™•ì¸ í›„ ë©¤ë²„ ì •ë³´ë¥¼ ì„¸ì…˜ì— ë‹´ì•„ changeMemberInfo í˜ì´ì§€ë¡œ ì´ë™
+	//ºñ¹Ğ¹øÈ£ È®ÀÎ ÈÄ ¸â¹ö Á¤º¸¸¦ ¼¼¼Ç¿¡ ´ã¾Æ changeMemberInfo ÆäÀÌÁö·Î ÀÌµ¿
 	@PostMapping("/checkpsw")
 	public String CheckPswPost(String userid,String password,HttpSession session, RedirectAttributes rttr) {
-		log.info("checkpsw ë©¤ë²„ ì •ë³´ ê°€ì ¸ì˜¤ê¸°");
-		log.info("ìœ ì € ì•„ì´ë”” : "+userid);
-		log.info("íŒ¨ìŠ¤ì›Œë“œ : "+password);
+		log.info("checkpsw ¸â¹ö Á¤º¸ °¡Á®¿À±â");
+		log.info("À¯Àú ¾ÆÀÌµğ : "+userid);
+		log.info("ÆĞ½º¿öµå : "+password);
 		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		MemberVO memberinfo = service.memberInfo(userid);
-		log.info("ë©¤ë²„ ì •ë³´ : "+memberinfo);
+		log.info("¸â¹ö Á¤º¸ : "+memberinfo);
 		
 		if(encoder.matches(password, memberinfo.getPassword())) {
 			session.setAttribute("memberinfo", memberinfo);	
 			return "redirect:changememberinfo";
 		}else {
-			rttr.addFlashAttribute("error","ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ ì£¼ì„¸ìš”");
+			rttr.addFlashAttribute("error","ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä");
 			return "redirect:checkpsw";
 		}
 	}
@@ -139,7 +139,7 @@ public class MemberController {
 	@GetMapping("/login-error")
 	public String loginError(Model model) {
 		
-		model.addAttribute("loginError", "ì•„ì´ë””ë‚˜ ë¹„ë°€ ë²ˆí˜¸ë¥¼ í™•ì¸í•´ ì£¼ì„¸ìš”");
+		model.addAttribute("loginError", "¾ÆÀÌµğ³ª ºñ¹Ğ ¹øÈ£¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä");
 		
 		return "/login";
 	}
