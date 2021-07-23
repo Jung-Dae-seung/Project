@@ -86,7 +86,29 @@
 <!-- Header part end-->
 
 <!-- jquery plugins here-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- jquery plugins here-->
+		<!-- jquery -->
+		<script src="resources/js/jquery-1.12.1.min.js"></script>
+		<!-- popper js -->
+		<script src="resources/js/popper.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="resources/js/bootstrap.min.js"></script>
+		<!-- easing js -->
+		<script src="resources/js/jquery.magnific-popup.js"></script>
+		<!-- particles js -->
+		<script src="resources/js/owl.carousel.min.js"></script>
+		<script src="resources/js/jquery.nice-select.min.js"></script>
+		<!-- slick js -->
+		<script src="resources/js/slick.min.js"></script>
+		<script src="resources/js/jquery.counterup.min.js"></script>
+		<script src="resources/js/waypoints.min.js"></script>
+		<script src="resources/js/contact.js"></script>
+		<script src="resources/js/jquery.ajaxchimp.min.js"></script>
+		<script src="resources/js/jquery.form.js"></script>
+		<script src="resources/js/jquery.validate.min.js"></script>
+		<script src="resources/js/mail-script.js"></script>
+		<!-- custom js -->
+		<script src="resources/js/custom.js"></script>
 	<script>
 		$(function(){	
 			var actionForm = $("#logoutForm");		
