@@ -104,7 +104,7 @@
 						<button type="button" class="btn btn-primary" id="modifybtn">수정</button>
 					</c:if>
 				</sec:authorize>
-				<button type="button" class="btn btn-primary" id="modifybtn">목록</button>
+				<button type="button" class="btn btn-primary" id="listbtn">목록</button>
 			</div>
 		</div>
 		<div>
