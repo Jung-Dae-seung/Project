@@ -100,11 +100,11 @@
 			<div style="float: right">
 				<sec:authentication property="principal" var="info"/>
                 <sec:authorize access="isAuthenticated()"> <!-- 로그인 여부 확인 -->
-                	<c:if test="${info.username == vo.writer}">
+                	<c:if test="${info.username==vo.writer}">
 						<button type="button" class="btn btn-primary" id="modifybtn">수정</button>
 					</c:if>
 				</sec:authorize>
-				<button type="button" class="btn btn-primary" id="modifybtn">수정</button>
+				<button type="button" class="btn btn-primary" id="modifybtn">목록</button>
 			</div>
 		</div>
 		<div>

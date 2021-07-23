@@ -66,7 +66,7 @@
 	                	<a class="btn_1 d-none d-lg-block" href="login">Log in</a>
                     </sec:authorize>
                     <sec:authorize access="isAuthenticated()">
-	                	<a class="btn_1 d-none d-lg-block" href="logout">Log out</a>
+	                	<a class="btn_1 d-none d-lg-block" href="logout">Log Out</a>
                     </sec:authorize>
 					
 					
