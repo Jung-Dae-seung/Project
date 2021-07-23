@@ -88,7 +88,8 @@
 <!-- jquery plugins here-->
 		<!-- jquery plugins here-->
 		<!-- jquery -->
-		<script src="resources/js/jquery-1.12.1.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<!-- <script src="resources/js/jquery-1.12.1.min.js"></script> -->
 		<!-- popper js -->
 		<script src="resources/js/popper.min.js"></script>
 		<!-- bootstrap js -->

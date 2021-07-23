@@ -6,35 +6,8 @@
 <meta charset="UTF-8" />
 <title>Insert title here</title>
 <link rel="icon" href="resources/img/favicon.png">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<!-- animate CSS -->
-<link rel="stylesheet" href="resources/css/animate.css">
-<!-- owl carousel CSS -->
-<link rel="stylesheet" href="resources/css/owl.carousel.min.css">
-<!-- font awesome CSS -->
-<link rel="stylesheet" href="resources/css/all.css">
-<!-- flaticon CSS -->
-<link rel="stylesheet" href="resources/css/flaticon.css">
-<link rel="stylesheet" href="resources/css/themify-icons.css">
-<link rel="stylesheet" href="resources/css/nice-select.css">
-<!-- font awesome CSS -->
-<link rel="stylesheet" href="resources/css/magnific-popup.css">
-<!-- swiper CSS -->
-<link rel="stylesheet" href="resources/css/slick.css">
-<!-- style CSS -->
-<link rel="stylesheet" href="resources/css/style.css">
-<!-- signup CSS -->
+<!-- login CSS -->
 <link rel="stylesheet" href="resources/css/login.css">
-
-<!-- jquery -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- validation -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
-<!-- validation 사용자 작성 코드 삽입-->
-<script src="/resources/js/register.js"></script>
 </head>
 <body>
 	<!--::header part start::-->
@@ -86,14 +59,22 @@
 			</div>
 		</div>
 	</div>
-<script>
-$(function () {
-	let error = '${error}';
-	
-	if(error){
-		alert(error);
-	}
-})
-</script>
+	<!-- jquery -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- validation -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+	<!-- validation 사용자 작성 코드 삽입-->
+	<script src="/resources/js/register.js"></script>
+	<script>
+	$(function () {
+		let error = '${error}';
+		
+		if(error){
+			alert(error);
+		}
+	})
+	</script>
 </body>
 </html>

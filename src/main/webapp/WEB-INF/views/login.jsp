@@ -4,31 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="resources/img/favicon.png">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<!-- animate CSS -->
-<link rel="stylesheet" href="resources/css/animate.css">
-<!-- owl carousel CSS -->
-<link rel="stylesheet" href="resources/css/owl.carousel.min.css">
-<!-- font awesome CSS -->
-<link rel="stylesheet" href="resources/css/all.css">
-<!-- flaticon CSS -->
-<link rel="stylesheet" href="resources/css/flaticon.css">
-<link rel="stylesheet" href="resources/css/themify-icons.css">
-<link rel="stylesheet" href="resources/css/nice-select.css">
-<!-- font awesome CSS -->
-<link rel="stylesheet" href="resources/css/magnific-popup.css">
-<!-- swiper CSS -->
-<link rel="stylesheet" href="resources/css/slick.css">
-<!-- style CSS -->
-<link rel="stylesheet" href="resources/css/style.css">
 <!-- login CSS -->
 <link rel="stylesheet" href="resources/css/login.css">
-<!-- jquery cdn -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-	crossorigin="anonymous"></script>
 <title>EatAtLine4</title>
 </head>
 <body>
