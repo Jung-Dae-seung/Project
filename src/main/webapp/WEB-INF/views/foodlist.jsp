@@ -35,29 +35,7 @@
 </head>
 
 <body>
-	<!--::header part start::-->
-	<header class="main_menu home_menu">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-12">
-
-					<a class="navbar-brand" href="index.jsp"> <img
-						src="resources/img/logo.png" alt="<logo></logo>">
-					</a> 
-					<a class="btn_1 d-none d-lg-block" href="community.jsp">Community</a>
-					
-					<sec:authorize access="isAnonymous">
-	                	<a class="btn_1 d-none d-lg-block" href="login">Log in</a>
-                    </sec:authorize>
-                    <sec:authorize access="isAuthenticated()">
-	                	<a class="btn_1 d-none d-lg-block" href="logout">Log out</a>
-                    </sec:authorize>
-
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Header part end-->
+	<jsp:include page="include/header2.jsp"></jsp:include>
 	
 	<!-- banner part start-->
 	<section class="banner_part3"></section>
