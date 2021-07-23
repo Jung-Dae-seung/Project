@@ -114,6 +114,8 @@ $(function(){
 		//input안에 들어있는 value 제거
 		modal.find("input").val("");	
 		
+		modalReplyer.val(replyer);
+		
 		//작성날짜 제거한 후 모달 보여주기
 		modalDate.closest("div").hide();
 		

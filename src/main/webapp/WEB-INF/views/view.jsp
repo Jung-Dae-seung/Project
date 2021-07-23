@@ -114,7 +114,12 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<i class="fa fa-comments fa-fw"></i> 댓글
-					<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글 작성</button>
+					<sec:authorize access="isAuthenticated()">
+						<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글 작성</button>
+					</sec:authorize>
+					<sec:authorize access="!isAuthenticated()">
+						<a href="login" class="btn btn-primary btn-xs pull-right">댓글 작성</a>
+					</sec:authorize>
 				</div>
 				<div class="panel-body">
 					<ul class="chat">
