@@ -3,9 +3,6 @@
  */
 
 $(function() {
-	var token = $("meta[name='_csrf']").attr("content");
-	var header = $("meta[name='_csrf_header']").attr("content");
-	
 	$("#signup").validate({
 		errorPlacement: function(error, element) {
 			$(element)
@@ -17,20 +14,19 @@ $(function() {
 			userid: {
 				required: true,
 				validId: true,
-/** ajax post로 아이디 체크시 토큰값을 보내줘야하는데 현재 안됨
 				remote: {
 					url: "/checkId",
 					type: "post",
+					beforeSend: function(xhr) {
+						xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+					},
 					data: {
 						userid: function() {
 							return $('#userid').val();
 						}
-					},
-					beforeSend: function(xhr) {
-						xhr.setRequestHeader(header, token);
 					}
 				}
- */
+
 			},
 			password: {
 				required: true,
@@ -66,7 +62,7 @@ $(function() {
 		},
 		messages: {
 			userid: {
-//				remote: "아이디가 중복되었습니다.",
+				remote: "아이디가 중복되었습니다",
 				required: "아이디를 입력해 주세요"
 			},
 			password: {

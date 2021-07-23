@@ -132,6 +132,8 @@
 	<!-- validation 사용자 작성 코드 삽입-->
 	<script src="/resources/js/signup.js"></script>
 	<script>
+		var csrfHeaderName="${_csrf.headerName}";
+		var csrfTokenValue="${_csrf.token}";
  		$(function() {
 			//gender 값 가져온 후 남이면 radio 부분에 남이 체크되도록 / 여이면 여자 체크
 			let gender = '${mamber.gender}'

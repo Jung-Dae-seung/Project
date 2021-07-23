@@ -31,8 +31,6 @@ $(function() {
 				equalTo: "입력하신 비밀번호와 다릅니다."
 			}
 		}
-		//		submitHandler: function() {
-		//		}
 	})
 	$("#passwordChangeButton").click(function(e) {
 		if ($("#new_password").val() == "") {
