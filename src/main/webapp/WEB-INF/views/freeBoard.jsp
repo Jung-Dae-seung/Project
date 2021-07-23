@@ -47,7 +47,10 @@
 						 <!-- 인증된 정보가 있으면 Logout 보여주기 -->
                         <sec:authorize access="isAuthenticated()">
 	                        <li>
-	                        	<a href="#" id="logout"><i class=""></i>로그아웃</a>
+                        	  <form action="/logout" method="post" id="logoutForm">
+                        	 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"  id="token"/> 
+	                        	<a href="#" id="logoutTag"><i class=""></i>로그아웃</a>
+	                        	</form>
 	                        </li>
 							</sec:authorize>
 	                        <sec:authorize access="!isAuthenticated()">
@@ -61,10 +64,6 @@
 		</div>
 	</nav>
 	
-	<%-- 로그아웃을 클릭하면 전송할 폼 --%>
-    <form action="/logout" method="post" id="logoutForm">
-    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
-    </form>
 	
 	<div class="container">
 		<!-- start search -->
@@ -150,18 +149,20 @@
 		<script>
 		let result = '${result}';
 	</script>
-	 <script>
-$(function(){
-	$("#logout").click(function(e){
-		//a 태그 동작 막기
-		e.preventDefault();
-		
-		//form을 보낼때 csrf 값 포함해서 전송
-		$('#logoutForm').submit();
-	})
-})
-</script>
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="/resources/js/freeBoard.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(function(){	
+			var actionForm = $("#logoutForm");		
+			$("#logoutTag").click(function(e){
+				e.preventDefault(); // 속성 중지
+	
+				//actionForm 보내기
+				actionForm.submit();
+			})
+		})
+	</script>
 </body>
 </html>
