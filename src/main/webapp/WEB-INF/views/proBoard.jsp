@@ -33,8 +33,8 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/freeBoard">자유 게시판</a></li>
-				<li><a href="/proBoard">홍보 게시판</a></li>
+				<li><a href="/freeBoard">자유 게시판</a></li>
+				<li class="active"><a href="/proBoard">홍보 게시판</a></li>
 				<li><a href="#">문의 게시판</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -96,15 +96,16 @@
 				</thead>
 				<tbody>
 					<!-- 게시판 리스트 반복문 -->
-					<c:forEach var="vo" items="${list}">
+					<c:forEach var="vo" items="${list }">
 						<tr>
-							<td>${vo.bno}</td>
-							<td><a href="${vo.bno}" class="move">${vo.title}</a> <strong>[${vo.replycnt}]</strong></td>
-							<td>${vo.writer}</td>
+							<td>${vo.bno }</td>
+							<td><a href="${vo.bno }" class="move">${vo.title }</a>
+								<strong>[${vo.replycnt }]</strong></td>
+							<td>${vo.writer }</td>
 							<td><fmt:formatDate pattern="yyy-MM-dd HH:mm"
-									value="${vo.regdate}" /></td>
+									value="${vo.regdate }" /></td>
 							<td><fmt:formatDate pattern="yyy-MM-dd HH:mm"
-									value="${vo.updatedate}" /></td>
+									value="${vo.updatedate }" /></td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -131,7 +132,7 @@
 					</c:if>
 				</ul>
 				<sec:authorize access="isAuthenticated()">
-					<a href="write" class="btn btn-primary pull-right">글쓰기</a>
+					<a href="Pwrite" class="btn btn-primary pull-right">글쓰기</a>
 				</sec:authorize>
 				<sec:authorize access="!isAuthenticated()">
 					<a href="login" class="btn btn-primary pull-right">글쓰기</a>
@@ -139,7 +140,7 @@
 			</div>
 		</div>
 	</div>
-	<form action="freeBoard" method="get" id="actionForm">
+	<form action="proBoard" method="get" id="actionForm">
 		<input type="hidden" name="type" value="${pageVO.cri.type }" /> <input
 			type="hidden" name="keyword" value="${pageVO.cri.keyword }" /> <input
 			type="hidden" name="pageNum" value="${pageVO.cri.pageNum }" /> <input
@@ -150,7 +151,7 @@
 	</script>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="/resources/js/freeBoard.js"></script>
+	<script src="/resources/js/proBoard.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
 		$(function(){	

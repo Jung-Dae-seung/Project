@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/security/tags"
-	prefix="sec"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +31,8 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/freeBoard">자유 게시판</a></li>
-				<li><a href="/proBoard">홍보 게시판</a></li>
+				<li><a href="/freeBoard">자유 게시판</a></li>
+				<li class="active"><a href="/proBoard">홍보 게시판</a></li>
 				<li><a href="#">문의 게시판</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -57,44 +56,66 @@
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>
-							<th colspan="2" style="background-color: #eeeeee; text-align: center">게시판 글쓰기</th>
+							<th colspan="2" style="background-color: #eeeeee; text-align: center">게시판 글 수정</th>
 						</tr>
 					</thead>
-					<tbody>
+						<tbody>
 						<tr>
-							<td><input type="text" class="form-control" placeholder="글 제목" id="title" name="title" maxlength="50" /></td>
+							<td>
+							<input type="text" class="form-control" id="title" name="title" maxlength="50" value="${vo.title}" /></td>
 						</tr>
 						<tr>
-							<td><input type="text" class="form-control" id="writer" name="writer" maxlength="50" value="<sec:authentication property='principal.username'/>" readonly/></td>
+							<td><input type="text" class="form-control" placeholder="작성자" id="writer" name="writer" maxlength="50" readonly="readonly" value="${vo.writer}" /></td>
 						</tr>
 						<tr>
-							<td><textarea class="form-control" placeholder="글 내용" id="content" name="content" maxlength="2000"  style="height: 350px;"/></textarea>
+							<td><textarea class="form-control" id="content" name="content" maxlength="2000"  style="height: 350px;" >${vo.content}</textarea></td>
 						</tr>
 						<tr>
 							<td>
 								<div class="col-lg-12">
-									<div class="form-group uploadDiv">
-										<input type="file" name="uploadFile" multiple class="form-control" maxlength="50" />
-									</div>		
-									<div class="uploadResult">
-										<ul></ul>
-									</div>
+									<i class="fa fas fa-file"></i>첨부파일
+										<div class="form-group uploadDiv">
+											<input type="file" name="uploadFile" multiple class="form-control" maxlength="50" />
+										</div>		
+										<div class="uploadResult">
+											<ul></ul>
+										</div>
 								</div>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 				<input type="hidden" name="${_csrf.parameterName}" value=${_csrf.token} />
-				<button type="submit" class="btn btn-primary pull-right">글쓰기</button>
+ 				<div style="float: right">
+ 				<sec:authentication property="principal" var="info"/>
+                <sec:authorize access="isAuthenticated()"> <!-- 로그인 여부 확인 -->
+                	<c:if test="${info.username==vo.writer }">
+						<button type="submit" data-oper="update" class="btn btn-primary">수정</button>
+						<button type="submit" data-oper="remove" class="btn btn-primary">삭제</button>
+					</c:if>
+				</sec:authorize>
+					<button type="submit" data-oper="list" class="btn btn-primary">목록</button> 
+				</div>
 			</form>
 		</div>
 	</div>
+<%-- remove와 list를 위한 폼--%>
+<form action="" id="operForm" method="post">
+	<input type="hidden" name="type" value="${cri.type }" />
+	<input type="hidden" name="keyword" value="${cri.keyword }" />
+	<input type="hidden" name="bno" value="${vo.bno }" />
+	<input type="hidden" name="pageNum" value="${cri.pageNum }" />
+	<input type="hidden" name="amount" value="${cri.amount }" />
 	
+	<input type="hidden" name="${_csrf.parameterName}" value=${_csrf.token} />
+	<input type="hidden" name="writer" value="${vo.writer }" />
+</form>
 
+	
 <!-- jquery plugins here-->
-<!-- jquery
-<script src="resources/js/jquery-1.12.1.min.js"></script>
-<script src="resources/js/waypoints.min.js"></script>-->
+<!-- jquery 이게 오래된 버전이라서 아마 3.1 버전이 커버 될거에요-->
+<!-- <script src="resources/js/waypoints.min.js"></script> 
+<script src="resources/js/jquery-1.12.1.min.js"></script> -->
 
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -116,14 +137,14 @@
 <script src="resources/js/jquery.form.js"></script>
 <script src="resources/js/jquery.validate.min.js"></script>
 <script src="resources/js/mail-script.js"></script>
-
-<script>
-		var csrfHeaderName = "${_csrf.headerName}";
-		var csrfTokenValue = "${_csrf.token}";
-</script>
 	
+<script>
+	let bno = ${vo.bno};
+	var csrfHeaderName = "${_csrf.headerName}";
+	var csrfTokenValue = "${_csrf.token}";
+</script>
 <!-- custom js -->
-<script src="resources/community/js/register.js"></script>
+<script src="resources/community/js/Pmodify.js"></script>
 <script src="resources/js/custom.js"></script>
 </body>
 </html>

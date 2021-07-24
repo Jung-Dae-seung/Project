@@ -33,8 +33,8 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/freeBoard">자유 게시판</a></li>
-				<li><a href="/proBoard">홍보 게시판</a></li>
+				<li><a href="/freeBoard">자유 게시판</a></li>
+				<li class="active"><a href="/proBoard">홍보 게시판</a></li>
 				<li><a href="#">문의 게시판</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -226,7 +226,7 @@ var csrfHeaderName = "${_csrf.headerName}";
 var csrfTokenValue = "${_csrf.token}";
 </script>
 <!-- custom js -->
-<script src="resources/community/js/read.js"></script>
+<script src="resources/community/js/Pread.js"></script>
 <script src="resources/js/custom.js"></script>
 <script src="resources/js/reply.js"></script>
 </body>
