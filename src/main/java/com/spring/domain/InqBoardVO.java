@@ -22,6 +22,7 @@ public class InqBoardVO {
 	private Date regdate;
 	private Date updatedate;
 	private int replycnt;
+	private String open;
 	
 	//첨부파일 리스트
 	private List<InqAttachFileDTO> attachList;
