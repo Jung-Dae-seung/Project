@@ -33,8 +33,8 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="/freeBoard">자유 게시판</a></li>
-				<li class="active"><a href="/proBoard">홍보 게시판</a></li>
+				<li class="active"><a href="/freeBoard">자유 게시판</a></li>
+				<li><a href="#">홍보 게시판</a></li>
 				<li><a href="#">문의 게시판</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -115,10 +115,10 @@
 				<div class="panel-heading">
 					<i class="fa fa-comments fa-fw"></i> 댓글
 					<sec:authorize access="isAuthenticated()">
-						<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글 작성</button>
+					<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글 작성</button>
 					</sec:authorize>
 					<sec:authorize access="!isAuthenticated()">
-						<a href="login" class="btn btn-primary btn-xs pull-right">댓글 작성</a>
+					<a href="login" class="btn btn-primary btn-xs pull-right">댓글 작성</a>
 					</sec:authorize>
 				</div>
 				<div class="panel-body">
@@ -226,8 +226,8 @@ var csrfHeaderName = "${_csrf.headerName}";
 var csrfTokenValue = "${_csrf.token}";
 </script>
 <!-- custom js -->
-<script src="resources/community/js/Pread.js"></script>
+<script src="resources/js/inqread.js"></script>
 <script src="resources/js/custom.js"></script>
-<script src="resources/js/proreply.js"></script>
+<script src="resources/js/inqreply.js"></script>
 </body>
 </html>

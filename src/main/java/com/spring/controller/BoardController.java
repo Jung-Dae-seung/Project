@@ -67,6 +67,18 @@ public class BoardController {
 		model.addAttribute("pageVO", new PageVO(cri, total));
 	}	
 	
+	@GetMapping("/InqBoard")
+	public void list_i(Model model,Criteria cri) {
+		log.info("전체 리스트 요청 ");
+		
+		//사용자가 선택한 페이지 게시물
+		List<InqBoardVO> list=service.list_i(cri);
+		//전체 게시물 수 
+		int total = service.total_i(cri);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageVO", new PageVO(cri, total));
+	}	
 	
 	
 	//자유게시판 - 게시글 등록
@@ -122,7 +134,30 @@ public class BoardController {
 			}
 		}
 	
+		@PreAuthorize("isAuthenticated()")
+		@GetMapping("/inqwrite")
+		public void write_i() {
+			log.info("새글 등록 폼 요청");
+		}
 		
+		@PreAuthorize("isAuthenticated()")
+		@PostMapping("/inqwrite")
+		public String writePost_i(InqBoardVO vo,RedirectAttributes rttr) {
+			log.info("새글 등록 요청 "+vo);
+			
+			//첨부 파일 확인
+			if(vo.getAttachList()!=null) {
+				vo.getAttachList().forEach(attach -> log.info(""+attach));
+			}	
+			
+			if(service.insert_i(vo)) {
+				//log.info("입력된 글 번호 "+vo.getBno());
+				rttr.addFlashAttribute("result", vo.getBno());
+				return "redirect:InqBoard";    //   redirect:/board/list
+			}else {
+				return "redirect:inqwrite"; //  redirect:/board/register
+			}
+		}
 	
 	//자유게시판 글 하나 읽기
 	@GetMapping({"/view","/update"})
@@ -143,7 +178,14 @@ public class BoardController {
 			model.addAttribute("vo", vo);	
 		}
 	
-	
+		@GetMapping({"/inqview","/inqupdate"})
+		public void read_i(int bno,@ModelAttribute("cri") Criteria cri,Model model) {
+			log.info("글 하나 가져오기 "+bno+" cri : "+cri);  
+			
+			InqBoardVO vo=service.read_i(bno);
+			model.addAttribute("vo", vo);	//	/board/read  or  /board/modify 
+		}
+		
 	
 	// 자유게시판-modify+post 수정한 후 list 
 	 	@PreAuthorize("principal.username == #vo.writer")
@@ -190,6 +232,26 @@ public class BoardController {
 	 			return "redirect:proBoard";	
 	 		}
 	 	
+		 	@PreAuthorize("principal.username == #vo.writer")
+		 	@PostMapping("/inqupdate")
+		 	public String modify_i(InqBoardVO vo,Criteria cri,RedirectAttributes rttr) {
+		 		log.info("수정 요청 "+vo+" 페이지 나누기 "+cri);
+		 		
+		 		//첨부 파일 확인
+		 		if(vo.getAttachList()!=null) {
+		 			vo.getAttachList().forEach(attach -> log.info(""+attach));
+		 		}	
+		 		
+		 		service.update_i(vo);		
+		 		
+		 		rttr.addFlashAttribute("result","성공");
+		 		
+		 		rttr.addAttribute("type", cri.getType());
+		 		rttr.addAttribute("keyword", cri.getKeyword());
+		 		rttr.addAttribute("pageNum", cri.getPageNum());
+		 		rttr.addAttribute("amount", cri.getAmount());
+		 		return "redirect:InqBoard";
+		 	}
 	 	
 		// 자유게시판 - 게시글 삭제
 		@PreAuthorize("principal.username == #vo.writer")
@@ -240,7 +302,28 @@ public class BoardController {
 					return "redirect:proBoard";
 				}
 		
-		
+				@PreAuthorize("principal.username == #vo.writer")
+				@PostMapping("/inqremove")
+				public String delete_i(int bno,Criteria cri, RedirectAttributes rttr) {
+					log.info("삭제 요청"+bno);
+					
+					//서버(폴더)에 저장된 첨부파일 삭제
+					// 1) bno에 해당하는 첨부파일 목록 알아내기
+					List<FreeAttachFileDTO> attachList=service.getAttachList_f(bno);
+					
+					//게시글 삭제 + 첨부파일 삭제
+					if(service.delete_i(bno)) {
+						// 2) 폴더 파일 삭제
+						deleteFiles(attachList);
+						rttr.addFlashAttribute("result","성공");
+					}
+					
+					rttr.addAttribute("type", cri.getType());
+					rttr.addAttribute("keyword", cri.getKeyword());
+					rttr.addAttribute("pageNum", cri.getPageNum());
+					rttr.addAttribute("amount", cri.getAmount());
+					return "redirect:InqBoard";
+				}
 				
 		//자유게시판 - 첨부물 가져오기
 		@GetMapping("/getAttachList")
