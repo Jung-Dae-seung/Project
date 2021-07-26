@@ -162,11 +162,11 @@
 		        <tr>
 		            <th scope="row">Rating &emsp; &emsp; </th>
 		            <td class="name">
-			                 <input type="radio" name="review_point" id="review_point" value="<%=5%>"/> Excellent &ensp; &ensp;  
-			                 <input type="radio" name="review_point" id="review_point" value="<%=4%>"/> Good &ensp; &ensp; 
-			                 <input type="radio" name="review_point" id="review_point" value="<%=3%>" /> Average &ensp; &ensp; 
-			                 <input type="radio" name="review_point" id="review_point" value="<%=2%>" /> Poor &ensp; &ensp; 
-			                 <input type="radio" name="review_point" id="review_point" value="<%=1%>" /> Terrible &ensp; &ensp;
+			                 <input type="radio" name="star number" id="star number" value="<%=5%>"/> Excellent &ensp; &ensp;  
+			                 <input type="radio" name="star number" id="star number" value="<%=4%>"/> Good &ensp; &ensp; 
+			                 <input type="radio" name="star number" id="star number" value="<%=3%>" /> Average &ensp; &ensp; 
+			                 <input type="radio" name="star number" id="star number" value="<%=2%>" /> Poor &ensp; &ensp; 
+			                 <input type="radio" name="star number" id="star number" value="<%=1%>" /> Terrible &ensp; &ensp;
 		            </td>
 		        </tr>
 		   
@@ -225,7 +225,7 @@
                 </div>
                 <div class="row text-left mt-4">
                     <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"><span class="blue-text pl-2">20</span> </div>
-                    <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2">${reivew.star number}</span> </div>
+                    <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2"> ${reivew['star number']}</span> </div>
                 </div>
             </div>
 </c:forEach>
