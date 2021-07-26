@@ -28,7 +28,7 @@
 		 <select id="list" resultType="com.spring.domain.InqBoardVO">
 			<![CDATA[
 					select *
-					from(select /*+INDEX_DESC(inqboardTBL pk_inqboardTBL)*/
+					from(select /*+INDEX_DESC(inqboardTBL inqboardtbl_pk)*/
 					          rownum rn,bno,title,writer,regdate,updatedate,replycnt,open
 					     from inqboardTBL
 					     where 
