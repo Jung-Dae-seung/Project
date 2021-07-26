@@ -24,6 +24,7 @@
 		set review=#{review},star=#{star},updatedate=sysdate
 		where bno=#{bno}
 	</update>
+	
 		
 
 </mapper>

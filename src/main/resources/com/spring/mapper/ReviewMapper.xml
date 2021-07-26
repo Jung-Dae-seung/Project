@@ -23,6 +23,7 @@
 		</select>
 
 
+
 <!-- 리뷰 작성 -->
 <insert id="insert">
 	   INSERT INTO MP_BOARD(    bno 
