@@ -231,6 +231,7 @@
 </c:forEach>
 
             
+            
 <!--             한줄평1 -->
 
             <div class="card">
