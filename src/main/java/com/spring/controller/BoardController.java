@@ -309,12 +309,12 @@ public class BoardController {
 					
 					//서버(폴더)에 저장된 첨부파일 삭제
 					// 1) bno에 해당하는 첨부파일 목록 알아내기
-					List<FreeAttachFileDTO> attachList=service.getAttachList_f(bno);
+					List<InqAttachFileDTO> attachList=service.getAttachList_i(bno);
 					
 					//게시글 삭제 + 첨부파일 삭제
 					if(service.delete_i(bno)) {
 						// 2) 폴더 파일 삭제
-						deleteFiles(attachList);
+						deleteFiles_i(attachList);
 						rttr.addFlashAttribute("result","성공");
 					}
 					
@@ -376,6 +376,40 @@ public class BoardController {
 					}
 					
 					for(ProAttachFileDTO dto:attachList) {
+						Path path = Paths.get("c:\\upload\\", dto.getUploadPath()+"\\"+dto.getUuid()+"_"+dto.getFileName());
+						
+						try {
+							Files.deleteIfExists(path);
+							
+							if(Files.probeContentType(path).startsWith("image")) {
+								Path thumbnail = Paths.get("c:\\upload\\", 
+										dto.getUploadPath()+"\\s_"+dto.getUuid()+"_"+dto.getFileName());
+								Files.delete(thumbnail);
+							}
+						} catch (IOException e) {				
+							e.printStackTrace();
+						}
+						
+					}
+				}
+				
+				//문의게시판 - 첨부물 가져오기
+				@GetMapping("/IgetAttachList")
+				public ResponseEntity<List<InqAttachFileDTO>> getAttachList_i(int bno){
+					log.info("첨부물 가져오기 "+bno);
+					
+					return new ResponseEntity<List<InqAttachFileDTO>>(service.getAttachList_i(bno),HttpStatus.OK);
+				}
+				
+				
+				private void deleteFiles_i(List<InqAttachFileDTO> attachList) {
+					log.info("첨부파일 삭제 "+attachList);
+					
+					if(attachList==null || attachList.size()<=0) {
+						return;
+					}
+					
+					for(InqAttachFileDTO dto:attachList) {
 						Path path = Paths.get("c:\\upload\\", dto.getUploadPath()+"\\"+dto.getUuid()+"_"+dto.getFileName());
 						
 						try {
