@@ -154,17 +154,19 @@
             </div>
             
 <!--            리뷰 작성페이지 -->
+
+<form  method="get" id="actionForm" action="review">
 <div class="card bg-secondary2 text-center align-items-center">
 		<div class="bbs_view" style="margin-bottom:-5px">
 		    <table class="view_1">
 		        <tr>
 		            <th scope="row">Rating &emsp; &emsp; </th>
 		            <td class="name">
-			                 <input type="radio" name="review_point" id="review_point" value="5" /> Excellent &ensp; &ensp;  
-			                 <input type="radio" name="review_point" id="review_point" value="4" /> Good &ensp; &ensp; 
-			                 <input type="radio" name="review_point" id="review_point" value="3" /> Average &ensp; &ensp; 
-			                 <input type="radio" name="review_point" id="review_point" value="2" /> Poor &ensp; &ensp; 
-			                 <input type="radio" name="review_point" id="review_point" value="1" /> Terrible &ensp; &ensp;
+			                 <input type="radio" name="review_point" id="review_point" value="<%=5%>"/> Excellent &ensp; &ensp;  
+			                 <input type="radio" name="review_point" id="review_point" value="<%=4%>"/> Good &ensp; &ensp; 
+			                 <input type="radio" name="review_point" id="review_point" value="<%=3%>" /> Average &ensp; &ensp; 
+			                 <input type="radio" name="review_point" id="review_point" value="<%=2%>" /> Poor &ensp; &ensp; 
+			                 <input type="radio" name="review_point" id="review_point" value="<%=1%>" /> Terrible &ensp; &ensp;
 		            </td>
 		        </tr>
 		   
@@ -174,7 +176,7 @@
 		        </tr>
 		        
 		        <tr>
-		            <th scope="row" >Comments &emsp; </th>
+		            <th scope="row" >review &emsp; </th>
 		            <td class="name">
 		                <textarea placeholder="Did you enjoy your meal? &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;  (Any comments or suggestions are welcomed)" rows="6" cols="58"></textarea>
 		            </td>
@@ -184,15 +186,61 @@
 				<input type = "submit" value = "submit">
 			</div>
 </div>
+</form>
+
+
+<form action="freeBoard" method="get" id="actionForm">
+		<input type="hidden" name="type" value="${pageVO.cri.type }" /> <input
+			type="hidden" name="keyword" value="${pageVO.cri.keyword }" /> <input
+			type="hidden" name="pageNum" value="${pageVO.cri.pageNum }" /> <input
+			type="hidden" name="amount" value="${pageVO.cri.amount }" />
+	</form>
 
             
 
+            
+<!--    반복문 실행     -->
+<c:forEach items="${list}"  var="review">
+            <div class="card">
+                <div class="row d-flex">
+                    <!-- user img -->
+                    <div class=""> <img class="profile-pic" src="resources/img/GongYoo.jpg"> </div>
+                    <div class="d-flex flex-column">
+                        <h3 class="mt-2 mb-0"> <c:forEach var="boardVO" items="${reviewlist}">
+							    <p><c:out value="${reviewVO.reviewer}" /></p>
+							</c:forEach>
+						</h3>
+					
+                        <div>
+                            <p class="text-left"><span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-inactive"></span></p>
+                        </div>
+                    </div>
+                    <div class="ml-auto">
+                        <p class="text-muted pt-5 pt-sm-3">${reivew.regdate}</p>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <h4 class="blue-text mt-3">"An awesome activity to experience"</h4>
+                    <p class="review">${reivew.review}</p>
+                </div>
+                <div class="row text-left mt-4">
+                    <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"><span class="blue-text pl-2">20</span> </div>
+                    <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2">${reivew.star number}</span> </div>
+                </div>
+            </div>
+</c:forEach>
             
 <!--             한줄평1 -->
+
             <div class="card">
                 <div class="row d-flex">
                     <div class=""> <img class="profile-pic" src="resources/img/GongYoo.jpg"> </div>
                     <div class="d-flex flex-column">
+                    
+                    <c:forEach var="boardVO" items="${reviewer}">
+					    <p><c:out value="${reviewVO.reviewer}" /></p>
+					</c:forEach>
+
                         <h3 class="mt-2 mb-0">Gong Yoo</h3>
                         <div>
                             <p class="text-left"><span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-inactive"></span></p>

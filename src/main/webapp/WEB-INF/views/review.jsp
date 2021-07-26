@@ -8,19 +8,96 @@
 <title>review Page</title>
 </head>
 <body>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<c:url var="reviewsPath" value="/reviews" />
-<f:form modelAttribute="review" action="${ reviewsPath }" method="post">
-    <c:forEach var="error" items="${ fieldErrors }">
-        <div class="alert alert-warning">
-            <strong>${ error.getField() }</strong>: ${ error.getDefaultMessage() }
-        </div>
-    </c:forEach>
-    <f:textarea path="text" cssClass="form-control" rows="5" />
-    <f:hidden path="bookId" />
-    <f:hidden path="userId" />
-    <button class="btn btn-block btn-primary" type="submit">리뷰 등록</button>
-</f:form>
+<%@ page import="com.spring.domain.ReviewAttachFileDTO"%>
+
+<%@ page import="com.spring.domain.ReviewVO"%>
+
+<%@ page import="java.io.PrintWriter"%>
+
+<%
+	request.setCharacterEncoding("UTF-8");
+
+	String userID = null;
+
+	if(session.getAttribute("userID") != null) {
+
+		userID = (String) session.getAttribute("userID");
+
+	}
+
+	//	로그인 체크 (login check)
+	if(userID == null) {
+
+		PrintWriter script = response.getWriter();
+
+		script.println("<script>");
+
+		script.println("alert('로그인을 해주세요.');");
+
+		script.println("location.href = 'login.jsp'");
+
+		script.println("</script>");
+
+		script.close();
+
+		return;
+
+	}
+
+	request.setCharacterEncoding("UTF-8");
+
+	String foodName = null;
+
+	String foodcourtName = null;
+
+	String reviewTitle = null;
+
+	String reviewContent = null;
+
+	String totalScore = null;
+	
+	String averageScore = null;
+	
+	
+
+	if(request.getParameter("foodName") != null) {
+
+		foodName = (String) request.getParameter("foodName");
+
+	}
+
+	if(request.getParameter("foodcourtName") != null) {
+
+		foodcourtName = (String) request.getParameter("foodcourtName");
+
+	}
+
+
+	if(request.getParameter("reviewTitle") != null) {
+
+		reviewTitle = (String) request.getParameter("reviewTitle");
+
+	}
+
+	if(request.getParameter("reviewContent") != null) {
+
+		reviewContent = (String) request.getParameter("reviewContent");
+
+	}
+
+	if(request.getParameter("totalScore") != null) {
+
+		totalScore = (String) request.getParameter("totalScore");
+
+	}
+
+
+
+%>
+	
+
 
 </body>
 </html>
