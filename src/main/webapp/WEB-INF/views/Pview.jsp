@@ -35,7 +35,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="/freeBoard">자유 게시판</a></li>
 				<li class="active"><a href="/proBoard">홍보 게시판</a></li>
-				<li><a href="#">문의 게시판</a></li>
+				<li><a href="/InqBoard">문의 게시판</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
