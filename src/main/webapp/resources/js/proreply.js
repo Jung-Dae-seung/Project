@@ -29,7 +29,7 @@ var replyService=(function(){
 		var page = param.page || 1;
 		
 		$.getJSON({
-			url:'/replies/pages/'+bno+'/'+page,
+			url:'/replies/pro/pages/'+bno+'/'+page,
 			success:function(data){
 				if(callback){
 					callback(data.replyCnt,data.list);
@@ -42,7 +42,7 @@ var replyService=(function(){
 	function remove(rno,replyer,callback){
 		
 		$.ajax({
-			url:'/replies/'+rno,
+			url:'/replies/pro/'+rno,
 			type:'delete',
 			beforeSend:function(xhr){
 				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
@@ -63,7 +63,7 @@ var replyService=(function(){
 	function update(reply,callback){
 		
 		$.ajax({
-			url:'/replies/'+reply.rno,
+			url:'/replies/pro/'+reply.rno,
 			type:'put',
 			beforeSend:function(xhr){
 				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
@@ -82,7 +82,7 @@ var replyService=(function(){
 	
 	function get(rno,callback){
 		$.getJSON({
-			url:'/replies/'+rno,
+			url:'/replies/pro/'+rno,
 			success:function(data){
 				if(callback){
 					callback(data);
