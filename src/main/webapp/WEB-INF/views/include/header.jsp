@@ -103,7 +103,7 @@
 		<script src="resources/js/slick.min.js"></script>
 		<script src="resources/js/jquery.counterup.min.js"></script>
 		<script src="resources/js/waypoints.min.js"></script>
-		<script src="resources/js/contact.js"></script>
+		<!-- <script src="resources/js/contact.js"></script> -->
 		<script src="resources/js/jquery.ajaxchimp.min.js"></script>
 		<script src="resources/js/jquery.form.js"></script>
 		<script src="resources/js/jquery.validate.min.js"></script>

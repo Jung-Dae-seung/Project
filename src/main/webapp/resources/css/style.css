@@ -2465,7 +2465,7 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 1000px;
+  height: 700px;
   background-color: #ffdab9;
 }
 .banner_part2 {
@@ -2496,6 +2496,26 @@ ul {
   height: 250px;
   background-color: #ffffff;
   margin-bottom: 80px;
+}
+
+.banner_part5 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  background-color: #ffffff;
+  margin-top: 10px;
+}
+
+.banner_part6 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  background-color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: -200px;
+  padding-top: 50px;
 }
 
 @media (max-width: 991px) {
