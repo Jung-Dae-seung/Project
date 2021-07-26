@@ -13,7 +13,7 @@ $(function(){
 		
 		var oper = $(this).data("oper");
 		
-		if(oper==="modify"){
+		if(oper==="update"){
 			operForm=$("form[role='form']");
 			
 			var str="";
