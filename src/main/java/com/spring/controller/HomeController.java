@@ -56,12 +56,12 @@ public class HomeController {
 		
 		// 평점 옵션
 		Map<Integer, String> ratingOptions = new HashMap<Integer, String>();
-		ratingOptions.put(0, "☆☆☆☆☆");
-		ratingOptions.put(1, "★☆☆☆☆");
-		ratingOptions.put(2, "★★☆☆☆");
-		ratingOptions.put(3, "★★★☆☆");
-		ratingOptions.put(4, "★★★★☆");
 		ratingOptions.put(5, "★★★★★");
+		ratingOptions.put(4, "★★★★☆");
+		ratingOptions.put(3, "★★★☆☆");
+		ratingOptions.put(2, "★★☆☆☆");
+		ratingOptions.put(1, "★☆☆☆☆");
+		ratingOptions.put(0, "☆☆☆☆☆");
 		model.addAttribute("ratingOptions", ratingOptions);
 		
 		return "food";

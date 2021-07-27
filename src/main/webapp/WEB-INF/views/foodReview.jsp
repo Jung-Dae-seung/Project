@@ -76,8 +76,9 @@
 	  		<option value="rating">${rating}</option>
 	  	</c:forEach>
   	</select>
-
-	<button class="btn btn-block btn-primary" onclick="location.href='food'" type="submit">리뷰 등록</button>
+	
+	<input type="hidden" name="${_csrf.parameterName}" value=${_csrf.token} />
+	<button type="submit" class="btn btn-block btn-primary" onclick="location.href='food'" >리뷰 등록</button>
 
     <!-- 이 부분은 맞게 고쳐야 하고요!-->
    	<input type="hidden" name="id" value="" />
@@ -85,6 +86,65 @@
 </form>
 
 <br/>
+<br/>
+
+
+<!-- 출력 -->
+<table class="table table-stripped" id="reviews">
+    <thead>
+        <tr>
+            <th>평점</th> <!-- 평점 -->
+            <th>작성자</th>
+            <th>내용</th>
+        </tr>
+    </thead>
+    <tbody>
+<%--         <c:forEach var="review" items="${ reviews }" varStatus="status"> --%>
+        <c:forEach var="vo" items="${ list}" varStatus="status">
+            <!-- 평점 기준 별표시 출력 -->
+            <tr>
+                <td><c:forEach var="rating" items="${ ratingOptions }" varStatus="status" begin="1" end="${vo.star}">★</c:forEach></td>
+                <td>${vo.bno}</td>
+                <td>${vo.reviewer}</td>
+                <td>${vo.review}</td>
+                <td><fmt:formatDate pattern="yyy-MM-dd HH:mm"
+						value="${vo.reviewdate}" /></td>
+				<td><fmt:formatDate pattern="yyy-MM-dd HH:mm"
+						value="${vo.updatedate}" /></td>
+            </tr>
+        </c:forEach>
+    </tbody>
+</table>
+
+<!-- 페이지 나누기 -->
+<div class="text-center">
+	<ul class="pagination">
+		<c:if test="${pageVO.prev }">
+			<li class="paginate_button previous"><a
+				href="${pageVO.startPage-1 }">이전</a></li>
+		</c:if>
+		
+		<c:forEach var="idx" begin="${pageVO.startPage }"
+			end="${pageVO.endPage }">
+			<li
+				class="paginate_button ${pageVO.cri.pageNum==idx?'active':'' }">
+				<a href="${idx }">${idx }</a>
+			</li>
+		</c:forEach>
+		
+		<c:if test="${pageVO.next }">
+			<li class="paginate_button next"><a
+				href="${pageVO.endPage+1 }">다음</a></li>
+		</c:if>
+	</ul>
+</div>
+<form action="foodReview" method="post" id="actionForm">
+	 <input type="hidden" name="pageNum" value="${pageVO.cri.pageNum }" /> 
+	 <input type="hidden" name="amount" value="${pageVO.cri.amount }" />
+</form>
+	<script>
+	let result = '${result}';
+</script>
 
 
 <!-- 추가한 부분 -->
