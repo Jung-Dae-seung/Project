@@ -330,7 +330,7 @@ $(function(){
 			//댓글 모달 창에 보여주기
 			modalReply.val(data.reply);
 			modalReplyer.val(data.replyer);
-			modalDate.val(replyService.displayTime(data.replyDate)).prop("readonly","readonly");
+			modalDate.val(replyService.displayTime(data.replydate)).prop("readonly","readonly");
 			// rno 값 필수로 담기(PK)
 			modal.data("rno",data.rno);
 			
