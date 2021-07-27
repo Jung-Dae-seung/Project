@@ -41,24 +41,17 @@
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Choose the subway line</button>
 						<div class="dropdown-menu">
-						<form action="" method="get">
 							<a class="dropdown-item" id="line1" href="#">line 1</a>
 							<a class="dropdown-item" id="line2" href="#">line 2</a>
 							<a class="dropdown-item" id="line3" href="#">line 3</a>
-							<a class="dropdown-item" id="line4" href="/subway">line 4</a>
-						</form>
+							<a class="dropdown-item" id="line4" href="#">line 4</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-9" id="subwayinclude"
-					style="border: solid; border-color: #b8cfc7; padding-top: 30px">
-					<jsp:include page="subway4.jsp"></jsp:include>
-					<%-- <c:set var="lineNum" value="<%=request.getAttribute("lineNum")%>"> --%>
-						<c:if test="${lineNum}=='line4'">
-							<div>테스트다다다다다다다</div>
-							<jsp:include page="subway4.jsp"></jsp:include>
-						</c:if>
-					<%-- </c:set> --%>
+				<div class="col-9" style="border: solid; border-color: #b8cfc7; padding-left: 0px;">
+					<div id="includeLine4" style="display: none;">
+						<jsp:include page="subway4.jsp"></jsp:include>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -102,33 +95,34 @@
 	<!-- footer part end-->
 
 	<script>
-		var csrfHeaderName="${_csrf.headerName}";
-		var csrfTokenValue="${_csrf.token}";
+  	$(function(){
+		$(".dropdown-item").click(function(e) {
+			e.preventDefault();
+			var lineNum = $(this).attr("id");
+			
+			switch (lineNum) {
+			case "line1":
+				
+				break;
+			
+			case "line2":
+				
+				break;
+				
+			case "line3":
+				
+				break;
+				
+			case "line4":
+				$("#includeLine4").attr("style","display: block;");
+				break;
 
-		$(function() {
-			$(".dropdown-item").click(function(e) {
-				e.preventDefault();
-				console.log("스크립트 테스트");
-				
-				var lineNum = $(this).attr("id");
-				console.log(lineNum);
-				$(this).append("<input type='hidden' name='"+lineNum+"' value='"+lineNum+"'/>")
-				
-				let sendData = "lineNum="+$('input[name="'+lineNum+'"]').val();
-				console.log(sendData);
-				$.ajax({
-					type:'post',
-					beforeSend:function(xhr){
-						xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
-					},
-					url:'/',
-					data:sendData,
-					success : function(){
-						
-					}
-				})
-			})
+			default:
+				break;
+			}
+			
 		})
+	}) 
 	</script>
 </body>
 </html>

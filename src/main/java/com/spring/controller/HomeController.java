@@ -34,23 +34,7 @@ public class HomeController {
 
 			return "index";
 	}
-	
-	@PostMapping("/")
-	public String homePost(RedirectAttributes rttr, String lineNum) {
-		log.info("post index : "+lineNum);
-		rttr.addFlashAttribute("lineNum",lineNum);
 		
-		return "redirect:/";
-	}
-	
-//	@GetMapping("/get")
-//	public String getLineNum(Model model,String lineNum) {
-//		log.info("getgetget index : "+lineNum);
-//		model.addAttribute("lineNum",lineNum);
-//		
-//		return "redirect:/";
-//	}
-	
 	@RequestMapping(value= "/except", method = RequestMethod.GET)
 	public String except() {
 		log.info("except ��û");

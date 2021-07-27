@@ -10,7 +10,7 @@
     .subway-map
     {
         margin: 0;
-        width: 750px;
+        width: 780px;
         height: 500px;
     }
     
@@ -25,7 +25,7 @@
     </style>
 </head>
 <body id="subwayBody">
-    <div class="subway-map" data-columns="13" data-rows="10" data-cellSize="60" 
+    <div class="subway-map" data-columns="13" data-rows="8" data-cellSize="60" 
     	data-legendId="legend" data-textClass="textSubway" 
     	data-gridNumbers="true" data-grid="false" data-lineWidth="15">
         <ul data-color="#50bcdf">
