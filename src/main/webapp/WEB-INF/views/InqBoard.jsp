@@ -94,6 +94,10 @@
 					</tr>
 				</thead>
 				<tbody>
+					<sec:authentication property="principal" var="info"/>
+					<c:forEach items="${info.memberAuthVO.authList}" var="auth">
+						<c:set value="${auth.auth}" var="role"/> 
+					</c:forEach>
 					<!-- 게시판 리스트 반복문 -->
 					<c:forEach var="vo" items="${list }">
 						<tr>
@@ -104,10 +108,9 @@
 								<i class="bi bi-lock"></i>
 								비밀글은 작성자와 관리자만 볼 수 있습니다.
 							</p>
-							<sec:authentication property="principal" var="info"/>
 							<sec:authorize access="isAuthenticated()">
 									<c:choose>
-										<c:when test="${info.username==vo.writer}">
+										<c:when test="${info.username==vo.writer || role=='ROLE_ADMIN'}">
 											<a href="${vo.bno }" class="move">${vo.title }</a> <strong>[${vo.replycnt }]</strong>
 										</c:when>
 										<c:otherwise>
