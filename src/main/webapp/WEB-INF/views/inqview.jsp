@@ -224,6 +224,12 @@ replyer = '<sec:authentication property="principal.username"/>';
 
 var csrfHeaderName = "${_csrf.headerName}";
 var csrfTokenValue = "${_csrf.token}";
+
+$('#modalRemoveBtn').click(function(e){
+	$('#replyModal').modal('hide');
+	location.reload();
+});
+
 </script>
 <!-- custom js -->
 <script src="resources/js/inqread.js"></script>
