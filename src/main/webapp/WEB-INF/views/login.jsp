@@ -42,7 +42,7 @@
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input"
-									id="customControlInline"> <label
+									name="remember-me" id="customControlInline"> <label
 									class="custom-control-label" for="customControlInline">Remember
 									me</label>
 							</div>

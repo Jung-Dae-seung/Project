@@ -20,9 +20,9 @@
 		<security:form-login login-page="/login" 
 		authentication-success-handler-ref="customLoginSuccessHandler"
     	authentication-failure-url="/login-error"/>
-	   	<security:logout invalidate-session="true" logout-success-url="/"/>
+	   	<security:logout invalidate-session="true" logout-success-url="/" delete-cookies="remember-me,JSESSION_ID"/>
 	<!-- remember-me 활성화 -->
-		<!-- <security:remember-me data-source-ref="ds" token-validity-seconds="604800"/> -->
+		<security:remember-me data-source-ref="ds" token-validity-seconds="604800"/>
 	</security:http>
 	
 	

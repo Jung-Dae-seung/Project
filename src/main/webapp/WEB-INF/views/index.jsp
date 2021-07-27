@@ -49,6 +49,15 @@
 					</div>
 				</div>
 				<div class="col-9" style="border: solid; border-color: #b8cfc7; padding-left: 0px;">
+					<div id="includeLine1" style="display: none;">
+						<h2>준비중 입니다.</h2>
+					</div>
+					<div id="includeLine2" style="display: none;">
+						<h2>준비중 입니다.</h2>
+					</div>
+					<div id="includeLine3" style="display: none;">
+						<h2>준비중 입니다.</h2>
+					</div>
 					<div id="includeLine4" style="display: none;">
 						<jsp:include page="subway4.jsp"></jsp:include>
 					</div>
@@ -98,19 +107,23 @@
   	$(function(){
 		$(".dropdown-item").click(function(e) {
 			e.preventDefault();
+			$("#includeLine1").attr("style","display: none;");
+			$("#includeLine2").attr("style","display: none;");
+			$("#includeLine3").attr("style","display: none;");
+			$("#includeLine4").attr("style","display: none;");
 			var lineNum = $(this).attr("id");
 			
 			switch (lineNum) {
 			case "line1":
-				
+				$("#includeLine1").attr("style","display: block;");
 				break;
 			
 			case "line2":
-				
+				$("#includeLine2").attr("style","display: block;");
 				break;
 				
 			case "line3":
-				
+				$("#includeLine3").attr("style","display: block;");
 				break;
 				
 			case "line4":
