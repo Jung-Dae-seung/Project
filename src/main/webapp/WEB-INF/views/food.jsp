@@ -10,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- 추가한 부분 -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<!-- <link rel="stylesheet" href="resources/css/bootstrap.min.css"> -->
+
 
 <!-- 별점 추가한 부분 -->
 <script src="resources/rating/js/star-rating.js" type="text/javascript"></script>
@@ -52,6 +52,7 @@
      <!-- <a class="btn btn-primary" href="#!">리뷰 작성</a > - -->
    </div>
  </div>
+</div>
 		
 		
       
@@ -67,26 +68,17 @@
     <textarea  class="form-control" rows="5" cols=""></textarea>
     
     <!-- 평점 선택창 -->
-    <label class="rating">평점: </label>
+    
     <select  id="">
 	  	 <c:forEach var="rating" items="${ratingOptions}" >
 	  		<option value="rating">${rating}</option>
 	  	</c:forEach>
   	</select>
   	
+  	<label class="rating">평점: ${rating}</label>
+  	
   	<button class="btn btn-block btn-primary" type="submit">리뷰 등록</button>
   	
-  	
-    <!-- <label>평점: </label>     input에 적용된 클래스명 으로 태그가 자동 생성되고 있거든요
-    근데..지금 별이 안 보여서
-    -->
-    
-     <!-- 평점 보여주기 -->
-   <!--  <input name="rating" id="rating-system" type="text" class="rating rating-loading" data-size="xs">   -->
-   
-   
-   
-  
   	
   
     <!-- 이 부분은 맞게 고쳐야 하고요!-->
@@ -96,80 +88,9 @@
 </form>
 
 
-
-
-
-	
-	<!--::footer_part start::-->
-<!-- <footer class="footer_top footer_part">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-lg-3">
-				<div class="footer_img">
-					<a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_2.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_3.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_4.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_5.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_6.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_7.png" alt=""></a>
-					<a href="#"><img src="img/footer_img/footer_8.png" alt=""></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="col-lg-8">
-			<div class="copyright_text">
-				<P>
-					Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
-		Copyright &copy;
-		<script>
-			document.write(new Date().getFullYear());
-		</script>
-		All rights reserved | <a
-			href="https://colorlib.com" target="_blank">EatAtLine4</a>
-		Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
-		</P>
-	</div>
-</div>
-<div class="col-lg-4">
-	<div class="footer_icon social_icon">
-		<ul class="list-unstyled">
-			<li><a href="#" class="single_social_icon"><i
-					class="fab fa-facebook-f"></i></a></li>
-			<li><a href="#" class="single_social_icon"><i
-					class="fab fa-twitter"></i></a></li>
-			<li><a href="#" class="single_social_icon"><i
-					class="fas fa-globe"></i></a></li>
-			                            <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-</footer> -->
-
-<!--::footer_part end::-->
-
-<!-- jquery plugins here-->
-<!-- jquery 
-<script src="resources/js/jquery-1.12.1.min.js"></script>
--->
-
-<!-- popper js -->
 <!-- 추가한 부분 -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-<script src="resources/js/popper.min.js"></script>
-<!-- bootstrap js -->
-<!-- 추가한 부분 -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-
-<!-- custom js -->
-		<script src="resources/js/custom.js"></script>
-
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b35c281dbc3e2a74b144079a4af860e3&libraries=LIBRARY,services,clusterer,drawing"></script>
 <script>
