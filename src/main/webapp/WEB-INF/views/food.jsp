@@ -8,10 +8,11 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>travel</title>
 <link rel="icon" href="resources/img/favicon.png">
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<!-- 추가한 부분 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="resources/css/bootstrap.min.css"> -->
 <!-- animate CSS -->
 <link rel="stylesheet" href="resources/css/animate.css">
 <!-- owl carousel CSS -->
@@ -30,6 +31,12 @@
 <link rel="stylesheet" href="resources/css/style.css">
 <!-- food CSS -->
 <link rel="stylesheet" href="resources/css/food.css">
+
+<!-- 별점 추가한 부분 -->
+<script src="resources/rating/js/star-rating.js" type="text/javascript"></script>
+<link href="resources/rating/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+
+<title>EatAtLine4</title>
 </head>
 <%
 	String store_name = request.getParameter("storeName");
@@ -65,256 +72,56 @@
      <!-- <a class="btn btn-primary" href="#!">리뷰 작성</a > - -->
    </div>
  </div>
-
-
-<!-- 식당 및 음식 사진들 -->
-<div class="container">
-	<div class= row>
-		<div class="col-sm-3">
-			<img src="resources/img/salad2.jpg" alt="" />
-		</div>
-		<div class="col-sm-3">
-			<img src="resources/img/naan.jpg" alt="" />
-		</div>
-		<div class="col-sm-3">
-			<img src="resources/img/beef.jpg" alt="" />
-		</div>
-		<div class="col-sm-3">
-			<img src="resources/img/cake.jpg" alt="" />
-		</div>
-	</div>
-</div>
 		
+		
+      
 
-<!-- 리뷰 바 -->
-<div class="container-fluid px-1 py-5 mx-auto">
-    <div class="row justify-content-center">
-        <div class="col-xl-7 col-lg-8 col-md-10 col-12 text-center mb-5">
-            <div class="card">
-                <div class="row justify-content-left d-flex">
-                    <div class="col-md-4 d-flex flex-column">
-                        <div class="rating-box">
-                            <h1 class="pt-4">4.0</h1>
-                            <p class="">out of 5</p>
-                        </div>
-                        <div> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-inactive mx-1"></span> </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="rating-bar0 justify-content-center">
-                            <table class="text-left mx-auto">
-                                <tr>
-                                    <td class="rating-label">Excellent</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-5"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">123</td>
-                                </tr>
-                                <tr>
-                                    <td class="rating-label">Good</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-4"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">23</td>
-                                </tr>
-                                <tr>
-                                    <td class="rating-label">Average</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-3"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">10</td>
-                                </tr>
-                                <tr>
-                                    <td class="rating-label">Poor</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-2"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">3</td>
-                                </tr>
-                                <tr>
-                                    <td class="rating-label">Terrible</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-1"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">0</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-<!--            리뷰 작성페이지 -->
-
-<form  method="get" id="actionForm" action="review">
-<div class="card bg-secondary2 text-center align-items-center">
-		<div class="bbs_view" style="margin-bottom:-5px">
-		    <table class="view_1">
-		        <tr>
-		            <th scope="row">Rating &emsp; &emsp; </th>
-		            <td class="name">
-			                 <input type="radio" name="star number" id="star number" value="<%=5%>"/> Excellent &ensp; &ensp;  
-			                 <input type="radio" name="star number" id="star number" value="<%=4%>"/> Good &ensp; &ensp; 
-			                 <input type="radio" name="star number" id="star number" value="<%=3%>" /> Average &ensp; &ensp; 
-			                 <input type="radio" name="star number" id="star number" value="<%=2%>" /> Poor &ensp; &ensp; 
-			                 <input type="radio" name="star number" id="star number" value="<%=1%>" /> Terrible &ensp; &ensp;
-		            </td>
-		        </tr>
-		   
-		      	 <tr>
-		        	<td><p><br/></p>
-		        	</td>
-		        </tr>
-		        
-		        <tr>
-		            <th scope="row" >review &emsp; </th>
-		            <td class="name">
-		                <textarea placeholder="Did you enjoy your meal? &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;  (Any comments or suggestions are welcomed)" rows="6" cols="58"></textarea>
-		            </td>
-		        </tr>
-		    </table>
-		    	<br/>
-				<input type = "submit" value = "submit">
-			</div>
-</div>
+<form action=""  method="post">
+    <c:forEach var="error" items="${ fieldErrors }">
+        <div class="alert alert-warning">
+            <strong>${ error.getField() }</strong>: ${ error.getDefaultMessage() }
+        </div>
+    </c:forEach>
+    
+    <!-- 리뷰메세지 -->
+    <textarea  class="form-control" rows="5" cols=""></textarea>
+    
+    <!-- 평점 선택창 -->
+    <label class="rating">평점: </label>
+    <select  id="">
+	  	 <c:forEach var="rating" items="${ratingOptions}">
+	  		<option value="${rating}">${rating}</option>
+	  	</c:forEach>
+  	</select>
+  	
+  	<button class="btn btn-block btn-primary" type="submit">리뷰 등록</button>
+  	
+  	
+    <!-- <label>평점: </label>     input에 적용된 클래스명 으로 태그가 자동 생성되고 있거든요
+    근데..지금 별이 안 보여서
+    -->
+    
+     <!-- 평점 보여주기 -->
+   <!--  <input name="rating" id="rating-system" type="text" class="rating rating-loading" data-size="xs">   -->
+   
+   
+   
+  
+  	
+  
+    <!-- 이 부분은 맞게 고쳐야 하고요!-->
+   	<input type="hidden" name="id" value="" />
+   	<input type="hidden" name="userid" value="" />
+    
 </form>
 
 
-<form action="freeBoard" method="get" id="actionForm">
-		<input type="hidden" name="type" value="${pageVO.cri.type }" /> <input
-			type="hidden" name="keyword" value="${pageVO.cri.keyword }" /> <input
-			type="hidden" name="pageNum" value="${pageVO.cri.pageNum }" /> <input
-			type="hidden" name="amount" value="${pageVO.cri.amount }" />
-	</form>
-
-            
-
-            
-<!--    반복문 실행     -->
-<c:forEach items="${list}"  var="review">
-            <div class="card">
-                <div class="row d-flex">
-                    <!-- user img -->
-                    <div class=""> <img class="profile-pic" src="resources/img/GongYoo.jpg"> </div>
-                    <div class="d-flex flex-column">
-                        <h3 class="mt-2 mb-0"> <c:forEach var="boardVO" items="${reviewlist}">
-							    <p><c:out value="${reviewVO.reviewer}" /></p>
-							</c:forEach>
-						</h3>
-					
-                        <div>
-                            <p class="text-left"><span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-inactive"></span></p>
-                        </div>
-                    </div>
-                    <div class="ml-auto">
-                        <p class="text-muted pt-5 pt-sm-3">${reivew.regdate}</p>
-                    </div>
-                </div>
-                <div class="row text-left">
-                    <h4 class="blue-text mt-3">"An awesome activity to experience"</h4>
-                    <p class="review">${reivew.review}</p>
-                </div>
-                <div class="row text-left mt-4">
-                    <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"><span class="blue-text pl-2">20</span> </div>
-                    <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2"> ${reivew['star number']}</span> </div>
-                </div>
-            </div>
-</c:forEach>
-
-            
-            
-<!--             한줄평1 -->
-
-            <div class="card">
-                <div class="row d-flex">
-                    <div class=""> <img class="profile-pic" src="resources/img/GongYoo.jpg"> </div>
-                    <div class="d-flex flex-column">
-                    
-                    <c:forEach var="boardVO" items="${reviewer}">
-					    <p><c:out value="${reviewVO.reviewer}" /></p>
-					</c:forEach>
-
-                        <h3 class="mt-2 mb-0">Gong Yoo</h3>
-                        <div>
-                            <p class="text-left"><span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-inactive"></span></p>
-                        </div>
-                    </div>
-                    <div class="ml-auto">
-                        <p class="text-muted pt-5 pt-sm-3">10 Sept</p>
-                    </div>
-                </div>
-                <div class="row text-left">
-                    <h4 class="blue-text mt-3">"An awesome activity to experience"</h4>
-                    <p class="content">If you really enjoy spending your vacation 'on water' or would like to try something new and exciting for the first time.</p>
-                </div>
-                <div class="row text-left mt-4">
-                    <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"><span class="blue-text pl-2">20</span> </div>
-                    <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2">4</span> </div>
-                </div>
-            </div>
-            
-<!--             한줄평2 -->
-            <div class="card">
-                <div class="row d-flex">
-                    <div class=""> <img class="profile-pic" src="resources/img/IU.jpg"> </div>
-                    <div class="d-flex flex-column">
-                        <h3 class="mt-2 mb-0">JiEun Lee</h3>
-                        <div>
-                            <p class="text-left"><span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-inactive"></span></p>
-                        </div>
-                    </div>
-                    <div class="ml-auto">
-                        <p class="text-muted pt-5 pt-sm-3">10 Sept</p>
-                    </div>
-                </div>
-                <div class="row text-left">
-                    <h4 class="blue-text mt-3">"An awesome activity to experience"</h4>
-                    <p class="content">If you really enjoy spending your vacation 'on water' or would like to try something new and exciting for the first time.</p>
-                </div>
-                <div class="row text-left mt-4">
-                    <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"><span class="blue-text pl-2">20</span> </div>
-                    <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2">4</span> </div>
-                </div>
-            </div>
-			<br/>
-
-			<!-- 하단 페이지 번호 -->
-			<nav aria-label="Page navigation example">
-			  <ul class="pagination justify-content-center">
-			    <li class="page-item">
-			      <a class="page-link" href="#" aria-label="Previous">
-			        <span aria-hidden="true">&laquo;</span>
-			      </a>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item">
-			      <a class="page-link" href="#" aria-label="Next">
-			        <span aria-hidden="true">&raquo;</span>
-			      </a>
-			    </li>
-			  </ul>
-			</nav>
-
-        </div>
-    </div>
-</div>
 
 
 
 	
 	<!--::footer_part start::-->
-<footer class="footer_top footer_part">
+<!-- <footer class="footer_top footer_part">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 col-lg-3">
@@ -336,14 +143,14 @@
 		<div class="col-lg-8">
 			<div class="copyright_text">
 				<P>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 		Copyright &copy;
 		<script>
 			document.write(new Date().getFullYear());
 		</script>
 		All rights reserved | <a
 			href="https://colorlib.com" target="_blank">EatAtLine4</a>
-		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 		</P>
 	</div>
 </div>
@@ -356,22 +163,28 @@
 					class="fab fa-twitter"></i></a></li>
 			<li><a href="#" class="single_social_icon"><i
 					class="fas fa-globe"></i></a></li>
-			<!--                             <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li> -->
+			                            <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
-</footer>
+</footer> -->
 
 <!--::footer_part end::-->
 
 <!-- jquery plugins here-->
-<!-- jquery -->
+<!-- jquery 
 <script src="resources/js/jquery-1.12.1.min.js"></script>
+-->
+
 <!-- popper js -->
+<!-- 추가한 부분 -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
 <script src="resources/js/popper.min.js"></script>
 <!-- bootstrap js -->
+<!-- 추가한 부분 -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <!-- easing js -->
 <script src="resources/js/jquery.magnific-popup.js"></script>
