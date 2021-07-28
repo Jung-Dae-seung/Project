@@ -6,9 +6,9 @@
 	<insert id="insert">
 		<!-- 주로 pk 값을 미리 SQL 쿼리문을 통해서 처리해 두고 특정한 이름으로 결과를 보관 -->
 		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
-			select seq_proBoard.nextval from dual		
+			select seq_review.nextval from dual		
 		</selectKey>	
-		insert into reviewtbl(bno,review,reviewer) values(#{bno},#{review},#{reviewer})
+		insert into reviewtbl(bno,review,reviewer,storeid,star) values(#{bno},#{review},#{reviewer},#{storeid},#{star})
 	</insert>
 	
 	
@@ -25,6 +25,52 @@
 		where bno=#{bno}
 	</update>
 	
+	
+		<!-- 전체 조회 : 페이지 나누기 적용 -->
+		 <select id="list" resultType="com.spring.domain.ReviewVO">
+			<![CDATA[
+					select *
+					from(select /*+INDEX_DESC(reviewtbl reviewtbl_pk)*/
+					          rownum rn,bno,review,star,reviewdate,updatedate,storeid
+					     from reviewtbl
+					     where 
+			]]>		
+			
+<!-- 			<include refid="criteria"></include> -->
+			     
+			<![CDATA[		     
+					     
+					     rownum <= (#{pageNum}*#{amount}))
+					where rn > ((#{pageNum}-1)*#{amount})		
+			]]>	
+		</select>
+		
+			
+		<!-- 특정번호 조회 : bno에 해당하는 게시물 가져오기(read) -->
+		<select id="read" resultType="com.spring.domain.ReviewVO">
+			select * from reviewtbl where bno=#{bno}
+		</select>
+		
+				<!-- 동적 SQL -->
+<!-- 		<sql id="criteria"> -->
+<!-- 			<trim prefix="(" suffix=") AND"  prefixOverrides="OR" > -->
+<!-- 				<foreach collection="typeArr" item='type'> -->
+<!-- 					<trim prefix="OR"> -->
+<!-- 						<choose> -->
+<!-- 							<when test="type=='T'.toString()"> -->
+<!-- 								title like '%'||#{keyword}||'%' -->
+<!-- 							</when> -->
+<!-- 							<when test="type=='C'.toString()"> -->
+<!-- 								content like '%'||#{keyword}||'%' -->
+<!-- 							</when> -->
+<!-- 							<when test="type=='W'.toString()"> -->
+<!-- 								writer like '%'||#{keyword}||'%' -->
+<!-- 							</when> -->
+<!-- 						</choose> -->
+<!-- 					</trim> -->
+<!-- 				</foreach> -->
+<!-- 			</trim> -->
+<!-- 		</sql> -->
 		
 
 </mapper>

@@ -22,7 +22,7 @@ public class ReviewVO {
 	private int star;
 	private Date reviewDate;
 	private Date updatedate;
-	private String restaurent;
+	private String storeid;
 	
-	private List<ReviewAttachFileDTO> attachList;
+	//private List<ReviewAttachFileDTO> attachList;
 }
