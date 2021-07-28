@@ -12,7 +12,6 @@
 <!-- 추가한 부분 -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-
 <!-- 별점 추가한 부분 -->
 <script src="resources/rating/js/star-rating.js" type="text/javascript"></script>
 <link href="resources/rating/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
@@ -24,6 +23,7 @@
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
 	String category = request.getParameter("category");
+	String storeid = request.getParameter("store_id");
 %>
 <body>
 	<!--::header part start::-->
@@ -48,14 +48,14 @@
      <h3 class="font-weight-light"><%=category%></h3>
      <p id="store_address"><%=address%></p>
      <p><%=phone%></p>
+     <p id="storeId"><%=storeid %></p>
      <br/>
      <br/>
      <!-- <a class="btn btn-primary" href="#!">리뷰 작성</a > - -->
    </div>
  </div>
 </div>	
-		
-      
+		    
 <!-- 입력 -->
 <form action=""  method="post">
     <c:forEach var="error" items="${ fieldErrors }">
@@ -86,6 +86,8 @@
 
 <br/>
 
+<jsp:include page="foodReview.jsp"></jsp:include>
+
 
 <!-- 추가한 부분 -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>     
@@ -94,11 +96,15 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b35c281dbc3e2a74b144079a4af860e3&libraries=LIBRARY,services,clusterer,drawing"></script>
 <script>
 
+
 var store_Address = document.getElementById('store_address');
 var storeAddress = String(store_Address.innerHTML);
 var store_name = document.getElementById('store_name');
 var storeName = String(store_name.innerHTML);
+var store_Id = document.getElementById('storeId');
+var storeID = String(store_Id.innerHTML);
 
+console.log(storeID);
 console.log(storeName);
 console.log(storeAddress);
 
