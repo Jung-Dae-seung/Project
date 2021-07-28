@@ -67,7 +67,6 @@
 		</div>
 	</nav>
 
-
 	<div class="container">
 		<!-- start search -->
 		<div class="row">
