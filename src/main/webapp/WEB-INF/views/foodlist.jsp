@@ -43,6 +43,7 @@
 	<section class="banner_part3"></section>
 	<!-- banner part start-->
 	
+	
  <!-- 재현님 Header-->
 <header class="py-1" style="text-align:center;font-size:40px">${vo.subway_name}
 	<h3>지도 마커를 클릭하여 넘어갑니다</h3>
@@ -238,6 +239,7 @@ function displayPlaces(places) {
         	var longitude = places[i].x;
         	var latitude = places[i].y;
         	
+        	console.log(places[i].id);
         	console.log(longitude);
         	
         	
