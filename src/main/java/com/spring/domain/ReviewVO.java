@@ -19,10 +19,10 @@ public class ReviewVO {
 	private String reviewer;
 	private int bno;
 	private String review;
-	private int star; 
-	private Date reviewdate;
+	private int star;
+	private Date reviewDate;
 	private Date updatedate;
-	//private String restaurent;
+	private String restaurent;
 	
-	//private List<ReviewAttachFileDTO> attachList;
+	private List<ReviewAttachFileDTO> attachList;
 }
