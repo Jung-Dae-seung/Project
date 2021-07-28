@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- 추가한 부분 -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
 
 <!-- 별점 추가한 부분 -->
 <script src="resources/rating/js/star-rating.js" type="text/javascript"></script>
@@ -53,17 +55,10 @@
      <!-- <a class="btn btn-primary" href="#!">리뷰 작성</a > - -->
    </div>
  </div>
-<<<<<<< HEAD
 </div>	
-		    
-<!-- 입력 -->
-=======
-</div>
-		
 		
       
-
->>>>>>> parent of 58d08cd (음식점 리뷰페이지 crud작업)
+<!-- 입력 -->
 <form action=""  method="post">
     <c:forEach var="error" items="${ fieldErrors }">
         <div class="alert alert-warning">
@@ -75,28 +70,29 @@
     <textarea  class="form-control" rows="5" cols=""></textarea>
     
     <!-- 평점 선택창 -->
+  	<label class="rating">평점: ${rating}</label>
+    <br/>
     
     <select  id="">
 	  	 <c:forEach var="rating" items="${ratingOptions}" >
 	  		<option value="rating">${rating}</option>
 	  	</c:forEach>
   	</select>
-  	
-  	<label class="rating">평점: ${rating}</label>
-  	
-  	<button class="btn btn-block btn-primary" type="submit">리뷰 등록</button>
-  	
-  	
-  
+
+	<button class="btn btn-block btn-primary" onclick="location.href='food'" type="submit">리뷰 등록</button>
+
     <!-- 이 부분은 맞게 고쳐야 하고요!-->
    	<input type="hidden" name="id" value="" />
    	<input type="hidden" name="userid" value="" />
-    
 </form>
+
+<br/>
+
+<jsp:include page="foodReview.jsp"></jsp:include>
 
 
 <!-- 추가한 부분 -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>     
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b35c281dbc3e2a74b144079a4af860e3&libraries=LIBRARY,services,clusterer,drawing"></script>
