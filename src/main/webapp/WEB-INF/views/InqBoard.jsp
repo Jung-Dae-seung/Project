@@ -17,7 +17,9 @@
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="resources/css/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <title>EatAtLine4</title>
 </head>
 <body>
@@ -94,35 +96,32 @@
 					</tr>
 				</thead>
 				<tbody>
-					<sec:authentication property="principal" var="info"/>
-					<c:forEach items="${info.memberAuthVO.authList}" var="auth">
-						<c:set value="${auth.auth}" var="role"/> 
-					</c:forEach>
 					<!-- 게시판 리스트 반복문 -->
 					<c:forEach var="vo" items="${list }">
 						<tr>
 							<td>${vo.bno }</td>
-							<td>
-							<c:if test="${vo.open eq 'N'}">
-							<p>
-								<i class="bi bi-lock"></i>
-								비밀글은 작성자와 관리자만 볼 수 있습니다.
-							</p>
-							<sec:authorize access="isAuthenticated()">
-									<c:choose>
-										<c:when test="${info.username==vo.writer || role=='ROLE_ADMIN'}">
-											<a href="${vo.bno }" class="move">${vo.title }</a> <strong>[${vo.replycnt }]</strong>
-										</c:when>
-										<c:otherwise>
-										
-										</c:otherwise>
-									</c:choose>
-								</sec:authorize>
-								</c:if> 
-								<c:if test="${vo.open eq 'Y'}">
-									<a href="${vo.bno }" class="move">${vo.title }</a> <strong>[${vo.replycnt }]</strong>
-								</c:if>
-							</td>
+							<td><c:if test="${vo.open eq 'N'}">
+									<p class="secret">
+										<i class="bi bi-lock"></i> 비밀글은 작성자와 관리자만 볼 수 있습니다.
+									</p>
+									<sec:authorize access="isAuthenticated()">
+										<sec:authentication property="principal" var="info" />
+										<c:forEach items="${info.memberAuthVO.authList}" var="auth">
+											<c:set value="${auth.auth}" var="role" />
+										</c:forEach>
+										<c:choose>
+											<c:when test="${info.username==vo.writer || role=='ROLE_ADMIN'}">
+												<script>
+													$(".secret").remove();
+												</script>
+												<i class='bi bi-lock'></i><a href="${vo.bno }" class="move">${vo.title }</a> <strong>[${vo.replycnt }]</strong>
+											</c:when>
+										</c:choose>
+									</sec:authorize>
+								</c:if> <c:if test="${vo.open eq 'Y'}">
+									<a href="${vo.bno }" class="move">${vo.title }</a>
+									<strong>[${vo.replycnt }]</strong>
+								</c:if></td>
 							<td>${vo.writer }</td>
 							<td><fmt:formatDate pattern="yyy-MM-dd HH:mm"
 									value="${vo.regdate }" /></td>
@@ -170,19 +169,15 @@
 	</form>
 	<script>
 		let result = '${result}';
-		
+
 		var csrfHeaderName = "${_csrf.headerName}";
 		var csrfTokenValue = "${_csrf.token}";
 	</script>
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-		crossorigin="anonymous"></script>
-		
-		
+
 	<script src="/resources/js/inqBoard.js"></script>
 	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script>
 		$(function() {
 			var actionForm = $("#logoutForm");
