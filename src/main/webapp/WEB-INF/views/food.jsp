@@ -94,13 +94,6 @@
     
 </form>
 
-<<<<<<< HEAD
-<br/>
-
-<jsp:include page="foodReview.jsp"></jsp:include>
-
-=======
->>>>>>> parent of 58d08cd (음식점 리뷰페이지 crud작업)
 
 <!-- 추가한 부분 -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
