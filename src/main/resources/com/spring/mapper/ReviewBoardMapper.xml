@@ -2,75 +2,35 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.mapper.ReviewBoardMapper">
 	
-	<!-- 삽입 : bno,title,content,writer 이며 bno의 경우 seq_board 값으로 삽입 (insert)-->
+	<!-- insert -->
 	<insert id="insert">
-		<!-- 주로 pk 값을 미리 SQL 쿼리문을 통해서 처리해 두고 특정한 이름으로 결과를 보관 -->
-		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
-			select seq_review.nextval from dual		
-		</selectKey>	
-		insert into reviewtbl(bno,review,reviewer,storeid,star) values(#{bno},#{review},#{reviewer},#{storeid},#{star})
+		insert into reviewtbl(bno,review,reviewer,storeid,star) values(seq_review.nextval,#{bno},#{review},#{reviewer},#{storeid},#{star})
 	</insert>
 	
+	<!-- 댓글 하나 가져오기 : rno 가 일치 -->
+	<select id="read" resultType="com.spring.domain.ReviewVO">
+		select * from reviewtbl where bno=#{bno}
+	</select>
 	
-	<!-- 삭제 : bno가 일치하면 삭제(delete) -->
-	<delete id="delete">
-		delete from reviewtbl where bno=#{bno}	
-	</delete>
-		
-		
-	<!-- 수정 : title,content,updatedate,  bno가 일치시(update) -->
+	<!-- 댓글 수정 : 댓글 내용만 수정, updatedate, rno가 일치하면 -->
 	<update id="update">
-		update reviewtbl
-		set review=#{review},star=#{star},updatedate=sysdate
-		where bno=#{bno}
+		update reviewtbl set review=#{review}, star=#{start}, updatedate=sysdate where bno=#{bno}
 	</update>
 	
+	<!-- 댓글 삭제 : rno 일치하면 -->
+	<delete id="delete">
+		delete from reviewtbl where bno=#{bno}
+	</delete>
 	
-		<!-- 전체 조회 : 페이지 나누기 적용 -->
-		 <select id="list" resultType="com.spring.domain.ReviewVO">
-			<![CDATA[
-					select *
-					from(select /*+INDEX_DESC(reviewtbl reviewtbl_pk)*/
-					          rownum rn,bno,review,star,reviewdate,updatedate,storeid
-					     from reviewtbl
-					     where 
-			]]>		
-			
-<!-- 			<include refid="criteria"></include> -->
-			     
-			<![CDATA[		     
-					     
-					     rownum <= (#{pageNum}*#{amount}))
-					where rn > ((#{pageNum}-1)*#{amount})		
-			]]>	
-		</select>
-		
-			
-		<!-- 특정번호 조회 : bno에 해당하는 게시물 가져오기(read) -->
-		<select id="read" resultType="com.spring.domain.ReviewVO">
-			select * from reviewtbl where bno=#{bno}
-		</select>
-		
-				<!-- 동적 SQL -->
-<!-- 		<sql id="criteria"> -->
-<!-- 			<trim prefix="(" suffix=") AND"  prefixOverrides="OR" > -->
-<!-- 				<foreach collection="typeArr" item='type'> -->
-<!-- 					<trim prefix="OR"> -->
-<!-- 						<choose> -->
-<!-- 							<when test="type=='T'.toString()"> -->
-<!-- 								title like '%'||#{keyword}||'%' -->
-<!-- 							</when> -->
-<!-- 							<when test="type=='C'.toString()"> -->
-<!-- 								content like '%'||#{keyword}||'%' -->
-<!-- 							</when> -->
-<!-- 							<when test="type=='W'.toString()"> -->
-<!-- 								writer like '%'||#{keyword}||'%' -->
-<!-- 							</when> -->
-<!-- 						</choose> -->
-<!-- 					</trim> -->
-<!-- 				</foreach> -->
-<!-- 			</trim> -->
-<!-- 		</sql> -->
+	<!-- 댓글 페이지 처리 -->
+	<select id="list" resultType="com.spring.domain.ReviewVO">
+	<![CDATA[
+		select bno,review,reviewer,storeid,star, reviewdate,updatedate from
+		(select /*+INDEX(reviewtbl idx)*/ rownum rn,bno,review,reviewer,storeid,star, reviewdate,updatedate
+		from reviewtbl where storeid=#{storeid} and bno>0 and rownum <= #{cri.pageNum} * #{cri.amount})
+		where rn>(#{cri.pageNum}-1)*#{cri.amount}
+		]]>
+	</select>
 		
 
 </mapper>
