@@ -19,12 +19,14 @@
 
 <title>EatAtLine4</title>
 </head>
-
+<%
+	String storeid = request.getParameter("store_id");
+%>
 <!-- 출력 -->
 <table class="table table-stripped" id="reviews">
     <thead>
         <tr>
-            <th>평점</th> <!-- 평점 -->
+            <th><%=storeid %></th> <!-- 평점 -->
             <th>작성자</th>
             <th>내용</th>
         </tr>

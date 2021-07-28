@@ -126,6 +126,10 @@
 							value="${_csrf.token}" id="token"/>
 </form>
 
+<form action="foodReview" method="post" id="reviewForm">
+	<input type="hidden" name="store_id" value="" id="store_id"/>
+</form>
+
 <!--::footer_part end::-->
 
 <script src="resources/js/jquery-1.12.1.min.js"></script>
@@ -257,7 +261,7 @@ function displayPlaces(places) {
             	console.log(address);
             	console.log(category);
             	
-            	
+            	reviewForm = document.getElementById('reviewForm');
             	actionForm = document.getElementById('actionForm');
             	document.getElementById('address').value=address;
             	document.getElementById('storeName').value=title;
@@ -266,6 +270,7 @@ function displayPlaces(places) {
             	document.getElementById('token').value=token;
             	document.getElementById('store_id').value=store_id;
             	
+            	reviewForm.submit();
             	actionForm.submit();
         	});
 
