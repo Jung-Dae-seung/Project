@@ -43,7 +43,6 @@
 	<section class="banner_part3"></section>
 	<!-- banner part start-->
 	
-	
  <!-- 재현님 Header-->
 <header class="py-1" style="text-align:center;font-size:40px">${vo.subway_name}
 	<h3>지도 마커를 클릭하여 넘어갑니다</h3>
@@ -122,6 +121,7 @@
 	<input type="hidden" name="storeName" value="" id="storeName"/>
 	<input type="hidden" name="phone" value="" id="phone"/>
 	<input type="hidden" name="category" value="" id="category"/>
+	<input type="hidden" name="store_id" value="" id="store_id"/>
 	<input type="hidden" name="${_csrf.parameterName}"
 							value="${_csrf.token}" id="token"/>
 </form>
@@ -238,10 +238,10 @@ function displayPlaces(places) {
         	var category = places[i].category_name;
         	var longitude = places[i].x;
         	var latitude = places[i].y;
+        	var store_id = places[i].id;
         	
-        	console.log(places[i].id);
         	console.log(longitude);
-        	
+        	console.log(store_id);
         	
         	
             kakao.maps.event.addListener(marker, 'mouseover', function() {
@@ -264,6 +264,7 @@ function displayPlaces(places) {
             	document.getElementById('phone').value=phone;
             	document.getElementById('category').value=category;
             	document.getElementById('token').value=token;
+            	document.getElementById('store_id').value=store_id;
             	
             	actionForm.submit();
         	});
@@ -293,7 +294,6 @@ function displayPlaces(places) {
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem(index, places) {
 
-	console.log(places.category_name);
     var el = document.createElement('li'),
     itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
                 '<div class="info">' +
