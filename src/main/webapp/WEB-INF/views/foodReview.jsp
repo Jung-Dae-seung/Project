@@ -81,8 +81,7 @@
 <!-- 추가한 부분 -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>     
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b35c281dbc3e2a74b144079a4af860e3&libraries=LIBRARY,services,clusterer,drawing"></script>
+
 
 </body>
 </html>
