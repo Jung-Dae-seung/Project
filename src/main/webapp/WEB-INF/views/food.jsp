@@ -95,8 +95,9 @@ String storeid = request.getParameter("store_id");
 
 		<!-- 리뷰 출력 -->
 		<div class="panel panel-default">
-		
-		<div class="card" id="reviews">
+		<ul class="reviews">
+		<li data-bno='1'>
+		<div class="card" >
 			<div class="row d-flex">
 				<div class="d-flex flex-column">
 					<h3 class="mt-2 mb-0">유저아이디</h3>
@@ -127,7 +128,8 @@ String storeid = request.getParameter("store_id");
 				</div>
 			</div>
 		</div>
-		
+		</li>
+		</ul>
 		<div class="card">
 			<div class="row d-flex">
 				<div class="d-flex flex-column">

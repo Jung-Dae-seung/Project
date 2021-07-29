@@ -3,9 +3,9 @@
  */
 $(function(){
 	//리뷰가 보여질 영역 가져오기
-	function test(){ 
+
 		
-		let reviewUl = $("#reviews");
+		let reviewUl = $(".reviews");
 		showList(1);
 	
 	
@@ -25,10 +25,10 @@ $(function(){
 	let RegisterBtn = $("#RegisterBtn");
 	let ModifyBtn = $("#ModifyBtn");
 	let RemoveBtn = $("#RemoveBtn");
-	}
+	
 	function showList(page){
 		//리뷰 목록 가져오기
-		reviewService.getList({storeid:storeid,page:page||1},function(total,data){
+		reviewService.getList({storeid:storeID,page:page||1},function(total,data){
 			console.log(total);
 			console.log(data);
 			
@@ -46,20 +46,76 @@ $(function(){
 			}
 			
 			
-			
 			//댓글이 있는 경우
 			var str="";
 			for(var i=0,len=data.length||0;i<len;i++){
-				str += "<li class='left clearfix' data-bno='"+data[i].bno+"'>";
-				str += "<div>";
-				str += "<div class='header'>";
-				str += "<strong class='primary-font'>"+data[i].reviewer+"</strong>";
-				str += "<small class='pull-right text-muted'>"+replyService.displayTime(data[i].replydate)+"</small>";
-				str += "<p>"+data[i].review+"</p>";
-				str += "</div></div></li>";
+				
+				str +="<li data-bno='"+data[i].bno+"'>";
+				str +="<div class='card'>";
+				str +="<div class='row d-flex'>";
+				str +="<div class='d-flex flex-column'>";
+				str +="<h3 class='mt-2 mb-0'>"+data[i].reviewer+"</h3>";
+				str +="<div>";
+				if(data[i].star == 1){
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+				} else if(data[i].star == 2){
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+				} else if(data[i].star == 3) {
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+				} else if(data[i].star == 4) {
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-inactive mx-1'></span>"
+				} else if(data[i].star ==5) {
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+					str +="<span class='fa fa-star star-active mx-1'></span>"
+				}
+				str +="</div>";
+				str +="</div>";
+				str +="<div class='ml-auto'>";
+				str +="<p class='text-muted pt-5 pt-sm-3'>"+reviewService.displayTime(data[i].reviewDate)+"</p>";
+				str +="</div>";
+				str +="</div>";
+				str +="<div class='row text-left'>";
+				str +="<p class='content mt-3'>"+data[i].review+"</p>";
+				str +="</div>";
+				str +="<div class='row d-flex mt-4'>";
+				str +="<div class='like mr-3 vote'>";
+				str +="<button class='btn btn-block btn-info' type='submit'>수정</button>";
+				str +="</div>";
+				str +="<div class='unlike vote'>";
+				str +="<button class='btn btn-block btn-info' type='submit'>삭제</button>";
+				str +="</div>";
+				str +="</div>";
+				str +="</div>";
+				
+				str +="</li>";
+				
+				
+				
 			}
 			reviewUl.html(str);
 			showReviewPage(total);
+			
+			console.log(str);
+			console.log(data);
 			
 		})
 	}
@@ -221,7 +277,7 @@ $(function(){
 	
 	
 	//이벤트 위임 : li 태그는 나중에 생기는 요소이기 떄문에 ul에 먼저 이벤트를 건 후 li에게 넘겨주는 방식
-	/* $(reviewUl).on("click","li",function(){
+	 $(reviewUl).on("click","li",function(){
 		
 		//현재 클릭된 li요소의 rno 가져오기
 		var bno = $(this).data("bno");
@@ -245,6 +301,6 @@ $(function(){
 		
 	})
 	
-	})*/
+	})
 	
 })
