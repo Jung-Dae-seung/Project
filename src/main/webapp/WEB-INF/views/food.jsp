@@ -154,13 +154,6 @@ String storeid = request.getParameter("store_id");
 			<div class="row text-left">
 				<p class="content mt-3">리뷰 내용</p>
 			</div>
-			<div class="row d-flex mt-4">
-				<div class="like mr-3 vote">
-					<button class="btn btn-block btn-info" id="ModifyBtn" type="button">수정</button>
-				</div>
-				<div class="unlike vote">
-					<button class="btn btn-block btn-info" id="RemoveBtn" type="button">삭제</button>
-				</div>
 			</div>
 		</div>
 	
@@ -219,12 +212,13 @@ String storeid = request.getParameter("store_id");
 						  </label>
 						</div>	
 					</div>
-					
 					<textarea class="form-control" name="review" rows="5" cols=""></textarea>
+					<input type="hidden" name="reviewer" id="reviewer" value="user00" />
+					<input type="hidden" name="storeid" id="storeid" value="000000" />
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-success" id="modalRegisterBtn">등록</button>
-					<button type="button" class="btn btn-warning" id="RemoveBtn">수정</button>
+					<button type="button" class="btn btn-warning" id="ModifyBtn">수정</button>
 					<button type="button" class="btn btn-danger" id="RemoveBtn">삭제</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal" id="modalCloseBtn">종료</button>
 				</div>
@@ -243,11 +237,6 @@ String storeid = request.getParameter("store_id");
 	<script>
 		let result = '${result}';
 		
-		$("#ModifyBtn").click(function(e){
-			e.preventDefault();
-			$("#reviewModal").modal("show");
-		});
-	
 		$('#modalRemoveBtn').click(function(e){
 			$('#reviewModal').modal('hide');
 			location.reload();

@@ -4,9 +4,8 @@
 $(function(){
 	//리뷰가 보여질 영역 가져오기
 
-		
-		let reviewUl = $(".reviews");
-		showList(1);
+	let reviewUl = $(".reviews");
+	showList(1);
 	
 	
 		//모달 영역 가져오기
@@ -15,10 +14,11 @@ $(function(){
 
 	
 	//한개의 리뷰 보여지는 모달창에 있는 값 가져오기
-	let modalReview = modal.find("");
-	let modalReviewer = modal.find("");
-	let modalReviewDate = modal.find("");
-	let modalStar = modal.find("");
+	
+	let modalReview = modal.find("textarea[name='review']");
+	let modalStar = modal.find("input[name='star']");
+	let modalReviewer = modal.find("input[name='reviewer']");
+	let modalStoreid = modal.find("input[name='storeid']");
 
 	
 	//모달 영역 안에 있는 button 가져오기
@@ -96,23 +96,14 @@ $(function(){
 				str +="<div class='row text-left'>";
 				str +="<p class='content mt-3'>"+data[i].review+"</p>";
 				str +="</div>";
-				str +="<div class='row d-flex mt-4'>";
-				str +="<div class='like mr-3 vote'>";
-				str +="<button class='btn btn-block btn-info' type='submit'>수정</button>";
 				str +="</div>";
-				str +="<div class='unlike vote'>";
-				str +="<button class='btn btn-block btn-info' type='submit'>삭제</button>";
-				str +="</div>";
-				str +="</div>";
-				str +="</div>";
-				
 				str +="</li>";
 				
 				
 				
 			}
 			reviewUl.html(str);
-			showReviewPage(total);
+			//showReviewPage(total);
 			
 			console.log(str);
 			console.log(data);
@@ -201,7 +192,7 @@ $(function(){
 	
 	
 	//댓글 수정
-	$("#modalModifyBtn").click(function(){
+	$("#ModifyBtn").click(function(){
 		
 		//로그인 여부 확인
 		if(!reviewer){
@@ -222,9 +213,11 @@ $(function(){
 		}
 		
 		var review = {
-			rno:modal.data("bno"),
-			reply:modalReview.val(),
-			replyer:modalReviewer.val()
+			bno:modal.data("bno"),
+			review:modalReview.val(),
+			reviewer:modalReviewer.val(),
+			star:modal.find("input[name='star']:checked").last().val(),
+			storeid:modalStoreid.val()
 		};
 		
 		
@@ -242,7 +235,7 @@ $(function(){
 	
 	
 	//댓글 삭제
-	$("#modalRemoveBtn").click(function(){
+	$("#RemoveBtn").click(function(){
 		
 		//로그인 여부 확인
 		if(!reviewer){
@@ -287,13 +280,18 @@ $(function(){
 			
 			//댓글 모달창에 보여주기
 			modalReview.val(data.review);
-			modalReviewer.val(data.reviewer);
-			modalReviewDate.val(reviewService.displayTime(data.reviewdate)).prop("readonly","readonly");
-			//rno값 필수로 담기(pk)
-			modal.data("bno",data.bno);
+			modalReviewer.val(data.reviewer);	
+			modalStoreid.val(data.storeid);		
+					
+			$.each(modalStar,function(idx,item){
+				if(idx<data.star){	
+					$(this).prop("checked","true");
+				}
+			})
 			
+			modal.data("bno",data.bno);
 			//작성 날짜 영역 보여주기 => 등록 후 댓글을 보는 작업
-			modalReviewDate.closest("div").show();
+			//modalReviewDate.closest("div").show();
 			modal.find('button').show();
 			modal.find("button[id='modalRegisterBtn']").hide();
 			
