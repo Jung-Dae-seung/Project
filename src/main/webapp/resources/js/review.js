@@ -4,6 +4,26 @@
 
 var replyService=(function(){
 	//private
+	
+		function add(review,callback){
+		console.log("add method 호출");	
+		
+		$.ajax({
+			type:'post',
+			beforeSend:function(xhr){
+				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
+			},
+			url:'/food/new',
+			contentType:'application/json',
+			data:JSON.stringify(review),
+			success:function(result){
+				if(callback){
+					callback(result);
+				}
+			}
+		})
+	}
+	
 	function getList(param,callback){
 		
 		var storeid = param.storeid;
@@ -20,17 +40,17 @@ var replyService=(function(){
 	} //getList 종료
 	
 	
-	function remove(rno,replyer,callback){
+	function remove(bno,reviewer,callback){
 		
 		$.ajax({
-			url:'/replies/'+rno,
+			url:'/food/'+rno,
 			type:'delete',
 			beforeSend:function(xhr){
 				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
 			},
 			contentType:"application/json",
 			data:JSON.stringify({
-				replyer:replyer
+				reviewer:reviewer
 			}),
 			success:function(result){
 				if(callback){
@@ -41,15 +61,15 @@ var replyService=(function(){
 	} //remove 종료
 	
 	
-	function update(reply,callback){
+	function update(review,callback){
 		
 		$.ajax({
-			url:'/replies/'+reply.rno,
+			url:'/food/'+review.bno,
 			type:'put',
 			beforeSend:function(xhr){
 				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
 			},
-			data:JSON.stringify(reply),
+			data:JSON.stringify(review),
 			contentType:'application/json',
 			success:function(result){
 				if(callback){
@@ -61,9 +81,9 @@ var replyService=(function(){
 	} //update 종료
 	
 	
-	function get(rno,callback){
+	function get(bno,callback){
 		$.getJSON({
-			url:'/replies/'+rno,
+			url:'/food/'+rno,
 			success:function(data){
 				if(callback){
 					callback(data);
@@ -74,6 +94,7 @@ var replyService=(function(){
 
 	//public
 	return{
+		add:add,
 		getList:getList,
 		remove:remove,
 		update:update,

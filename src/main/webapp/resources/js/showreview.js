@@ -33,22 +33,22 @@ $(function(){
 				str += "<li class='left clearfix' data-bno='"+data[i].bno+"'>";
 				str += "<div>";
 				str += "<div class='header'>";
-				str += "<strong class='primary-font'>"+data[i].replyer+"</strong>";
+				str += "<strong class='primary-font'>"+data[i].reviewer+"</strong>";
 				str += "<small class='pull-right text-muted'>"+replyService.displayTime(data[i].replydate)+"</small>";
-				str += "<p>"+data[i].reply+"</p>";
+				str += "<p>"+data[i].review+"</p>";
 				str += "</div></div></li>";
 			}
-			replyUl.html(str);
-			showReplyPage(total);
+			reviewUl.html(str);
+			showReviewPage(total);
 			
 		})
 	}
 	
 	//페이지 나누기
 	//댓글 페이지 영역 가져오기
-	var replyPageFooter=$(".panel-footer");
+	var reviewPageFooter=$(".panel-footer");
 	var pageNum = 1;
-	function showReplyPage(total){
+	function showReviewPage(total){
 		//마지막 페이지 계산
 		var endPage = Math.ceil(pageNum/10.0)*10;
 		//시작 페이지 계싼
@@ -81,11 +81,11 @@ $(function(){
 		}
 		
 		str += "</ul>";
-		replyPageFooter.html(str);
+		reviewPageFooter.html(str);
 	}
 	
 	//댓글 페이지 번호 클릭시
-	replyPageFooter.on("click","li a",function(e){
+	reviewPageFooter.on("click","li a",function(e){
 		e.preventDefault(); //a 태그 동작 막기
 		
 		pageNum = $(this).attr("href");
