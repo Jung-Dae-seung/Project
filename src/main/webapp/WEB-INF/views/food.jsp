@@ -44,7 +44,7 @@ String storeid = request.getParameter("store_id");
 				<h3 class="font-weight-light"><%=category%></h3>
 				<p id="store_address"><%=address%></p>
 				<p><%=phone%></p>
-				<p id="storeId"><%=storeid%></p>
+				<p id="storeId" style="display: none;"><%=storeid%></p>
 				<br /> <br />
 			</div>
 		</div>
@@ -54,9 +54,10 @@ String storeid = request.getParameter("store_id");
 			<!-- 리뷰메세지 -->
 			<textarea class="form-control" name="review" rows="5" cols=""></textarea>
 			<div class="row gx-4 gx-lg-5 align-items-center my-2">
-				<div style="margin-left:10px">
+				<div class="col-1">
 					<h3>평점:</h3>
 				</div>
+				<div class="col-3">
 				<div class="startRadio" style="margin-left:10px">
 				  <label class="startRadio__box">
 				    <input type="radio" name="star" id="" value="1">
@@ -81,23 +82,21 @@ String storeid = request.getParameter("store_id");
 				</div>	
 			</div>
 
-				<div class="col">
-
+				<div class="ml-auto" style="margin-right: 15px;">
 					<button class="btn btn-block btn-info" id="RegisterBtn" type="button">리뷰 등록</button>
-
 				</div>
 
 				<!-- 이 부분은 맞게 고쳐야 하고요!!-->
 				<sec:authorize access="isAuthenticated()">
 				<input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" />
 				</sec:authorize>
+			</div>
 		</form>
 
 		<!-- 리뷰 출력 -->
 		<div class="panel panel-default">
-		<ul class="reviews">
-		<li data-bno='1'>
-		<div class="card" >
+		
+		<div class="card" id="reviews">
 			<div class="row d-flex">
 				<div class="d-flex flex-column">
 					<h3 class="mt-2 mb-0">유저아이디</h3>
@@ -159,11 +158,9 @@ String storeid = request.getParameter("store_id");
 				<div class="unlike vote">
 					<button class="btn btn-block btn-info" id="RemoveBtn" type="button">삭제</button>
 				</div>
-				<div class="unlike vote">
-					<button type="button" class="btn btn-info" data-dismiss="modal" id="CloseBtn">종료</button>
-				</div>
 			</div>
-		</div>	
+		</div>
+	
 	</div>
 
 		<!-- 페이지 나누기 부분 -->
@@ -179,14 +176,79 @@ String storeid = request.getParameter("store_id");
 			</div>
 		</div>
 	</div>
-
-
+	
+	<!-- 모달창 -->
+	<div class="modal" tabindex="-1" id="reviewModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h5 class="modal-title">review</h5>
+				</div>
+				<div class="modal-body">
+					<div class="row gx-4 gx-lg-5 align-items-center my-2">
+						<div style="margin-left:10px">
+							<h3>평점:</h3>
+						</div>
+						<div class="startRadio" style="margin-left:10px">
+						  <label class="startRadio__box">
+						    <input type="radio" name="star" id="" value="1">
+						    <span class="startRadio__img"><span class="blind">별 1개</span></span>
+						  </label>
+						  <label class="startRadio__box">
+						    <input type="radio" name="star" id="" value="2">
+						    <span class="startRadio__img"><span class="blind">별 2개</span></span>
+						  </label>
+						  <label class="startRadio__box">
+						    <input type="radio" name="star" id="" value="3">
+						    <span class="startRadio__img"><span class="blind">별 3개</span></span>
+						  </label>
+						  <label class="startRadio__box">
+						    <input type="radio" name="star" id="" value="4">
+						    <span class="startRadio__img"><span class="blind">별 4개</span></span>
+						  </label>
+						  <label class="startRadio__box">
+						    <input type="radio" name="star" id="" value="5">
+						    <span class="startRadio__img"><span class="blind">별 5개</span></span>
+						  </label>
+						</div>	
+					</div>
+					
+					<textarea class="form-control" name="review" rows="5" cols=""></textarea>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" id="modalRegisterBtn">등록</button>
+					<button type="button" class="btn btn-warning" id="RemoveBtn">수정</button>
+					<button type="button" class="btn btn-danger" id="RemoveBtn">삭제</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" id="modalCloseBtn">종료</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--::footer part start::-->
+	<jsp:include page="include/footer.jsp"></jsp:include>
+	<!-- footer part end-->
+	
 	<!-- 추가한 부분 -->
 	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b35c281dbc3e2a74b144079a4af860e3&libraries=LIBRARY,services,clusterer,drawing"></script>
 	<script>
 		let result = '${result}';
+		
+		$("#ModifyBtn").click(function(e){
+			e.preventDefault();
+			$("#reviewModal").modal("show");
+		});
+	
+		$('#modalRemoveBtn').click(function(e){
+			$('#reviewModal').modal('hide');
+			location.reload();
+		});
 		
 		var reviewer = null;
 		<sec:authorize access="isAuthenticated()">
