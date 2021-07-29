@@ -10,9 +10,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <!-- 별점 추가한 부분 -->
-<script src="resources/rating/js/star-rating.js" type="text/javascript"></script>
-<link href="resources/rating/css/star-rating.css" media="all"
-	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="resources/css/star.css" />
 
 <!-- food CSS -->
 <link rel="stylesheet" href="resources/css/food.css">
@@ -65,59 +63,59 @@ String storeid = request.getParameter("store_id");
 			<!-- 리뷰메세지 -->
 			<textarea class="form-control" name="review" rows="5" cols=""></textarea>
 			<div class="row gx-4 gx-lg-5 align-items-center my-2">
-				<!-- 평점 선택창 -->
-				<div class="col text-align justify">
-					<div class="btn-group">
-					  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    평점 선택
-					  </button>
-					  <div class="dropdown-menu" style="width: 200px;">
-					  <div class="dropdown-divider"></div>
-					    <input type="radio" name="star" id="">
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<div class="dropdown-divider"></div>
-						<input type="radio" name="star" id="">
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<div class="dropdown-divider"></div>
-						<input type="radio" name="star" id="">
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<div class="dropdown-divider"></div>
-						<input type="radio" name="star" id="">
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-inactive mx-1"></span>
-						<div class="dropdown-divider"></div>
-						<input type="radio" name="star" id="">
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-						<span class="fa fa-star star-active mx-1"></span>
-					  </div>
-					</div>						
+				<div style="margin-left:10px">
+					<h3>평점:</h3>
 				</div>
+				<div class="startRadio" style="margin-left:10px">
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 1개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 1.5개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 2개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 2.5개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 3개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 3.5개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 4개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 4.5개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 5개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="">
+				    <span class="startRadio__img"><span class="blind">별 5.5개</span></span>
+				  </label>
+				</div>	
+			</div>
 
 				<div class="col">
 					<button class="btn btn-block btn-primary" id="RegisterBtn" type="submit">리뷰 등록</button>
 				</div>
 
 				<!-- 이 부분은 맞게 고쳐야 하고요!-->
-				<input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" />
-			</div>
+				<%-- <input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" /> --%>
 		</form>
 
 
@@ -190,13 +188,12 @@ String storeid = request.getParameter("store_id");
 					<button type="button" class="btn btn-primary" data-dismiss="modal" id="CloseBtn">종료</button>
 				</div>
 			</div>
-		</div>
-		
-		</div>
+		</div>	
+	</div>
 
 		<!-- 페이지 나누기 부분 -->
 		<div class="row d-flex my-2" id="panel-footer">
-			<div class="ml-auto">
+			<div class="ml-auto" style="margin-right:15px">
 				<!-- 아래 예시 -->
 				<ul class="pagination pagination-sm">
 					<li class="page-item active" aria-current="page"><span
@@ -208,6 +205,7 @@ String storeid = request.getParameter("store_id");
 		</div>
 	</div>
 
+
 	<!-- 추가한 부분 -->
 	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script type="text/javascript"
@@ -216,52 +214,43 @@ String storeid = request.getParameter("store_id");
 		let result = '${result}';
 		
 		var reviewer = null;
-		<sec:authorize access="isAuthenticated()">
+		/* <sec:authorize access="isAuthenticated()">
 		reviewer = '<sec:authentication property="principal.username"/>';
-		</sec:authorize>
-
+		</sec:authorize> */
+		
 		var store_Address = document.getElementById('store_address');
 		var storeAddress = String(store_Address.innerHTML);
 		var store_name = document.getElementById('store_name');
 		var storeName = String(store_name.innerHTML);
 		var store_Id = document.getElementById('storeId');
 		var storeID = String(store_Id.innerHTML);
-
 		console.log(storeID);
 		console.log(storeName);
 		console.log(storeAddress);
-
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {
 			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
 			level : 3
 		// 지도의 확대 레벨
 		};
-
 		// 지도를 생성합니다    
 		var map = new kakao.maps.Map(mapContainer, mapOption);
-
 		// 주소-좌표 변환 객체를 생성합니다
 		var geocoder = new kakao.maps.services.Geocoder();
-
 		// 주소로 좌표를 검색합니다
 		geocoder
 				.addressSearch(
 						storeAddress,
 						function(result, status) {
-
 							// 정상적으로 검색이 완료됐으면 
 							if (status === kakao.maps.services.Status.OK) {
-
 								var coords = new kakao.maps.LatLng(result[0].y,
 										result[0].x);
-
 								// 결과값으로 받은 위치를 마커로 표시합니다
 								var marker = new kakao.maps.Marker({
 									map : map,
 									position : coords
 								});
-
 								// 인포윈도우로 장소에 대한 설명을 표시합니다
 								var infowindow = new kakao.maps.InfoWindow(
 										{
@@ -269,7 +258,6 @@ String storeid = request.getParameter("store_id");
 													+ storeName + '</div>'
 										});
 								infowindow.open(map, marker);
-
 								// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
 								map.setCenter(coords);
 							}
