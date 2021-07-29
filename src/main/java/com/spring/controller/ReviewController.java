@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.spring.domain.Criteria;
-import com.spring.domain.FreeReplyVO;
-import com.spring.domain.InqReplyVO;
 import com.spring.domain.ReviewPageVO;
 import com.spring.domain.ReviewVO;
 import com.spring.service.ReviewBoardService;
