@@ -26,7 +26,7 @@
 	<select id="list" resultType="com.spring.domain.ReviewVO">
 	<![CDATA[
 		select bno,review,reviewer,storeid,star, reviewdate,updatedate from
-		(select /*+INDEX(reviewtbl idx)*/ rownum rn,bno,review,reviewer,storeid,star, reviewdate,updatedate
+		(select /*+INDEX_DESC(reviewtbl reviewtbl_pk)*/ rownum rn,bno,review,reviewer,storeid,star, reviewdate,updatedate
 		from reviewtbl where storeid=#{storeid} and bno>0 and rownum <= #{cri.pageNum} * #{cri.amount})
 		where rn>(#{cri.pageNum}-1)*#{cri.amount}
 		]]>
