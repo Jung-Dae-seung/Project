@@ -6,9 +6,28 @@ $(function(){
 	let reviewUl = $("#reviews");
 	showList(1);
 	
+	
+		//모달 영역 가져오기
+	let modal = $(".modal");
+	
+		//food.jsp 리뷰 입력 받은 값
+	let review = $("#review");
+	
+	//한개의 리뷰 보여지는 모달창에 있는 값 가져오기
+	let modalReview = modal.find("");
+	let modalReviewer = modal.find("");
+	let modalReviewDate = modal.find("");
+	let modalStar = modal.find("");
+
+	
+	//모달 영역 안에 있는 button 가져오기
+	let RegisterBtn = $("#RegisterBtn");
+	let modalModifyBtn = $("#modalModifyBtn");
+	let modalRemoveBtn = $("#modalRemoveBtn");
+	
 	function showList(page){
 		//리뷰 목록 가져오기
-		replyService.getList({storeid:storeid,page:page||1},function(total,data){
+		reviewService.getList({storeid:storeid,page:page||1},function(total,data){
 			console.log(total);
 			console.log(data);
 			
@@ -92,13 +111,33 @@ $(function(){
 		showList(pageNum);
 	})
 
+		//댓글 삽입 - bno, reply(댓글 내용), replyer(작성자)
+	$("#RegisterBtn").click(function(){
+		
+		//모달 안에 잇는 댓글 작성자, 댓글 내용 가져오기
+		var review = {
+			bno:bno,
+			review:reivew.val(),
+			reviewer:reivewer
+		};
+		
+		reviewService.add(review,function(result){
+			
+			/*if(result){
+				alert(result);
+			}*/
+			showList(-1);
+			
+		}); //add 종료
+	}) //modalRegisterBtn 종료
+	
 	
 	
 	//댓글 수정
 	$("#modalModifyBtn").click(function(){
 		
 		//로그인 여부 확인
-		if(!replyer){
+		if(!reviewer){
 			alert("로그인 한 후 수정이 가능합니다");
 			modal.modal("hide");
 			return;
@@ -107,22 +146,22 @@ $(function(){
 		//현재 모달창에 있는 작성자와 로그인 사용자가 같은지 확인
 		
 		//현재 모달창 작성자 가져오기
-		var oriReplyer = modalReplyer.val();
+		var oriReviewer = modalReviewer.val();
 		//비교
-		if(oriReplyer!=replyer){
+		if(oriReviewer!=reviewer){
 			alert("자신의 댓글만 수정이 가능합니다.");
 			modal.modal("hide");
 			return;
 		}
 		
-		var reply = {
-			rno:modal.data("rno"),
-			reply:modalReply.val(),
-			replyer:modalReplyer.val()
+		var review = {
+			rno:modal.data("bno"),
+			reply:modalReview.val(),
+			replyer:modalReviewer.val()
 		};
 		
 		
-		replyService.update(reply,function(result){
+		reviewService.update(review,function(result){
 			/*if(result){
 				alert(result);
 			}*/
@@ -139,7 +178,7 @@ $(function(){
 	$("#modalRemoveBtn").click(function(){
 		
 		//로그인 여부 확인
-		if(!replyer){
+		if(!reviewer){
 			alert("로그인 한 후 삭제가 가능합니다");
 			modal.modal("hide");
 			return;
@@ -148,18 +187,18 @@ $(function(){
 		//현재 모달창에 있는 작성자와 로그인 사용자가 같은지 확인
 		
 		//현재 모달창 작성자 가져오기
-		var oriReplyer = modalReplyer.val();
+		var oriReviewer = modalReviewer.val();
 		//비교
-		if(oriReplyer!=replyer){
+		if(oriReviewer!=reviewer){
 			alert("자신의 댓글만 삭제가 가능합니다.");
 			modal.modal("hide");
 			return;
 		}
 		
 		//rno가져오기
-		var rno = modal.data("rno");
+		var bno = modal.data("bno");
 		
-		replyService.remove(rno,oriReplyer,function(result){
+		reviewService.remove(bno,oriReviewer,function(result){
 			//alert(result);
 			
 			//모달창 닫기
@@ -171,23 +210,23 @@ $(function(){
 	
 	
 	//이벤트 위임 : li 태그는 나중에 생기는 요소이기 떄문에 ul에 먼저 이벤트를 건 후 li에게 넘겨주는 방식
-	 $(replyUl).on("click","li",function(){
+	 $(reviewUl).on("click","li",function(){
 		
 		//현재 클릭된 li요소의 rno 가져오기
-		var rno = $(this).data("rno");
+		var bno = $(this).data("bno");
 		
-		replyService.get(rno,function(data){
+		reviewService.get(bno,function(data){
 			console.log(data);
 			
 			//댓글 모달창에 보여주기
-			modalReply.val(data.reply);
-			modalReplyer.val(data.replyer);
-			modalReplyDate.val(replyService.displayTime(data.replydate)).prop("readonly","readonly");
+			modalReview.val(data.review);
+			modalReviewer.val(data.reviewer);
+			modalReviewDate.val(reviewService.displayTime(data.reviewdate)).prop("readonly","readonly");
 			//rno값 필수로 담기(pk)
-			modal.data("rno",data.rno);
+			modal.data("bno",data.bno);
 			
 			//작성 날짜 영역 보여주기 => 등록 후 댓글을 보는 작업
-			modalReplyDate.closest("div").show();
+			modalReviewDate.closest("div").show();
 			modal.find('button').show();
 			modal.find("button[id='modalRegisterBtn']").hide();
 			

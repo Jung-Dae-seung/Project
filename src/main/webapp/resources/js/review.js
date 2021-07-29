@@ -2,7 +2,7 @@
  * 댓글 스크립트 - 자바스크립트 모듈(관련 있는 함수 모임) 구성
  */
 
-var replyService=(function(){
+var reviewService=(function(){
 	//private
 	
 		function add(review,callback){
@@ -43,7 +43,7 @@ var replyService=(function(){
 	function remove(bno,reviewer,callback){
 		
 		$.ajax({
-			url:'/food/'+rno,
+			url:'/food/'+bno,
 			type:'delete',
 			beforeSend:function(xhr){
 				xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
@@ -83,7 +83,7 @@ var replyService=(function(){
 	
 	function get(bno,callback){
 		$.getJSON({
-			url:'/food/'+rno,
+			url:'/food/'+bno,
 			success:function(data){
 				if(callback){
 					callback(data);
