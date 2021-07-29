@@ -24,6 +24,21 @@ var reviewService=(function(){
 		})
 	}
 	
+	function getStar(param,callback){
+		
+		var storeid = param.storeid;
+		
+		$.getJSON({
+			url:'/food/pages/'+storeid,
+			success:function(data){
+				if(callback){
+					callback(data.reviewCnt,data.list);
+				}
+			}
+		})
+	} //getStar 종료
+	
+	
 	function getList(param,callback){
 		
 		var storeid = param.storeid;
@@ -122,6 +137,7 @@ var reviewService=(function(){
 		remove:remove,
 		update:update,
 		get:get,
-		displayTime:displayTime
+		displayTime:displayTime,
+		getStar:getStar
 	}
 })();

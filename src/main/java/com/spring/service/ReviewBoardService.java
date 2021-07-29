@@ -12,5 +12,6 @@ public interface ReviewBoardService {
 	public boolean update(ReviewVO vo);
 	public ReviewPageVO list(Criteria cri, String storeid);
 	public ReviewVO read(int bno);
+	public ReviewPageVO starlist(String storeid);
 
 }

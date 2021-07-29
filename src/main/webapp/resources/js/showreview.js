@@ -2,19 +2,18 @@
  * 
  */
 $(function(){
+	//별점 평균 보여줄 영역 가져오기
+	let staraverage = $("#staraverage");
+	staraver();
+		
 	//리뷰가 보여질 영역 가져오기
-
 	let reviewUl = $(".reviews");
 	showList(1);
 	
-	
-		//모달 영역 가져오기
+	//모달 영역 가져오기
 	let modal = $(".modal");
 	
-
-	
 	//한개의 리뷰 보여지는 모달창에 있는 값 가져오기
-	
 	let modalReview = modal.find("textarea[name='review']");
 	let modalStar = modal.find("input[name='star']");
 	let modalReviewer = modal.find("input[name='reviewer']");
@@ -26,7 +25,70 @@ $(function(){
 	let ModifyBtn = $("#ModifyBtn");
 	let RemoveBtn = $("#RemoveBtn");
 	
+	//전체 별점 평균 구하기
+	function staraver(){
+		reviewService.getStar({storeid:storeID},function(total,data){
+			
+				if(data==null||data.length==0){
+				staraverage.html("<h5>리뷰가 아직 없습니다! 첫 리뷰를 작성해보세요!</h5>");
+				return;
+			}
+			var str2="";
+			var star2=0;
+			for(var i=0,len=data.length;i<len;i++){
+					console.log("스타 : "+data[i].star)
+					star2 += data[i].star			
+			}
+			console.log("스타 ++++: "+star2);
+			console.log("스타 평균: "+star2/total);
+			
+			var star2 = Math.round(star2/total);
+			
+			console.log("스타 평균 반올림: "+star2);
+			
+			if(star2 == 1){
+				str2 +="<p>총 "+total+"개 리뷰의 평균</p>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+			} else if(star2 == 2){
+				str2 +="<p>총 "+total+"개 리뷰의 평균</p>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+			} else if(star2 == 3) {
+				str2 +="<p>총 "+total+"개 리뷰의 평균</p>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+			} else if(star2 == 4) {
+				str2 +="<p>총 "+total+"개 리뷰의 평균</p>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-inactive mx-1'></span>"
+			} else if(star2 == 5) {
+				str2 +="<p>총 "+total+"개 리뷰의 평균</p>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+				str2 +="<span class='fa fa-star star-active mx-1'></span>"
+			}
+			console.log(str2);
+			staraverage.html(str2);
+		})
+	}
+	
 	function showList(page){
+		
 		//리뷰 목록 가져오기
 		reviewService.getList({storeid:storeID,page:page||1},function(total,data){
 			console.log(total);
@@ -34,7 +96,7 @@ $(function(){
 			
 			if(page==-1){
 				//마지막 페이지 계산
-				pageNum=Math.ceil(total/10.0);
+				pageNum=Math.ceil(total/5.0);
 				showList(pageNum);
 				return;
 			}
@@ -98,10 +160,8 @@ $(function(){
 				str +="</div>";
 				str +="</div>";
 				str +="</li>";
-				
-				
-				
 			}
+			
 			reviewUl.html(str);
 			showReviewPage(total);
 			
@@ -184,7 +244,8 @@ $(function(){
 			/*if(result){
 				alert(result);
 			}*/
-			showList(-1);
+			showList(1);
+			staraver();
 			
 		}); //add 종료
 		

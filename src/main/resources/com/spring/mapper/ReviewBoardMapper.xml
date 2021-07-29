@@ -32,6 +32,11 @@
 		]]>
 	</select>
 	
+	<!-- 전체 리스트 (별점 뽑기용) 페이지 제거-->
+	<select id="starlist" resultType="com.spring.domain.ReviewVO">
+		select * from reviewtbl where storeid=#{storeid}
+	</select>
+	
 	<!-- storeid에 대한 전체 댓글 게시물 수 -->
 	<select id="getCountByStoreid" resultType="int">
 		select count(*) from reviewtbl where storeid=#{storeid}

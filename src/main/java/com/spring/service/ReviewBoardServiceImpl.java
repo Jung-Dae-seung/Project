@@ -42,6 +42,11 @@ public class ReviewBoardServiceImpl implements ReviewBoardService {
 		return mapper.read(bno);
 	}
 
+	@Override
+	public ReviewPageVO starlist(String storeid) {
+		return new ReviewPageVO(mapper.getCountByStoreid(storeid) ,mapper.starlist(storeid));
+	}
+
 
 
 	

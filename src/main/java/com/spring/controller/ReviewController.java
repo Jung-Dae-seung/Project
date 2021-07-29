@@ -36,6 +36,13 @@ public class ReviewController {
 		
 		return new ResponseEntity<ReviewPageVO>(service.list(cri, storeid),HttpStatus.OK);
 	}
+	// 별점 평균 뽑기용 전체 리스트 (페이지 제거)
+	@GetMapping("/pages/{storeid}")
+	public ResponseEntity<ReviewPageVO>getStar(@PathVariable("storeid") String storeid){
+		log.info("리뷰 가져오기 "+storeid);
+		
+		return new ResponseEntity<ReviewPageVO>(service.starlist(storeid),HttpStatus.OK);
+	}
 	
 	// insert
 	@PreAuthorize("isAuthenticated()")

@@ -45,6 +45,10 @@ String storeid = request.getParameter("store_id");
 				<p id="store_address"><%=address%></p>
 				<p><%=phone%></p>
 				<p id="storeId" style="display: none;"><%=storeid%></p>
+				 <br />
+				<div id="staraverage">
+				<!-- 평균 리뷰 별점 -->
+				</div>	
 				<br /> <br />
 			</div>
 		</div>
