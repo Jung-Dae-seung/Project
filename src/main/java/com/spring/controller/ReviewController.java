@@ -1,22 +1,20 @@
 package com.spring.controller;
 
-
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.spring.domain.Criteria;
-import com.spring.domain.FreeReplyPageVO;
+import com.spring.domain.FreeReplyVO;
+import com.spring.domain.InqReplyVO;
 import com.spring.domain.ReviewPageVO;
 import com.spring.domain.ReviewVO;
 import com.spring.service.ReviewBoardService;
@@ -31,7 +29,7 @@ public class ReviewController {
 	@Autowired
 	ReviewBoardService service;
 	
-	//food list
+	// list
 	@GetMapping("/pages/{storeid}/{page}")
 	public ResponseEntity<ReviewPageVO>getList(@PathVariable("storeid") String storeid, @PathVariable("page") int page){
 		log.info("리뷰 가져오기 "+storeid+" page "+page);
@@ -39,8 +37,50 @@ public class ReviewController {
 		Criteria cri = new Criteria(page, 10);
 		
 		return new ResponseEntity<ReviewPageVO>(service.list(cri, storeid),HttpStatus.OK);
-		
 	}
+	
+	// insert
+	@PreAuthorize("isAuthenticated()")
+	@PostMapping("/new")
+	public ResponseEntity<String> create(@RequestBody ReviewVO review){
+		log.info("리뷰 입력 요청 "+review);
+		
+		return service.insert(review)?new ResponseEntity<String>("success",HttpStatus.OK):
+			new ResponseEntity<String>("fail",HttpStatus.BAD_REQUEST);
+	}
+	
+	
+	// read
+	@GetMapping("/{bno}")
+	public ResponseEntity<ReviewVO> read(@PathVariable("bno") int bno){
+		log.info("리뷰 하나 가져오기 "+bno);
+		
+		return new ResponseEntity<>(service.read(bno),HttpStatus.OK);
+	}
+	
+	// update
+	@PreAuthorize("principal.username == #review.reviewer")
+	@PutMapping("/{bno}")
+	public ResponseEntity<String> update(@PathVariable("bno") int bno,@RequestBody ReviewVO review){
+		log.info("리뷰 수정 "+bno+" 리뷰 내용 "+review);
+		
+		review.setBno(bno);
+		
+		return service.update(review)?new ResponseEntity<String>("success",HttpStatus.OK):
+			new ResponseEntity<String>("fail",HttpStatus.BAD_REQUEST);
+	}
+	
+	// delete
+	@PreAuthorize("principal.username == #vo.reviewer")
+	@DeleteMapping("/{bno}")
+	public ResponseEntity<String> delete(@PathVariable("bno") int bno,@RequestBody ReviewVO vo){
+		log.info("리뷰 삭제 "+bno);
+		
+		return service.delete(bno)?new ResponseEntity<String>("success",HttpStatus.OK):
+			new ResponseEntity<String>("fail",HttpStatus.BAD_REQUEST);
+	}
+	
+	
 	
 	
 	
