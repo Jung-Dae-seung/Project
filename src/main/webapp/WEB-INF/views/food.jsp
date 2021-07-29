@@ -68,54 +68,54 @@ String storeid = request.getParameter("store_id");
 				</div>
 				<div class="startRadio" style="margin-left:10px">
 				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
+				    <input type="radio" name="star" id="" value="0.5">
+				    <span class="startRadio__img"><span class="blind">별 0.5개</span></span>
+				  </label>
+				  <label class="startRadio__box">
+				    <input type="radio" name="star" id="" value="1">
 				    <span class="startRadio__img"><span class="blind">별 1개</span></span>
 				  </label>
 				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
-				    <span class="startRadio__img"><span class="blind">별 1.5개</span></span>
-				  </label>
-				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
+				    <input type="radio" name="star" id="" value="1.5">
 				    <span class="startRadio__img"><span class="blind">별 2개</span></span>
 				  </label>
 				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
+				    <input type="radio" name="star" id="" value="2">
 				    <span class="startRadio__img"><span class="blind">별 2.5개</span></span>
 				  </label>
 				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
+				    <input type="radio" name="star" id="" value="2.5">
 				    <span class="startRadio__img"><span class="blind">별 3개</span></span>
 				  </label>
 				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
+				    <input type="radio" name="star" id="" value="3">
 				    <span class="startRadio__img"><span class="blind">별 3.5개</span></span>
 				  </label>
 				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
+				    <input type="radio" name="star" id="" value="3.5">
 				    <span class="startRadio__img"><span class="blind">별 4개</span></span>
 				  </label>
 				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
+				    <input type="radio" name="star" id="" value="4">
 				    <span class="startRadio__img"><span class="blind">별 4.5개</span></span>
 				  </label>
 				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
+				    <input type="radio" name="star" id="" value="4.5">
 				    <span class="startRadio__img"><span class="blind">별 5개</span></span>
 				  </label>
 				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
+				    <input type="radio" name="star" id="" value="5">
 				    <span class="startRadio__img"><span class="blind">별 5.5개</span></span>
 				  </label>
 				</div>	
 			</div>
 
 				<div class="col">
-					<button class="btn btn-block btn-primary" id="RegisterBtn" type="submit">리뷰 등록</button>
+					<button class="btn btn-block btn-primary" id="RegisterBtn" type="button">리뷰 등록</button>
 				</div>
 
 				<!-- 이 부분은 맞게 고쳐야 하고요!-->
-				<%-- <input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" /> --%>
+				<input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" />
 		</form>
 
 
@@ -214,9 +214,9 @@ String storeid = request.getParameter("store_id");
 		let result = '${result}';
 		
 		var reviewer = null;
-		/* <sec:authorize access="isAuthenticated()">
+		<sec:authorize access="isAuthenticated()">
 		reviewer = '<sec:authentication property="principal.username"/>';
-		</sec:authorize> */
+		</sec:authorize> 
 		
 		var store_Address = document.getElementById('store_address');
 		var storeAddress = String(store_Address.innerHTML);
@@ -263,5 +263,7 @@ String storeid = request.getParameter("store_id");
 							}
 						});
 	</script>
+	<script src="/resources/js/showreview.js"></script>
+	<script src="/resources/js/review.js"></script>
 </body>
 </html>
