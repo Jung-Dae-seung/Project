@@ -2,8 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@taglib uri="http://www.springframework.org/security/tags"
-	prefix="sec"%>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,19 +46,11 @@ String storeid = request.getParameter("store_id");
 				<p><%=phone%></p>
 				<p id="storeId"><%=storeid%></p>
 				<br /> <br />
-				<!-- <a class="btn btn-primary" href="#!">리뷰 작성</a > - -->
 			</div>
 		</div>
 
 		<!-- 입력 -->
 		<form action="" method="post">
-			<!--  뭔지 모름.. 사용안하면 삭제 예정 -->
-			<%-- <c:forEach var="error" items="${ fieldErrors }">
-				<div class="alert alert-warning">
-					<strong>${ error.getField() }</strong>: ${ error.getDefaultMessage() }
-				</div>
-			</c:forEach> --%>
-
 			<!-- 리뷰메세지 -->
 			<textarea class="form-control" name="review" rows="5" cols=""></textarea>
 			<div class="row gx-4 gx-lg-5 align-items-center my-2">
@@ -73,15 +64,7 @@ String storeid = request.getParameter("store_id");
 				  </label>
 				  <label class="startRadio__box">
 				    <input type="radio" name="star" id="">
-				    <span class="startRadio__img"><span class="blind">별 1.5개</span></span>
-				  </label>
-				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
 				    <span class="startRadio__img"><span class="blind">별 2개</span></span>
-				  </label>
-				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
-				    <span class="startRadio__img"><span class="blind">별 2.5개</span></span>
 				  </label>
 				  <label class="startRadio__box">
 				    <input type="radio" name="star" id="">
@@ -89,36 +72,22 @@ String storeid = request.getParameter("store_id");
 				  </label>
 				  <label class="startRadio__box">
 				    <input type="radio" name="star" id="">
-				    <span class="startRadio__img"><span class="blind">별 3.5개</span></span>
-				  </label>
-				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
 				    <span class="startRadio__img"><span class="blind">별 4개</span></span>
-				  </label>
-				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
-				    <span class="startRadio__img"><span class="blind">별 4.5개</span></span>
 				  </label>
 				  <label class="startRadio__box">
 				    <input type="radio" name="star" id="">
 				    <span class="startRadio__img"><span class="blind">별 5개</span></span>
 				  </label>
-				  <label class="startRadio__box">
-				    <input type="radio" name="star" id="">
-				    <span class="startRadio__img"><span class="blind">별 5.5개</span></span>
-				  </label>
 				</div>	
 			</div>
 
 				<div class="col">
-					<button class="btn btn-block btn-primary" id="RegisterBtn" type="submit">리뷰 등록</button>
+					<button class="btn btn-block btn-info" id="RegisterBtn" type="submit">리뷰 등록</button>
 				</div>
 
 				<!-- 이 부분은 맞게 고쳐야 하고요!-->
 				<%-- <input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" /> --%>
 		</form>
-
-
 
 		<!-- 리뷰 출력 -->
 		<div class="panel panel-default">
@@ -147,10 +116,10 @@ String storeid = request.getParameter("store_id");
 			</div>
 			<div class="row d-flex mt-4">
 				<div class="like mr-3 vote">
-					<button class="btn btn-block btn-primary" type="submit">수정</button>
+					<button class="btn btn-block btn-info" type="submit">수정</button>
 				</div>
 				<div class="unlike vote">
-					<button class="btn btn-block btn-primary" type="submit">삭제</button>
+					<button class="btn btn-block btn-info" type="submit">삭제</button>
 				</div>
 			</div>
 		</div>
@@ -179,13 +148,13 @@ String storeid = request.getParameter("store_id");
 			</div>
 			<div class="row d-flex mt-4">
 				<div class="like mr-3 vote">
-					<button class="btn btn-block btn-primary" id="ModifyBtn" type="button">수정</button>
+					<button class="btn btn-block btn-info" id="ModifyBtn" type="button">수정</button>
 				</div>
 				<div class="unlike vote">
-					<button class="btn btn-block btn-primary" id="RemoveBtn" type="button">삭제</button>
+					<button class="btn btn-block btn-info" id="RemoveBtn" type="button">삭제</button>
 				</div>
 				<div class="unlike vote">
-					<button type="button" class="btn btn-primary" data-dismiss="modal" id="CloseBtn">종료</button>
+					<button type="button" class="btn btn-info" data-dismiss="modal" id="CloseBtn">종료</button>
 				</div>
 			</div>
 		</div>	
