@@ -115,7 +115,7 @@ $(function(){
 		//댓글 삽입 - bno, reply(댓글 내용), replyer(작성자)
 	$("#RegisterBtn").click(function(){
 		
-				//food.jsp 리뷰 입력 받은 값
+				//food.jsp 리뷰 입력 받은 값!
 		var form = $("form");	
 		
 			

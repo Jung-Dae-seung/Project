@@ -87,7 +87,7 @@ String storeid = request.getParameter("store_id");
 
 				</div>
 
-				<!-- 이 부분은 맞게 고쳐야 하고요!-->
+				<!-- 이 부분은 맞게 고쳐야 하고요!!-->
 				<sec:authorize access="isAuthenticated()">
 				<input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" />
 				</sec:authorize>

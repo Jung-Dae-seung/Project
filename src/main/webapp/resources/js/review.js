@@ -3,7 +3,7 @@
  */
 
 var reviewService=(function(){
-	//private
+	//private1
 	
 		function add(review,callback){
 		console.log("add method 호출");	

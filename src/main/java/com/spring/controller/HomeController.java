@@ -50,7 +50,6 @@ public class HomeController {
 	}
 	
 	@PreAuthorize("isAuthenticated() and isAnonymous()")
-	//@PreAuthorize("permitAll")
 	@PostMapping("food")
 	public String foodPost(Model model) {
 		log.info("food page");
