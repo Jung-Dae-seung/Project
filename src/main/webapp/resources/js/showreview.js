@@ -187,6 +187,9 @@ $(function(){
 			showList(-1);
 			
 		}); //add 종료
+		
+		form.find("textarea[name='review']").val("");
+		
 	}) //modalRegisterBtn 종료
 	
 	

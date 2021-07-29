@@ -82,13 +82,20 @@ String storeid = request.getParameter("store_id");
 				</div>	
 			</div>
 
+				
+				
+				<sec:authorize access="!isAuthenticated()">
 				<div class="ml-auto" style="margin-right: 15px;">
-					<button class="btn btn-block btn-info" id="RegisterBtn" type="button">리뷰 등록</button>
+					<a href="login" class="btn btn-block btn-info">리뷰 등록</a>
 				</div>
+				</sec:authorize>
 
 				<!-- 이 부분은 맞게 고쳐야 하고요!!-->
 				<sec:authorize access="isAuthenticated()">
 				<input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" />
+				<div class="ml-auto" style="margin-right: 15px;">
+					<button class="btn btn-block btn-info" id="RegisterBtn" type="button">리뷰 등록</button>
+				</div>
 				</sec:authorize>
 			</div>
 		</form>
