@@ -3,19 +3,16 @@
  */
 $(function(){
 	//리뷰가 보여질 영역 가져오기
-	let reviewUl = $("#reviews");
-	showList(1);
+	function test(){ 
+		
+		let reviewUl = $("#reviews");
+		showList(1);
 	
 	
 		//모달 영역 가져오기
 	let modal = $(".modal");
 	
-		//food.jsp 리뷰 입력 받은 값
-	var form = $("form");	
-	
-		
-	let review = form.find("textarea[name='review']");
-	let star = form.find("")
+
 	
 	//한개의 리뷰 보여지는 모달창에 있는 값 가져오기
 	let modalReview = modal.find("");
@@ -28,7 +25,7 @@ $(function(){
 	let RegisterBtn = $("#RegisterBtn");
 	let ModifyBtn = $("#ModifyBtn");
 	let RemoveBtn = $("#RemoveBtn");
-	
+	}
 	function showList(page){
 		//리뷰 목록 가져오기
 		reviewService.getList({storeid:storeid,page:page||1},function(total,data){
@@ -69,7 +66,7 @@ $(function(){
 	
 	//페이지 나누기
 	//댓글 페이지 영역 가져오기
-	var reviewPageFooter=$("#panel-footer");
+	//var reviewPageFooter=$("#panel-footer");
 	var pageNum = 1;
 	function showReviewPage(total){
 		//마지막 페이지 계산
@@ -108,22 +105,31 @@ $(function(){
 	}
 	
 	//댓글 페이지 번호 클릭시
-	reviewPageFooter.on("click","li a",function(e){
+	/*reviewPageFooter.on("click","li a",function(e){
 		e.preventDefault(); //a 태그 동작 막기
 		
 		pageNum = $(this).attr("href");
 		showList(pageNum);
-	})
+	})*/
 
 		//댓글 삽입 - bno, reply(댓글 내용), replyer(작성자)
 	$("#RegisterBtn").click(function(){
 		
+				//food.jsp 리뷰 입력 받은 값
+		var form = $("form");	
+		
+			
+		let review_text = form.find("textarea[name='review']").val();
+		let star = form.find("input[name='star']:checked").last().val();
+		
+		
+		
 		//리뷰작성자, 리뷰 내용, 별점 가져오기
 		var review = {
-			bno:bno,
-			review:reivew.val(),
-			reviewer:reivewer,
-			star:star.val()
+			review:review_text,
+			reviewer:reviewer,
+			star:star,
+			storeid:storeID
 		};
 		
 		reviewService.add(review,function(result){
@@ -215,7 +221,7 @@ $(function(){
 	
 	
 	//이벤트 위임 : li 태그는 나중에 생기는 요소이기 떄문에 ul에 먼저 이벤트를 건 후 li에게 넘겨주는 방식
-	 $(reviewUl).on("click","li",function(){
+	/* $(reviewUl).on("click","li",function(){
 		
 		//현재 클릭된 li요소의 rno 가져오기
 		var bno = $(this).data("bno");
@@ -239,6 +245,6 @@ $(function(){
 		
 	})
 	
-	})
+	})*/
 	
 })

@@ -4,7 +4,7 @@
 	
 	<!-- insert -->
 	<insert id="insert">
-		insert into reviewtbl(bno,review,reviewer,storeid,star) values(seq_review.nextval,#{bno},#{review},#{reviewer},#{storeid},#{star})
+		insert into reviewtbl(bno,review,reviewer,storeid,star) values(seq_review.nextval,#{review},#{reviewer},#{storeid},#{star})
 	</insert>
 	
 	<!-- 댓글 하나 가져오기 : rno 가 일치 -->

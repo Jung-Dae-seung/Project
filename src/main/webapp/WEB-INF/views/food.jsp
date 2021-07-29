@@ -88,7 +88,9 @@ String storeid = request.getParameter("store_id");
 				</div>
 
 				<!-- 이 부분은 맞게 고쳐야 하고요!-->
+				<sec:authorize access="isAuthenticated()">
 				<input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" />
+				</sec:authorize>
 		</form>
 
 		<!-- 리뷰 출력 -->
@@ -188,6 +190,9 @@ String storeid = request.getParameter("store_id");
 		<sec:authorize access="isAuthenticated()">
 		reviewer = '<sec:authentication property="principal.username"/>';
 		</sec:authorize> 
+		
+		var csrfHeaderName = "${_csrf.headerName}";
+		var csrfTokenValue = "${_csrf.token}";
 		
 		var store_Address = document.getElementById('store_address');
 		var storeAddress = String(store_Address.innerHTML);
