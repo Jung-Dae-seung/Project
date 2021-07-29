@@ -31,6 +31,11 @@
 		where rn>(#{cri.pageNum}-1)*#{cri.amount}
 		]]>
 	</select>
+	
+	<!-- storeid에 대한 전체 댓글 게시물 수 -->
+	<select id="getCountByStoreid" resultType="int">
+		select count(*) from reviewtbl where storeid=#{storeid}
+	</select>
 		
 
 </mapper>

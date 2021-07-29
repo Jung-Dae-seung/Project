@@ -33,7 +33,7 @@ var reviewService=(function(){
 			url:'/food/pages/'+storeid+'/'+page,
 			success:function(data){
 				if(callback){
-					callback(data.total,data.list);
+					callback(data.reviewCnt,data.list);
 				}
 			}
 		})

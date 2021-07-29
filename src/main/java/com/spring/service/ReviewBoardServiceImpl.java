@@ -34,7 +34,7 @@ public class ReviewBoardServiceImpl implements ReviewBoardService {
 
 	@Override
 	public ReviewPageVO list(Criteria cri, String storeid) {
-		return new ReviewPageVO(mapper.list(cri, storeid));
+		return new ReviewPageVO(mapper.getCountByStoreid(storeid) ,mapper.list(cri, storeid));
 	}
 
 	@Override

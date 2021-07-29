@@ -12,5 +12,6 @@ public interface ReviewBoardMapper {
 	public int delete(int bno);
 	public int update(ReviewVO vo);
 	public List<ReviewVO> list(@Param("cri") Criteria cri,@Param("storeid") String storeid);
+	public int getCountByStoreid(String storeid);
 	public ReviewVO read(int bno);
 }

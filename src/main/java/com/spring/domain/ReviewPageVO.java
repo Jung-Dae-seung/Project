@@ -14,5 +14,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReviewPageVO {
+	
+	private int reviewCnt;
 	private List<ReviewVO> list;
 }
