@@ -32,7 +32,7 @@ public class ReviewController {
 	public ResponseEntity<ReviewPageVO>getList(@PathVariable("storeid") String storeid, @PathVariable("page") int page){
 		log.info("리뷰 가져오기 "+storeid+" page "+page);
 		
-		Criteria cri = new Criteria(page, 10);
+		Criteria cri = new Criteria(page, 5);
 		
 		return new ResponseEntity<ReviewPageVO>(service.list(cri, storeid),HttpStatus.OK);
 	}

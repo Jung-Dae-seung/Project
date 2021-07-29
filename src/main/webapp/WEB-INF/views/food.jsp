@@ -55,7 +55,7 @@ String storeid = request.getParameter("store_id");
 			<textarea class="form-control" name="review" rows="5" cols=""></textarea>
 			<div class="row gx-4 gx-lg-5 align-items-center my-2">
 				<div class="col-1">
-					<h3>평점:</h3>
+					<h3 style="height: 20px">평점:</h3>
 				</div>
 				<div class="col-3">
 				<div class="startRadio" style="margin-left:10px">
@@ -95,80 +95,17 @@ String storeid = request.getParameter("store_id");
 
 		<!-- 리뷰 출력 -->
 		<div class="panel panel-default">
-		
-		<ul class="reviews">
-		<li data-bno='1'>
-		<div class="card">
-			<div class="row d-flex">
-				<div class="d-flex flex-column">
-					<h3 class="mt-2 mb-0">유저아이디</h3>
-					<div>
-						<!--별점 자 (아래 코드는 예시)-->
-						<span class="fa fa-star star-active mx-1"></span> 
-						<span class="fa fa-star star-active mx-1"></span> 
-						<span class="fa fa-star star-active mx-1"></span> 
-						<span class="fa fa-star star-active mx-1"></span> 
-						<span class="fa fa-star star-inactive mx-1"></span>
+			<ul class="reviews">
+			<!-- 리뷰 출력 부분 -->
 
-					</div>
-				</div>
-
-				<div class="ml-auto">
-					<p class="text-muted pt-5 pt-sm-3">날짜</p>
-				</div>
-			</div>
-			<div class="row text-left">
-				<p class="content mt-3">리뷰 내용</p>
-			</div>
-			<div class="row d-flex mt-4">
-				<div class="like mr-3 vote">
-					<button class="btn btn-block btn-info" type="submit">수정</button>
-				</div>
-				<div class="unlike vote">
-					<button class="btn btn-block btn-info" type="submit">삭제</button>
-				</div>
-			</div>
+			</ul>
 		</div>
-		</li>
-		</ul>
-		
-		<div class="card">
-			<div class="row d-flex">
-				<div class="d-flex flex-column">
-					<h3 class="mt-2 mb-0">유저아이디</h3>
-					<div>
-						<!--별점 자 (아래 코드는 예시)-->
-						<span class="fa fa-star star-active mx-1"></span> 
-						<span class="fa fa-star star-active mx-1"></span> 
-						<span class="fa fa-star star-active mx-1"></span> 
-						<span class="fa fa-star star-active mx-1"></span> 
-						<span class="fa fa-star star-inactive mx-1"></span>
-
-					</div>
-				</div>
-
-				<div class="ml-auto">
-					<p class="text-muted pt-5 pt-sm-3">날짜</p>
-				</div>
-			</div>
-			<div class="row text-left">
-				<p class="content mt-3">리뷰 내용</p>
-			</div>
-			</div>
-		</div>
-	
-	</div>
 
 		<!-- 페이지 나누기 부분 -->
-		<div class="row d-flex my-2" id="panel-footer">
-			<div class="ml-auto" style="margin-right:15px">
-				<!-- 아래 예시 -->
-				<ul class="pagination pagination-sm">
-					<li class="page-item active" aria-current="page"><span
-						class="page-link">1</span></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-				</ul>
+		<div class="row d-flex my-2">
+			<div class="ml-auto" style="margin-right:15px" id="panel-footer">
+				<!-- 페이지 나누기 출력 부분 -->
+
 			</div>
 		</div>
 	</div>

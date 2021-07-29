@@ -103,7 +103,7 @@ $(function(){
 				
 			}
 			reviewUl.html(str);
-			//showReviewPage(total);
+			showReviewPage(total);
 			
 			console.log(str);
 			console.log(data);
@@ -113,22 +113,22 @@ $(function(){
 	
 	//페이지 나누기
 	//댓글 페이지 영역 가져오기
-	//var reviewPageFooter=$("#panel-footer");
+	var reviewPageFooter=$("#panel-footer");
 	var pageNum = 1;
 	function showReviewPage(total){
 		//마지막 페이지 계산
-		var endPage = Math.ceil(pageNum/10.0)*10;
-		//시작 페이지 계싼
-		var startPage = endPage-9;
+		var endPage = Math.ceil(pageNum/5.0)*5;
+		//시작 페이지 계
+		var startPage = endPage-4;
 		//이전 버튼
 		var prev = startPage!=1;
 		//다음 버튼
 		var next = false;
 		
-		if(endPage * 10 >= total){
-			endPage = Math.ceil(total/10.0);
+		if(endPage * 5 >= total){
+			endPage = Math.ceil(total/5.0);
 		}
-		if(endPage * 10 <total){
+		if(endPage * 5 <total){
 			next = true;
 		}
 		
@@ -152,12 +152,12 @@ $(function(){
 	}
 	
 	//댓글 페이지 번호 클릭시
-	/*reviewPageFooter.on("click","li a",function(e){
+	reviewPageFooter.on("click","li a",function(e){
 		e.preventDefault(); //a 태그 동작 막기
 		
 		pageNum = $(this).attr("href");
 		showList(pageNum);
-	})*/
+	})
 
 		//댓글 삽입 - bno, reply(댓글 내용), replyer(작성자)
 	$("#RegisterBtn").click(function(){
