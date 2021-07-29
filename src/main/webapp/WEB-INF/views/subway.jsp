@@ -100,7 +100,7 @@
             <li data-coords="7.5,3" ></li>
             <li data-coords="7,3" data-marker="@station"><a href="#">회현</a></li>
             <li data-coords="6.5,3" ></li>
-            <li data-coords="6,3" data-marker="@station"><a href="#">서울역</a></li>
+            <li data-coords="6,3" data-marker="@station"><a href="#">서울</a></li>
             <li data-coords="5.5,3" ></li>
             <li data-coords="5,3" data-marker="@station"><a href="#">숙대입구</a></li>
             <li data-coords="4.5,3" ></li>
