@@ -11,7 +11,11 @@ $(function(){
 	let modal = $(".modal");
 	
 		//food.jsp 리뷰 입력 받은 값
-	let review = $("#review");
+	var form = $("form");	
+	
+		
+	let review = form.find("textarea[name='review']");
+	let star = form.find("")
 	
 	//한개의 리뷰 보여지는 모달창에 있는 값 가져오기
 	let modalReview = modal.find("");
@@ -22,8 +26,8 @@ $(function(){
 	
 	//모달 영역 안에 있는 button 가져오기
 	let RegisterBtn = $("#RegisterBtn");
-	let modalModifyBtn = $("#modalModifyBtn");
-	let modalRemoveBtn = $("#modalRemoveBtn");
+	let ModifyBtn = $("#ModifyBtn");
+	let RemoveBtn = $("#RemoveBtn");
 	
 	function showList(page){
 		//리뷰 목록 가져오기
@@ -65,7 +69,7 @@ $(function(){
 	
 	//페이지 나누기
 	//댓글 페이지 영역 가져오기
-	var reviewPageFooter=$(".panel-footer");
+	var reviewPageFooter=$("#panel-footer");
 	var pageNum = 1;
 	function showReviewPage(total){
 		//마지막 페이지 계산
@@ -114,11 +118,12 @@ $(function(){
 		//댓글 삽입 - bno, reply(댓글 내용), replyer(작성자)
 	$("#RegisterBtn").click(function(){
 		
-		//모달 안에 잇는 댓글 작성자, 댓글 내용 가져오기
+		//리뷰작성자, 리뷰 내용, 별점 가져오기
 		var review = {
 			bno:bno,
 			review:reivew.val(),
-			reviewer:reivewer
+			reviewer:reivewer,
+			star:star.val()
 		};
 		
 		reviewService.add(review,function(result){

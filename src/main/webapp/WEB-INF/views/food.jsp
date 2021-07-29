@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +63,7 @@ String storeid = request.getParameter("store_id");
 			</c:forEach> --%>
 
 			<!-- 리뷰메세지 -->
-			<textarea class="form-control" rows="5" cols=""></textarea>
+			<textarea class="form-control" name="review" rows="5" cols=""></textarea>
 			<div class="row gx-4 gx-lg-5 align-items-center my-2">
 				<!-- 평점 선택창 -->
 				<div class="col text-align justify">
@@ -110,13 +112,11 @@ String storeid = request.getParameter("store_id");
 				</div>
 
 				<div class="col">
-					<button class="btn btn-block btn-primary"
-						onclick="location.href='food'" type="submit">리뷰 등록</button>
+					<button class="btn btn-block btn-primary" id="RegisterBtn" type="submit">리뷰 등록</button>
 				</div>
 
 				<!-- 이 부분은 맞게 고쳐야 하고요!-->
-				<input type="hidden" name="id" value="" /> <input type="hidden"
-					name="userid" value="" />
+				<input type="hidden" name="reviewer" id="reviewer" value="<sec:authentication property='principal.username'/>" />
 			</div>
 		</form>
 
@@ -125,7 +125,7 @@ String storeid = request.getParameter("store_id");
 		<!-- 리뷰 출력 -->
 		<div class="panel panel-default">
 		
-		<div class="card">
+		<div class="card" id="reviews">
 			<div class="row d-flex">
 				<div class="d-flex flex-column">
 					<h3 class="mt-2 mb-0">유저아이디</h3>
@@ -181,10 +181,13 @@ String storeid = request.getParameter("store_id");
 			</div>
 			<div class="row d-flex mt-4">
 				<div class="like mr-3 vote">
-					<button class="btn btn-block btn-primary" type="submit">수정</button>
+					<button class="btn btn-block btn-primary" id="ModifyBtn" type="button">수정</button>
 				</div>
 				<div class="unlike vote">
-					<button class="btn btn-block btn-primary" type="submit">삭제</button>
+					<button class="btn btn-block btn-primary" id="RemoveBtn" type="button">삭제</button>
+				</div>
+				<div class="unlike vote">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" id="CloseBtn">종료</button>
 				</div>
 			</div>
 		</div>
@@ -192,7 +195,7 @@ String storeid = request.getParameter("store_id");
 		</div>
 
 		<!-- 페이지 나누기 부분 -->
-		<div class="row d-flex my-2">
+		<div class="row d-flex my-2" id="panel-footer">
 			<div class="ml-auto">
 				<!-- 아래 예시 -->
 				<ul class="pagination pagination-sm">
@@ -211,6 +214,11 @@ String storeid = request.getParameter("store_id");
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b35c281dbc3e2a74b144079a4af860e3&libraries=LIBRARY,services,clusterer,drawing"></script>
 	<script>
 		let result = '${result}';
+		
+		var reviewer = null;
+		<sec:authorize access="isAuthenticated()">
+		reviewer = '<sec:authentication property="principal.username"/>';
+		</sec:authorize>
 
 		var store_Address = document.getElementById('store_address');
 		var storeAddress = String(store_Address.innerHTML);
