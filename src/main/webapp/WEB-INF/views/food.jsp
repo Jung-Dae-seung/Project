@@ -161,9 +161,9 @@ String storeid = request.getParameter("store_id");
 					<input type="hidden" name="storeid" id="storeid" value="000000" />
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-success" id="modalRegisterBtn">등록</button>
-					<button type="button" class="btn btn-warning" id="ModifyBtn">수정</button>
-					<button type="button" class="btn btn-danger" id="RemoveBtn">삭제</button>
+					<button type="button" class="btn btn-primary" id="modalRegisterBtn">등록</button>
+					<button type="button" class="btn btn-primary" id="ModifyBtn">수정</button>
+					<button type="button" class="btn btn-primary" id="RemoveBtn">삭제</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal" id="modalCloseBtn">종료</button>
 				</div>
 			</div>
