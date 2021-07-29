@@ -44,7 +44,7 @@
 	<!-- banner part start-->
 	
  <!-- 재현님 Header-->
-<header class="py-1" style="text-align:center;font-size:40px">${vo.subway_name}
+<header class="py-1" style="text-align:center;font-size:40px">${vo.subway_name}역
 	<h3>지도 마커를 클릭하여 넘어갑니다</h3>
     <div class="container px-lg-5">
     	<div class="map_wrap">
