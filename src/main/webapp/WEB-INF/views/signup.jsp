@@ -5,7 +5,7 @@
 <meta charset="UTF-8" />
 <meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
 <meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
-<title>Insert title here</title>
+<title>EatAtLine4</title>
 <link rel="icon" href="resources/img/favicon.png">
 <!-- signup CSS -->
 <link rel="stylesheet" href="resources/css/signup.css">

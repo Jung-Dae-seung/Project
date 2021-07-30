@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>EatAtLine4</title>
 <link rel="icon" href="resources/img/favicon.png">
 <!-- login CSS -->
 <link rel="stylesheet" href="resources/css/login.css">

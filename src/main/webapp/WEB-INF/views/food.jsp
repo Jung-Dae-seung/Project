@@ -8,12 +8,11 @@
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
+<link rel="icon" href="resources/img/favicon.png">
 <!-- 별점 추가한 부분 -->
 <link rel="stylesheet" href="resources/css/star.css" />
-
 <!-- food CSS -->
 <link rel="stylesheet" href="resources/css/food.css">
-
 <title>EatAtLine4</title>
 </head>
 <%

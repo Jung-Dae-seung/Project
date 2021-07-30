@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="resources/img/favicon.png">
 <!-- login CSS -->
 <link rel="stylesheet" href="resources/css/login.css">
 <title>EatAtLine4</title>

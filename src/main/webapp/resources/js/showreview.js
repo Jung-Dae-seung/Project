@@ -247,9 +247,11 @@ $(function(){
 			showList(1);
 			staraver();
 			
+			
 		}); //add 종료
 		
 		form.find("textarea[name='review']").val("");
+		form.find("input[name='star']").prop('checked',false);
 		
 	}) //modalRegisterBtn 종료
 	
