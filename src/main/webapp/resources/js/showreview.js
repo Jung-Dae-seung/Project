@@ -108,7 +108,7 @@ $(function(){
 			}
 			
 			
-			//댓글이 있는 경우
+			//리뷰 있는 경우
 			var str="";
 			for(var i=0,len=data.length||0;i<len;i++){
 				
@@ -172,7 +172,7 @@ $(function(){
 	}
 	
 	//페이지 나누기
-	//댓글 페이지 영역 가져오기
+	//리뷰 페이지 영역 가져오기
 	var reviewPageFooter=$("#panel-footer");
 	var pageNum = 1;
 	function showReviewPage(total){
@@ -211,7 +211,7 @@ $(function(){
 		reviewPageFooter.html(str);
 	}
 	
-	//댓글 페이지 번호 클릭시
+	//리뷰 페이지 번호 클릭시
 	reviewPageFooter.on("click","li a",function(e){
 		e.preventDefault(); //a 태그 동작 막기
 		
@@ -219,10 +219,10 @@ $(function(){
 		showList(pageNum);
 	})
 
-		//댓글 삽입 - bno, reply(댓글 내용), replyer(작성자)
+		//리뷰삽입 - bno, review(리뷰 내용), reviewer(작성자)
 	$("#RegisterBtn").click(function(){
 		
-				//food.jsp 리뷰 입력 받은 값!
+		//food.jsp 리뷰 입력 받은 값!
 		var form = $("form");	
 		
 			
@@ -257,7 +257,7 @@ $(function(){
 	
 	
 	
-	//댓글 수정
+	//리뷰 수정
 	$("#ModifyBtn").click(function(){
 		
 		//로그인 여부 확인
@@ -273,7 +273,7 @@ $(function(){
 		var oriReviewer = modalReviewer.val();
 		//비교
 		if(oriReviewer!=reviewer){
-			alert("자신의 댓글만 수정이 가능합니다.");
+			alert("자신의 리뷰만 수정이 가능합니다.");
 			modal.modal("hide");
 			return;
 		}
@@ -300,7 +300,7 @@ $(function(){
 	}) //#modalModifyBtn 종료
 	
 	
-	//댓글 삭제
+	//리뷰 삭제
 	$("#RemoveBtn").click(function(){
 		
 		//로그인 여부 확인
@@ -316,7 +316,7 @@ $(function(){
 		var oriReviewer = modalReviewer.val();
 		//비교
 		if(oriReviewer!=reviewer){
-			alert("자신의 댓글만 삭제가 가능합니다.");
+			alert("자신의 리뷰만 삭제가 가능합니다.");
 			modal.modal("hide");
 			return;
 		}
@@ -344,7 +344,7 @@ $(function(){
 		reviewService.get(bno,function(data){
 			console.log(data);
 			
-			//댓글 모달창에 보여주기
+			//리뷰 모달창에 보여주기
 			modalReview.val(data.review);
 			modalReviewer.val(data.reviewer);	
 			modalStoreid.val(data.storeid);		
@@ -359,7 +359,6 @@ $(function(){
 			//작성 날짜 영역 보여주기 => 등록 후 댓글을 보는 작업
 			//modalReviewDate.closest("div").show();
 			modal.find('button').show();
-			modal.find("button[id='modalRegisterBtn']").hide();
 			
 			modal.modal("show");
 		
