@@ -129,6 +129,7 @@
             <li data-coords="3.6,4.6"></li>
        </ul>
        
+       <!-- 광명 -->
        <ul data-color="#0052A4">
        		<li data-coords="3.3,4.6"></li>
             <li data-coords="3.3,4.3"></li>
