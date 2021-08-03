@@ -50,13 +50,13 @@
 				</div>
 				<div class="col-9" style="border: solid; border-color: #b8cfc7; padding-left: 0px;">
 					<div id="includeLine1" style="display: none;">
-						<h2>준비중 입니다.</h2>
+						<jsp:include page="subway1.jsp"></jsp:include>
 					</div>
 					<div id="includeLine2" style="display: none;">
-						<h2>준비중 입니다.</h2>
+						<jsp:include page="subway2.jsp"></jsp:include>
 					</div>
 					<div id="includeLine3" style="display: none;">
-						<h2>준비중 입니다.</h2>
+						<jsp:include page="subway3.jsp"></jsp:include>
 					</div>
 					<div id="includeLine4" style="display: none;">
 						<jsp:include page="subway4.jsp"></jsp:include>
