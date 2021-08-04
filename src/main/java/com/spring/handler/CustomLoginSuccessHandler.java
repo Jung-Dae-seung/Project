@@ -22,7 +22,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 		
 		log.info("Login success");
 		
-		//ï¿½ì”¤ï§ï¿½ ï¿½ì ™è¹‚ï¿½ ï¿½ì†—ï¿½ì”¤
+		//ÀÎÁõ Á¤º¸ È®ÀÎ
 		List<String> roleNames = new ArrayList<String>();
 		authentication.getAuthorities().forEach(auth -> roleNames.add(auth.getAuthority()));
 		

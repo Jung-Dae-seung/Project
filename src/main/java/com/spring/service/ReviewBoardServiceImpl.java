@@ -47,6 +47,16 @@ public class ReviewBoardServiceImpl implements ReviewBoardService {
 		return new ReviewPageVO(mapper.getCountByStoreid(storeid) ,mapper.starlist(storeid));
 	}
 
+	@Override
+	public ReviewPageVO lowStarList(Criteria cri, String storeid) {
+		return new ReviewPageVO(mapper.getCountByStoreid(storeid) ,mapper.lowStarList(cri, storeid));
+	}
+
+	@Override
+	public ReviewPageVO highStarList(Criteria cri, String storeid) {
+		return new ReviewPageVO(mapper.getCountByStoreid(storeid) ,mapper.highStarList(cri, storeid));
+	}
+
 
 
 	

@@ -104,12 +104,18 @@ String storeid = request.getParameter("store_id");
 		</form>
 
 		<!-- 리뷰 출력 -->
-		<div class="panel panel-default">
+		<div class="row d-flex my-4">
+			<div class="col-4" id="reviewarray">
+				<a href="#" id="newarray" style="font-size: 18px">최신순</a>
+				&emsp;
+				<a href="#" id="highstararray" style="font-size: 18px">평점 높은순</a>
+				&emsp;
+				<a href="#" id="lowstararray" style="font-size: 18px">평점 낮은순</a>
+			</div>
+		</div>
 			<ul class="reviews">
 			<!-- 리뷰 출력 부분 -->
-
 			</ul>
-		</div>
 
 		<!-- 페이지 나누기 부분 -->
 		<div class="row d-flex my-2">

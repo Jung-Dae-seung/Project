@@ -54,6 +54,36 @@ var reviewService=(function(){
 		})
 	} //getList 종료
 	
+	function highStarList(param,callback){
+		
+		var storeid = param.storeid;
+		var page = param.page || 1;
+		
+		$.getJSON({
+			url:'/food/pages/'+storeid+'/'+page+'/highstar',
+			success:function(data){
+				if(callback){
+					callback(data.reviewCnt,data.list);
+				}
+			}
+		})
+	} //highStarList 종료
+
+	function lowStarList(param,callback){
+		
+		var storeid = param.storeid;
+		var page = param.page || 1;
+		
+		$.getJSON({
+			url:'/food/pages/'+storeid+'/'+page+'/lowstar',
+			success:function(data){
+				if(callback){
+					callback(data.reviewCnt,data.list);
+				}
+			}
+		})
+	} //lowStarList 종료
+	
 	
 	function remove(bno,reviewer,callback){
 		
@@ -129,6 +159,17 @@ var reviewService=(function(){
 			}
 		})
 	} // get 종료
+	
+	function getTotal(storeid,callback){
+				$.getJSON({
+			url:'/food/'+storeid,
+			success:function(data){
+				if(callback){
+					callback(data);
+				}
+			}
+		})
+	} // getTotal 종료
 
 	//public
 	return{
@@ -138,6 +179,9 @@ var reviewService=(function(){
 		update:update,
 		get:get,
 		displayTime:displayTime,
-		getStar:getStar
+		getStar:getStar,
+		getTotal:getTotal,
+		highStarList:highStarList,
+		lowStarList:lowStarList
 	}
 })();

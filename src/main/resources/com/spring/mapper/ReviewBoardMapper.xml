@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.mapper.ReviewBoardMapper">
 	
-	<!-- insert ㄴ-->
+	<!-- insert -->
 	<insert id="insert">
 		insert into reviewtbl(bno,review,reviewer,storeid,star) values(seq_review.nextval,#{review},#{reviewer},#{storeid},#{star})
 	</insert>
@@ -22,12 +22,34 @@
 		delete from reviewtbl where bno=#{bno}
 	</delete>
 	
-	<!-- 댓글 페이지 처리 -->
+	<!-- 댓글 페이지 처리 최신순 리스트 출력 -->
 	<select id="list" resultType="com.spring.domain.ReviewVO">
 	<![CDATA[
 		select bno,review,reviewer,storeid,star, reviewdate,updatedate from
 		(select /*+INDEX_DESC(reviewtbl reviewtbl_pk)*/ rownum rn,bno,review,reviewer,storeid,star, reviewdate,updatedate
 		from reviewtbl where storeid=#{storeid} and bno>0 and rownum <= #{cri.pageNum} * #{cri.amount})
+		where rn>(#{cri.pageNum}-1)*#{cri.amount}
+		]]>
+	</select>
+	
+		<!-- 댓글 페이지 처리 별점 낮은순중 최신순으로 리스트 출력 -->
+	<select id="lowStarList" resultType="com.spring.domain.ReviewVO">
+	<![CDATA[
+		select bno,review,reviewer,storeid,star, reviewdate,updatedate from
+		(select /*+INDEX_DESC(reviewtbl reviewtbl_pk)*/ rownum rn,bno,review,reviewer,storeid,star, reviewdate,updatedate
+		from (select * from reviewtbl where storeid=#{storeid} order by star asc, bno desc) 
+		where storeid=#{storeid} and bno>0 and rownum <= #{cri.pageNum} * #{cri.amount})
+		where rn>(#{cri.pageNum}-1)*#{cri.amount}
+		]]>
+	</select>
+	
+		<!-- 댓글 페이지 처리 별점 높은순중 최신순으로 리스트 출력 -->
+	<select id="highStarList" resultType="com.spring.domain.ReviewVO">
+	<![CDATA[
+		select bno,review,reviewer,storeid,star, reviewdate,updatedate from
+		(select /*+INDEX_DESC(reviewtbl reviewtbl_pk)*/ rownum rn,bno,review,reviewer,storeid,star, reviewdate,updatedate
+		from (select * from reviewtbl where storeid=#{storeid} order by star desc, bno desc) 
+		where storeid=#{storeid} and bno>0 and rownum <= #{cri.pageNum} * #{cri.amount})
 		where rn>(#{cri.pageNum}-1)*#{cri.amount}
 		]]>
 	</select>

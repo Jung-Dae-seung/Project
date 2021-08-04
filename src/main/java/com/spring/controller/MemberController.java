@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
@@ -29,9 +30,11 @@ public class MemberController {
 	private MemberService service;
 	
 	@GetMapping("/login")
-	public void loginGet() {
+	public void loginGet(HttpServletRequest request) {
 		log.info("loginget 요청");
-		
+	    String referrer = request.getHeader("Referer");
+	    log.info("로그인 요청 페이지 주소 받기 : "+referrer);
+	    request.getSession().setAttribute("prevPage", referrer);	
 	}
 	@GetMapping("/logout")
 	public void logoutget() {

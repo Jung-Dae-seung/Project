@@ -11,6 +11,8 @@ public interface ReviewBoardService {
 	public boolean delete(int bno);
 	public boolean update(ReviewVO vo);
 	public ReviewPageVO list(Criteria cri, String storeid);
+	public ReviewPageVO lowStarList(Criteria cri, String storeid);
+	public ReviewPageVO highStarList(Criteria cri, String storeid);
 	public ReviewVO read(int bno);
 	public ReviewPageVO starlist(String storeid);
 

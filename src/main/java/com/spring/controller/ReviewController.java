@@ -27,7 +27,7 @@ public class ReviewController {
 	@Autowired
 	ReviewBoardService service;
 	
-	// list
+	// 최신순 list
 	@GetMapping("/pages/{storeid}/{page}")
 	public ResponseEntity<ReviewPageVO>getList(@PathVariable("storeid") String storeid, @PathVariable("page") int page){
 		log.info("리뷰 가져오기 "+storeid+" page "+page);
@@ -36,6 +36,27 @@ public class ReviewController {
 		
 		return new ResponseEntity<ReviewPageVO>(service.list(cri, storeid),HttpStatus.OK);
 	}
+	
+	// 리뷰 평점 높은순 list
+	@GetMapping("/pages/{storeid}/{page}/highstar")
+	public ResponseEntity<ReviewPageVO>highStarList(@PathVariable("storeid") String storeid, @PathVariable("page") int page){
+		log.info("리뷰 가져오기 "+storeid+" page "+page);
+		
+		Criteria cri = new Criteria(page, 5);
+		
+		return new ResponseEntity<ReviewPageVO>(service.highStarList(cri, storeid),HttpStatus.OK);
+	}
+	
+	// 리뷰 평점 낮은순 list
+	@GetMapping("/pages/{storeid}/{page}/lowstar")
+	public ResponseEntity<ReviewPageVO>lowStarList(@PathVariable("storeid") String storeid, @PathVariable("page") int page){
+		log.info("리뷰 가져오기 "+storeid+" page "+page);
+		
+		Criteria cri = new Criteria(page, 5);
+		
+		return new ResponseEntity<ReviewPageVO>(service.lowStarList(cri, storeid),HttpStatus.OK);
+	}
+	
 	// 별점 평균 뽑기용 전체 리스트 (페이지 제거)
 	@GetMapping("/pages/{storeid}")
 	public ResponseEntity<ReviewPageVO>getStar(@PathVariable("storeid") String storeid){
@@ -43,6 +64,15 @@ public class ReviewController {
 		
 		return new ResponseEntity<ReviewPageVO>(service.starlist(storeid),HttpStatus.OK);
 	}
+	
+//	//페이지 나누기 갱신시 필요한 리뷰수 가져오기
+//	@GetMapping("/{storeid}")
+//	public ResponseEntity<String>getTotal(@PathVariable("storeid") int storeid){
+//		log.info("음식점 총 리뷰 수 가져오기"+storeid);
+//		
+//		return new ResponseEntity<ReviewPageVO>(service.getTotal(storeid),HttpStatus.OK);
+//	}
+	
 	
 	// insert
 	@PreAuthorize("isAuthenticated()")
@@ -85,9 +115,7 @@ public class ReviewController {
 			new ResponseEntity<String>("fail",HttpStatus.BAD_REQUEST);
 	}
 	
-	
-	
-	
+
 	
 //	@GetMapping("/list")
 //    public void list(Model model, Criteria cri) {
