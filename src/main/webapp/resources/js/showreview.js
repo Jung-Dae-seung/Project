@@ -12,6 +12,7 @@ $(function(){
 	//리뷰가 보여질 영역 가져오기
 	let reviewUl = $(".reviews");
 	showList(1);
+	$("#newarray").css("color","red");
 	
 	//모달 영역 가져오기
 	let modal = $(".modal");
@@ -29,14 +30,20 @@ $(function(){
 	
 	//최신순 정렬 클릭시
 	$("#newarray").click(function(e){
-		e.preventDefault();	
+		e.preventDefault();
+		$(this).css("color","red");
+		$("#highstararray").css("color","");
+		$("#lowstararray").css("color","");
 		staraver();
 		showList(1);
 	})
 	
 	//평점 높은순 정렬 클릭시
 	$("#highstararray").click(function(e){
-		e.preventDefault();			
+		e.preventDefault();
+		$(this).css("color","red");
+		$("#newarray").css("color","");
+		$("#lowstararray").css("color","");
 		staraver();
 		highStarArrayList(1);
 
@@ -45,6 +52,9 @@ $(function(){
 	//평점 낮은순 정렬 클릭시
 	$("#lowstararray").click(function(e){
 		e.preventDefault();
+		$(this).css("color","red");
+		$("#highstararray").css("color","");
+		$("#newarray").css("color","");
 		staraver();
 		lowStarArrayList(1);
 
