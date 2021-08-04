@@ -522,10 +522,9 @@ ul {
 
 /* line 36, /Applications/MAMP/htdocs/palash/cl/july 2019/189 travel/189 travel html/sass/_button.scss */
 .btn_1 {
-	float:right;
   display: inline-block;
   width:170px;
-  line-height:30px;
+  line-height:10px;
   text-align:center;
   padding: 13px 40px;
   margin-left: 10px;
@@ -2335,7 +2334,7 @@ ul {
   transform: scale(1, 0);
   display: block;
   border: 0px solid transparent;
-  background-color: #ffdab9;
+  background-color: #fff;
 }
 
 /* line 164, /Applications/MAMP/htdocs/palash/cl/july 2019/189 travel/189 travel html/sass/_menu.scss */
@@ -2343,7 +2342,7 @@ ul {
   font-size: 14px;
   padding: 8px 20px !important;
   color: #fff !important;
-  background-color: #ffdab9;
+  background-color: #fff;
   text-transform: capitalize;
 }
 

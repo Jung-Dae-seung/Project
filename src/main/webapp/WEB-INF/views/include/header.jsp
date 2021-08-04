@@ -53,19 +53,17 @@
 							<a class="btn_1 d-none d-lg-block" href="#">
 							members
 							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+							<ul class="dropdown-menu" style="background: none;" aria-labelledby="navbarScrollingDropdown">
 					          <li>
 					          	<sec:authorize access="isAnonymous()"> <!-- 비 로그인 사용자만 볼수 있음 -->
 					          		<a class="btn_1 d-none d-lg-block" href="/login">log in</a>
-									<li><hr class="dropdown-divider"></li>
 					          	</sec:authorize>
 					          </li>
 					          <li>
 					          	<sec:authorize access="isAuthenticated()"> <!-- 로그인 사용자만 볼수 있음 -->
-					          		<a class="btn_1 d-none d-lg-block" href="/checkpsw">profile modify</a>
+					          		<a class="btn_1 d-none d-lg-block" href="/checkpsw" style="margin-bottom: 10px">profile</a>
 					          	</sec:authorize>
 					          </li>
-					          <li><hr class="dropdown-divider"></li>					          
 					          <li>
 								<sec:authentication property="principal" var="info"/>
 				                <sec:authorize access="isAuthenticated()"> <!-- 로그인 사용자만 볼수 있음 -->
@@ -75,7 +73,6 @@
 							          	</form>
 								</sec:authorize>
 					          </li>
-					          <li><hr class="dropdown-divider"></li>
 					        </ul>
 						</li>
 					</ul>
