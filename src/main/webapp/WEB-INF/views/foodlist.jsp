@@ -124,6 +124,7 @@
 	<input type="hidden" name="store_id" value="" id="store_id"/>
 	<input type="hidden" name="${_csrf.parameterName}"
 							value="${_csrf.token}" id="token"/>
+	<input type="hidden" name="station" value="${subway_name}" id="station"/>
 </form>
 
 <form action="foodReview" method="post" id="reviewForm">
@@ -243,10 +244,11 @@ function displayPlaces(places) {
         	var longitude = places[i].x;
         	var latitude = places[i].y;
         	var store_id = places[i].id;
+        	var station = "${vo.subway_name}"
         	
         	console.log(longitude);
         	console.log(store_id);
-        	
+        	console.log(station);
         	
             kakao.maps.event.addListener(marker, 'mouseover', function() {
                 displayInfowindow(marker, title);
@@ -269,6 +271,7 @@ function displayPlaces(places) {
             	document.getElementById('category').value=category;
             	document.getElementById('token').value=token;
             	document.getElementById('store_id').value=store_id;
+            	document.getElementById('station').value=station;
             	
             	reviewForm.submit();
             	actionForm.submit();

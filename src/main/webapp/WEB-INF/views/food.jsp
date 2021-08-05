@@ -21,6 +21,7 @@ String address = request.getParameter("address");
 String phone = request.getParameter("phone");
 String category = request.getParameter("category");
 String storeid = request.getParameter("store_id");
+String station = request.getParameter("station");
 %>
 <body>
 	<!--::header part start::-->
@@ -34,6 +35,10 @@ String storeid = request.getParameter("store_id");
 	<!-- Page Content-->
 	<div class="container px-4 px-lg-5">
 		<!-- Heading Row-->
+		
+		<div class="col-3" style="margin-left: -15px; margin-bottom: -35px">
+			<a href="#" id ="subway-map" class="btn btn-block btn-info"><%=station%>역 다른 음식점 보기</a>
+		</div>
 		<div class="row gx-4 gx-lg-5 align-items-center my-5">
 			<div class="col-lg-7">
 				<div id="map" style="width: 90%; height: 350px;"></div>
@@ -44,6 +49,7 @@ String storeid = request.getParameter("store_id");
 				<p id="store_address"><%=address%></p>
 				<p><%=phone%></p>
 				<p id="storeId" style="display: none;"><%=storeid%></p>
+				<p id="station" style="display: none;"><%=station%></p>
 				 <br />
 				<div id="staraverage">
 				<!-- 평균 리뷰 별점 -->
@@ -187,6 +193,16 @@ String storeid = request.getParameter("store_id");
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b35c281dbc3e2a74b144079a4af860e3&libraries=LIBRARY,services,clusterer,drawing"></script>
 	<script>
+		//클릭시 지도페이지 돌아가기
+		$("#subway-map").click(function(e){ 
+			e.preventDefault();
+			var subway_name = $("#station").html();
+			console.log(subway_name);
+			var link = "/foodlist?subway_name=" + subway_name;
+			window.location.herf = link;
+			window.open(link, "_self");
+		})
+	
 		let result = '${result}';
 		
 		$('#modalRemoveBtn').click(function(e){
