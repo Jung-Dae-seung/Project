@@ -16,7 +16,7 @@
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <!-- style CSS -->
-<link rel="stylesheet" href="resources/css/style.css">
+<!-- <link rel="stylesheet" href="resources/css/style.css"> -->
 <title>EatAtLine4</title>
 </head>
 <body>
@@ -73,12 +73,6 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>
-								<input type="radio" name="open" id="open" value="Y" class="radio" /><span class="ml_10">공개</span>&nbsp;&nbsp;&nbsp;&nbsp;
-   								<input type="radio" name="open" id="open" value="N" class="radio" /><span class="ml_10">비공개</span>&nbsp;
-							</td>
-						</tr>
-						<tr>
 							<td><input type="text" class="form-control" placeholder="글 제목" id="title" name="title" maxlength="50" /></td>
 						</tr>
 						<tr>
@@ -102,11 +96,28 @@
 					</tbody>
 				</table>
 				<input type="hidden" name="${_csrf.parameterName}" value=${_csrf.token} />
-				<button type="submit" class="btn btn-primary pull-right">글쓰기</button>
+				<div class=row style="margin-bottom: 10px">
+					<select name="open" id="open" class="pull-right" style="margin-right: 13px">
+						<option value="Y">공개</option>
+						<option value="N">비공개</option>
+					</select>
+				</div>
+				<div class=row>
+					<button type="submit" class="btn btn-primary pull-right" style="margin-right: 13px">글쓰기</button>
+				</div>
 			</form>
 		</div>
 	</div>
 	
+	
+<!-- <tr>
+	<td>
+		<input type="radio" name="open" id="open" value="Y" class="radio" />
+		<span class="ml_10">공개</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="open" id="open" value="N" class="radio" />
+		<span class="ml_10">비공개</span>&nbsp;
+	</td>
+</tr> -->
 
 <!-- jquery plugins here-->
 <!-- jquery
@@ -114,25 +125,25 @@
 <script src="resources/js/waypoints.min.js"></script>-->
 
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="resources/community/js/bootstrap.js"></script>
-<!-- popper js -->
+popper js
 <script src="resources/js/popper.min.js"></script>
-<!-- bootstrap js -->
+bootstrap js
 <script src="resources/js/bootstrap.min.js"></script>
-<!-- easing js -->
+easing js
 <script src="resources/js/jquery.magnific-popup.js"></script>
-<!-- particles js -->
+particles js
 <script src="resources/js/owl.carousel.min.js"></script>
 <script src="resources/js/jquery.nice-select.min.js"></script>
-<!-- slick js -->
+slick js
 <script src="resources/js/slick.min.js"></script>
 <script src="resources/js/jquery.counterup.min.js"></script>
 <script src="resources/js/contact.js"></script>
 <script src="resources/js/jquery.ajaxchimp.min.js"></script>
 <script src="resources/js/jquery.form.js"></script>
 <script src="resources/js/jquery.validate.min.js"></script>
-<script src="resources/js/mail-script.js"></script>
+<script src="resources/js/mail-script.js"></script> -->
 
 <script>
 		var csrfHeaderName = "${_csrf.headerName}";
