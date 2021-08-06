@@ -42,9 +42,20 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="/login">로그인</a></li>
-						<li><a href="/logout">로그아웃</a></li>
 						<li><a href="/">Home</a></li>
+						<!-- 인증된 정보가 있으면 Logout 보여주기 -->
+						<sec:authorize access="isAuthenticated()">
+							<li>
+								<form action="/logout" method="post" id="logoutForm">
+									<input type="hidden" name="${_csrf.parameterName}"
+										value="${_csrf.token}" id="token" /> <a href="#"
+										id="logoutTag"><i class=""></i>로그아웃</a>
+								</form>
+							</li>
+						</sec:authorize>
+						<sec:authorize access="!isAuthenticated()">
+							<li><a href="/login"><i class=""></i>로그인</a></li>
+						</sec:authorize>
 					</ul></li>
 			</ul>
 		</div>
@@ -234,5 +245,16 @@ $('#modalRemoveBtn').click(function(e){
 <script src="resources/community/js/read.js"></script>
 <script src="resources/js/custom.js"></script>
 <script src="resources/js/reply.js"></script>
+	<script>
+		$(function() {
+			var actionForm = $("#logoutForm");
+			$("#logoutTag").click(function(e) {
+				e.preventDefault(); // 속성 중지
+
+				//actionForm 보내기
+				actionForm.submit();
+			})
+		})
+	</script>
 </body>
 </html>
