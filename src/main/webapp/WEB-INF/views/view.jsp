@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
 <!DOCTYPE html>
@@ -83,11 +84,13 @@
 					</tr>
 					<tr>
 						<td>작성일자</td>
-						<td colspan="2">${vo.regdate }</td>
+						<td colspan="2"><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+									value="${vo.regdate}" /></td>
 					</tr>
 					<tr>
 						<td>수정일자</td>
-						<td colspan="2">${vo.updatedate }</td>
+						<td colspan="2"><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+									value="${vo.updatedate}" /></td>
 					</tr>
 					<tr>
 						<td>내용</td>
